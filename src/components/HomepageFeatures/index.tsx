@@ -10,32 +10,29 @@ type FeatureItem = {
 
 const FeatureList: FeatureItem[] = [
   {
-    title: 'Easy to Use',
-    Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
+    title: 'Engage Your Players with On-Chain Tournaments',
+    Svg: require('@site/static/img/undraw_gaming_re_cma2.svg').default,
     description: (
       <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+        Host on-chain tournaments and incentivize your players with rewards using the lndiGG Tournament Protocol. With easy API integrations and semi-custodial wallet functionality, the lndiGG Tournament Protocol is the perfect solution for game developers looking to increase player engagement and competitiveness.
       </>
     ),
   },
   {
-    title: 'Focus on What Matters',
-    Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
+    title: 'Secure and Transparent Tournament System',
+    Svg: require('@site/static/img/undraw_select_player_64ca.svg').default,
     description: (
       <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
+        By leveraging the power of smart contracts and the blockchain, the lndiGG Tournament Protocol provides a secure and transparent tournament system. With proof of participation and reward recorded on-chain, users can be sure that their rewards are secure and the process is transparent.
       </>
     ),
   },
   {
-    title: 'Powered by React',
-    Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
+    title: 'Customizable Reward System',
+    Svg: require('@site/static/img/undraw_game_day_ucx9.svg').default,
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+        The lndiGG Tournament Protocol allows game developers to customize the reward system to fit the theme and genre of their game. With leaderboard smart contracts, quests, SBTs, and NFTs, the possibilities are endless. The customizable reward system provides an exciting and immersive gameplay experience for users, increasing player engagement and retention.
       </>
     ),
   },

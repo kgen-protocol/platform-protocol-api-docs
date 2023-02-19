@@ -6,8 +6,8 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'IndiGG API Documentation',
-  tagline: 'INDIGG HELPS GAMERS EARN REAL MONEY WHILE DOING WHAT THEY LOVE - PLAY GAMES LIKE SKYWEAVER, BLAST ROYALE, CRYPTO UNICORNS, AXIE INFINITY AND MORE',
+  title: 'lndiGG Tournament Protocol',
+  tagline: 'A competitive gaming platform that allows your players to Play, Own & Earn and Experience a host of engaging on-chain quests, tournaments and NFTs in an existing or new game.',
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
@@ -58,18 +58,44 @@ const config = {
     ],
   ],
 
+  plugins: [
+    [
+      'docusaurus-plugin-openapi-docs',
+      {
+        id: "apiDocs",
+        docsPluginId: "classic",
+        config: {
+          petstore: { // Note: petstore key is treated as the <id> and can be used to specify an API doc instance when using CLI commands
+            specPath: "examples/petstore.yaml", // Path to designated spec file
+            outputDir: "api/petstore", // Output directory for generated .mdx docs
+            sidebarOptions: {
+              groupPathsBy: "tag",
+            },
+          },
+          burgers: {
+            specPath: "examples/food/burgers/openapi.yaml",
+            outputDir: "api/food/burgers",
+          }
+        }
+      },
+    ]
+  ],
+
+  themes: ["docusaurus-theme-openapi-docs"], // Allows use of @theme/ApiItem and other components
+
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       // Replace with your project's social card
       image: 'img/docusaurus-social-card.jpg',
       colorMode: {
-        defaultMode: 'dark',
+        defaultMode: 'light',
+        // defaultMode: 'dark',
         disableSwitch: true,
         respectPrefersColorScheme: true,
       },
       navbar: {
-        title: 'IndiGG API Documentation',
+        title: 'lndiGG Tournament Protocol',
         logo: {
           alt: 'IndiGG Logo',
           src: 'img/logo.svg',
@@ -79,7 +105,7 @@ const config = {
             type: 'doc',
             docId: 'intro',
             position: 'left',
-            label: 'Tutorial',
+            label: 'Documentation',
           },
           // {to: '/blog', label: 'Blog', position: 'left'},
           {
@@ -96,7 +122,7 @@ const config = {
             title: 'Docs',
             items: [
               {
-                label: 'Tutorial',
+                label: 'Documentation',
                 to: '/docs/intro',
               },
             ],
@@ -130,6 +156,43 @@ const config = {
       //   theme: darkCodeTheme,
       //   // darkTheme: darkCodeTheme,
       // },
+
+      languageTabs: [
+        {
+          highlight: "bash",
+          language: "curl",
+          logoClass: "bash",
+        },
+        {
+          highlight: "python",
+          language: "python",
+          logoClass: "python",
+          variant: "http.client",
+        },
+        {
+          highlight: "go",
+          language: "go",
+          logoClass: "go",
+        },
+        {
+          highlight: "javascript",
+          language: "nodejs",
+          logoClass: "nodejs",
+          variant: "axios",
+        },
+        {
+          highlight: "csharp",
+          language: "csharp",
+          logoClass: "csharp",
+          variant: "httpclient",
+        },
+        {
+          highlight: "java",
+          language: "java",
+          logoClass: "java",
+          variant: "unirest",
+        },
+      ],
     }),
 };
 
