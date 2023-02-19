@@ -30,13 +30,13 @@ The lndiGG Tournament Protocol also allows game developers to incentivize player
 
 ### Technical Concepts
 
-In this documentation guide there are some architectural concepts and terms to get familiar with.
+In this documentation guide there are some architectural concepts and terms to get familiar with. For [details read here](/docs/category/tech-integration).
 
 #### API Key
 
 To get started, game developers will need to connect to the lndiGG Tournament Protocol and receive an API key. The API key will be used to authenticate API requests and ensure that the game developer has permission to use the protocol.
 
-##### Session Service
+#### Session Service
 
 Once the game developer has received an API key, they will need to integrate with the session service to initiate user sessions. User sessions are required to manage the user's participation in tournaments and ensure that their progress is tracked accurately.
 
