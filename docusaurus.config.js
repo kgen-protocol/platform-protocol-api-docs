@@ -7,7 +7,8 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'lndiGG Tournament Protocol',
-  tagline: 'A competitive gaming platform that allows your players to Play, Own & Earn and Experience a host of engaging on-chain quests, tournaments and NFTs in an existing or new game.',
+  tagline:
+    'A competitive gaming platform that allows your players to Play, Own & Earn and Experience a host of engaging on-chain quests, tournaments and NFTs in an existing or new game.',
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
@@ -41,8 +42,7 @@ const config = {
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+          editUrl: 'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
         },
         // blog: {
         //   showReadingTime: true,
@@ -59,29 +59,30 @@ const config = {
   ],
 
   plugins: [
-    [
-      'docusaurus-plugin-openapi-docs',
-      {
-        id: "apiDocs",
-        docsPluginId: "classic",
-        config: {
-          petstore: { // Note: petstore key is treated as the <id> and can be used to specify an API doc instance when using CLI commands
-            specPath: "examples/petstore.yaml", // Path to designated spec file
-            outputDir: "api/petstore", // Output directory for generated .mdx docs
-            sidebarOptions: {
-              groupPathsBy: "tag",
-            },
-          },
-          burgers: {
-            specPath: "examples/food/burgers/openapi.yaml",
-            outputDir: "api/food/burgers",
-          }
-        }
-      },
-    ]
+    // [
+    //   'docusaurus-plugin-openapi-docs',
+    //   {
+    //     id: 'apiDocs',
+    //     docsPluginId: 'classic',
+    //     config: {
+    //       petstore: {
+    //         // Note: petstore key is treated as the <id> and can be used to specify an API doc instance when using CLI commands
+    //         specPath: 'examples/petstore.yaml', // Path to designated spec file
+    //         outputDir: 'api/petstore', // Output directory for generated .mdx docs
+    //         sidebarOptions: {
+    //           groupPathsBy: 'tag',
+    //         },
+    //       },
+    //       burgers: {
+    //         specPath: 'examples/food/burgers/openapi.yaml',
+    //         outputDir: 'api/food/burgers',
+    //       },
+    //     },
+    //   },
+    // ],
   ],
 
-  themes: ["docusaurus-theme-openapi-docs"], // Allows use of @theme/ApiItem and other components
+  // themes: ['docusaurus-theme-openapi-docs'], // Allows use of @theme/ApiItem and other components
 
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
@@ -117,6 +118,7 @@ const config = {
       },
       footer: {
         style: 'dark',
+        // style: 'light',
         links: [
           {
             title: 'Docs',
@@ -152,45 +154,45 @@ const config = {
         ],
         copyright: `Copyright © ${new Date().getFullYear()} Indi.gg, Inc. Built with Docusaurus.`,
       },
-      // prism: {
-      //   theme: darkCodeTheme,
-      //   // darkTheme: darkCodeTheme,
-      // },
+      prism: {
+        theme: lightCodeTheme,
+        darkTheme: darkCodeTheme,
+      },
 
       languageTabs: [
         {
-          highlight: "bash",
-          language: "curl",
-          logoClass: "bash",
+          highlight: 'bash',
+          language: 'curl',
+          logoClass: 'bash',
         },
         {
-          highlight: "python",
-          language: "python",
-          logoClass: "python",
-          variant: "http.client",
+          highlight: 'python',
+          language: 'python',
+          logoClass: 'python',
+          variant: 'http.client',
         },
         {
-          highlight: "go",
-          language: "go",
-          logoClass: "go",
+          highlight: 'go',
+          language: 'go',
+          logoClass: 'go',
         },
         {
-          highlight: "javascript",
-          language: "nodejs",
-          logoClass: "nodejs",
-          variant: "axios",
+          highlight: 'javascript',
+          language: 'nodejs',
+          logoClass: 'nodejs',
+          variant: 'axios',
         },
         {
-          highlight: "csharp",
-          language: "csharp",
-          logoClass: "csharp",
-          variant: "httpclient",
+          highlight: 'csharp',
+          language: 'csharp',
+          logoClass: 'csharp',
+          variant: 'httpclient',
         },
         {
-          highlight: "java",
-          language: "java",
-          logoClass: "java",
-          variant: "unirest",
+          highlight: 'java',
+          language: 'java',
+          logoClass: 'java',
+          variant: 'unirest',
         },
       ],
     }),
