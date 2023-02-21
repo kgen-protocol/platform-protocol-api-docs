@@ -15,7 +15,7 @@ Contracts, Quests, SBTs or NFTs.
 
 ## Developer's Point of view
 
-![engage-host-reward](/img/engage-host-reward.png)
+![engage-host-reward](/img/engage-host-reward.jpg)
 
 The registration process for IndiGG Tournament Protocol is designed to be simple and user-friendly. The following are the five simple steps
 for users to get started:
