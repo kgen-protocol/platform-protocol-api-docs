@@ -35,7 +35,7 @@ The IndiGG Tournament Protocol also allows game developers to incentivise player
 quests, SBTs, or NFTs. These rewards can be customized to the theme and genre of the game, making the gameplay experience even more exciting
 and immersive.
 
-![Screens](/img/screens_1_1.png)] ![Screens](/img/screens_1_2.png)]
+![Screens](/img/screens_1_1.jpg)] ![Screens](/img/screens_1_2.jpg)]
 
 See more screens [here >>](/docs/showcase)
 
