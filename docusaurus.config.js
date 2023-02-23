@@ -138,7 +138,7 @@ const config = {
               },
               {
                 label: 'Twitter',
-                href: 'https://twitter.com/indigg',
+                href: 'https://twitter.com/IndiGG_DAO',
               },
             ],
           },
