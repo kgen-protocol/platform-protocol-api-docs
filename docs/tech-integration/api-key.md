@@ -12,18 +12,20 @@ To obtain an API key, game developers must first connect to the lndiGG Tournamen
 
 - `developer_id`: The unique identifier for the game developer.
 - `game_id`: The unique identifier for the game.
-- `signature`: A digital signature of the payload.
 
-The `developer_id` and `game_id` fields are assigned by the lndiGG Tournament Protocol team upon registration. The `signature` field is generated using the developer's private key and the payload.
+The `developer_id` and `game_id` fields are assigned by the lndiGG Tournament Protocol team upon registration.
 
-If the payload is valid and the `signature` is verified, the API key will be returned in the response. The API key should be kept secure and not shared with anyone outside of the game developer's organization.
+The API key should be kept secure and not shared with anyone outside of the game developer's organization.
 
 ## Using the API Key
 
-Once the game developer has obtained an API key, they can use it to authenticate API requests to the lndiGG Tournament Protocol. The API key should be included in the `Authorization` header of all API requests using the following format:
+Once the game developer has obtained an API key, they can use it to authenticate API requests to the lndiGG Tournament Protocol. The API key should be included in the `apiKey` query of all API requests using the following format:
 
 ```text
-Authorization: Bearer <API Key>
+https://<api-domain/api/v1/path?apiKey=<the api key>
 ```
 
-If the API key is not included in the request or is invalid, the API will return an error.
+If the API key is not included in the request or is invalid, the API will return a `401` error.
+
+
+![tournaments-active](/img/tournaments-flow.png)
