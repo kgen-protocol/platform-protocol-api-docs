@@ -12,21 +12,25 @@ paths:
       operationId: EntrypointController_getCTABtn
       summary: Get the entrypoint of the CTA Button to render
       parameters:
-        - name: token
-          required: true
-          in: query
-          description: the user session token
-          schema:
-            type: string
         - name: apiKey
           required: true
           in: query
           description: the auth apiKey token
           schema:
             type: string
+        - name: token
+          required: true
+          in: query
+          description: the user session token
+          schema:
+            type: string
       responses:
         '200':
-          description: ''
+          description: The response manifest
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EntrypointResultDTO'
       tags: &ref_0
         - entrypoint
       security:
@@ -38,21 +42,25 @@ paths:
       operationId: EntrypointController_getInterstitial
       summary: Get the entrypoint of the Interstitial screen to render
       parameters:
-        - name: token
-          required: true
-          in: query
-          description: the user session token
-          schema:
-            type: string
         - name: apiKey
           required: true
           in: query
           description: the auth apiKey token
           schema:
             type: string
+        - name: token
+          required: true
+          in: query
+          description: the user session token
+          schema:
+            type: string
       responses:
         '200':
-          description: ''
+          description: The response manifest
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EntrypointResultDTO'
       tags: *ref_0
       security:
         - *ref_1
@@ -62,45 +70,59 @@ paths:
       operationId: EntrypointController_getTakeover
       summary: Get the entrypoint of the Takeover screen to render
       parameters:
-        - name: token
-          required: true
-          in: query
-          description: the user session token
-          schema:
-            type: string
         - name: apiKey
           required: true
           in: query
           description: the auth apiKey token
           schema:
             type: string
+        - name: token
+          required: true
+          in: query
+          description: the user session token
+          schema:
+            type: string
       responses:
         '200':
-          description: ''
+          description: The response manifest
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EntrypointResultDTO'
       tags: *ref_0
       security:
         - *ref_1
         - apiKey: []
   /api/v1/eventing:
     post:
-      operationId: EventingController_startEventing
+      operationId: EventingController_submitEvent
       summary: Submit progress events
       parameters:
-        - name: token
-          required: false
-          in: query
-          description: the user session token
-          schema:
-            type: string
         - name: apiKey
           required: true
           in: query
           description: the auth apiKey token
           schema:
             type: string
+        - name: token
+          required: false
+          in: query
+          description: the user session token
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/EventingSubmitDto'
       responses:
-        '201':
-          description: ''
+        '200':
+          description: Event has been submited
+          content:
+            application/json:
+              schema:
+                type: boolean
       tags:
         - eventing
       security:
@@ -109,23 +131,27 @@ paths:
   /api/v1/session:
     get:
       operationId: SessionController_getSession
-      summary: Get users' current session context
+      summary: Get users current session context
       parameters:
-        - name: token
-          required: true
-          in: query
-          description: the user session token
-          schema:
-            type: string
         - name: apiKey
           required: true
           in: query
           description: the auth apiKey token
           schema:
             type: string
+        - name: token
+          required: true
+          in: query
+          description: the user session token
+          schema:
+            type: string
       responses:
         '200':
-          description: ''
+          description: The active user session
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SessionDTO'
       tags: &ref_2
         - session
       security:
@@ -142,9 +168,27 @@ paths:
           description: the auth apiKey token
           schema:
             type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SessionStartReqDTO'
       responses:
+        '200':
+          description: The session started
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SessionStartRespDTO'
         '201':
-          description: ''
+          description: The session started
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SessionStartRespDTO'
+        '422':
+          description: Session cloud not start
       tags: *ref_2
       security:
         - *ref_3
@@ -154,16 +198,16 @@ paths:
       operationId: TournamentsController_getActiveTournaments
       summary: Fetch active tournaments
       parameters:
-        - name: token
-          required: false
-          in: query
-          description: the user session token - activates session & targeting
-          schema:
-            type: string
         - name: apiKey
           required: true
           in: query
           description: the auth apiKey token
+          schema:
+            type: string
+        - name: token
+          required: false
+          in: query
+          description: the user session token - activates session & targeting
           schema:
             type: string
       responses:
@@ -190,16 +234,16 @@ paths:
       operationId: TournamentsController_getUserParticipations
       summary: Fetch the active tournaments that user has joined
       parameters:
-        - name: token
-          required: true
-          in: query
-          description: the user session token - activates session & targeting
-          schema:
-            type: string
         - name: apiKey
           required: true
           in: query
           description: the auth apiKey token
+          schema:
+            type: string
+        - name: token
+          required: true
+          in: query
+          description: the user session token - activates session & targeting
           schema:
             type: string
       responses:
@@ -225,9 +269,10 @@ paths:
       operationId: TournamentsController_getTournament
       summary: Fetch document tournament by Id
       parameters:
-        - name: tournamentId
+        - name: apiKey
           required: true
-          in: path
+          in: query
+          description: the auth apiKey token
           schema:
             type: string
         - name: token
@@ -236,10 +281,9 @@ paths:
           description: the user session token - activates session & targeting
           schema:
             type: string
-        - name: apiKey
+        - name: tournamentId
           required: true
-          in: query
-          description: the auth apiKey token
+          in: path
           schema:
             type: string
       responses:
@@ -269,9 +313,10 @@ paths:
       operationId: TournamentsController_joinTournament
       summary: Enrol/Join user to a tournament
       parameters:
-        - name: tournamentId
+        - name: apiKey
           required: true
-          in: path
+          in: query
+          description: the auth apiKey token
           schema:
             type: string
         - name: token
@@ -280,10 +325,9 @@ paths:
           description: the user session token - activates session & targeting
           schema:
             type: string
-        - name: apiKey
+        - name: tournamentId
           required: true
-          in: query
-          description: the auth apiKey token
+          in: path
           schema:
             type: string
       requestBody:
@@ -311,9 +355,10 @@ paths:
       operationId: LeaderboardsController_getTournamentLeaderboard
       summary: Fetch leaderboard of a tournament
       parameters:
-        - name: tournamentId
+        - name: apiKey
           required: true
-          in: path
+          in: query
+          description: the auth apiKey token
           schema:
             type: string
         - name: token
@@ -322,10 +367,9 @@ paths:
           description: the user session token
           schema:
             type: string
-        - name: apiKey
+        - name: tournamentId
           required: true
-          in: query
-          description: the auth apiKey token
+          in: path
           schema:
             type: string
       responses:
@@ -354,14 +398,10 @@ paths:
       operationId: LeaderboardsController_getLeaderboardByRange
       summary: Fetch leaderboard based on given date-range
       parameters:
-        - name: startDate
+        - name: apiKey
           required: true
           in: query
-          schema:
-            type: string
-        - name: endDate
-          required: true
-          in: query
+          description: the auth apiKey token
           schema:
             type: string
         - name: token
@@ -370,10 +410,14 @@ paths:
           description: the user session token
           schema:
             type: string
-        - name: apiKey
+        - name: startDate
           required: true
           in: query
-          description: the auth apiKey token
+          schema:
+            type: string
+        - name: endDate
+          required: true
+          in: query
           schema:
             type: string
       responses:
@@ -400,16 +444,16 @@ paths:
       operationId: TokensController_getActiveTokens
       summary: fetch owned tokens
       parameters:
-        - name: token
-          required: true
-          in: query
-          description: the user session token
-          schema:
-            type: string
         - name: apiKey
           required: true
           in: query
           description: the auth apiKey token
+          schema:
+            type: string
+        - name: token
+          required: true
+          in: query
+          description: the user session token
           schema:
             type: string
       responses:
@@ -420,7 +464,7 @@ paths:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/TokenDto'
+                  $ref: '#/components/schemas/TokenRespDto'
       tags: &ref_7
         - tokens
       security:
@@ -432,16 +476,16 @@ paths:
       operationId: TokensController_getSumValue
       summary: fetch the sum-up value of the user's owned tokens
       parameters:
-        - name: token
-          required: true
-          in: query
-          description: the user session token
-          schema:
-            type: string
         - name: apiKey
           required: true
           in: query
           description: the auth apiKey token
+          schema:
+            type: string
+        - name: token
+          required: true
+          in: query
+          description: the user session token
           schema:
             type: string
       responses:
@@ -460,9 +504,10 @@ paths:
       operationId: TokensController_getToken
       summary: fetch document token by Id
       parameters:
-        - name: id
+        - name: apiKey
           required: true
-          in: path
+          in: query
+          description: the auth apiKey token
           schema:
             type: string
         - name: token
@@ -471,10 +516,9 @@ paths:
           description: the user session token
           schema:
             type: string
-        - name: apiKey
+        - name: id
           required: true
-          in: query
-          description: the auth apiKey token
+          in: path
           schema:
             type: string
       responses:
@@ -483,7 +527,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/TokenDto'
+                $ref: '#/components/schemas/TokenRespDto'
       tags: *ref_7
       security:
         - *ref_8
@@ -493,16 +537,16 @@ paths:
       operationId: StatisticsController_getActiveStatistics
       summary: fetch owned statistics
       parameters:
-        - name: token
-          required: true
-          in: query
-          description: the user session token
-          schema:
-            type: string
         - name: apiKey
           required: true
           in: query
           description: the auth apiKey token
+          schema:
+            type: string
+        - name: token
+          required: true
+          in: query
+          description: the user session token
           schema:
             type: string
       responses:
@@ -525,16 +569,16 @@ paths:
       operationId: StatisticsController_getSessionStatistics
       summary: fetch statistics that user has from the latest tournament
       parameters:
-        - name: token
-          required: true
-          in: query
-          description: the user session token
-          schema:
-            type: string
         - name: apiKey
           required: true
           in: query
           description: the auth apiKey token
+          schema:
+            type: string
+        - name: token
+          required: true
+          in: query
+          description: the user session token
           schema:
             type: string
       responses:
@@ -555,16 +599,16 @@ paths:
       operationId: StatisticsController_getHistoricStatistics
       summary: fetch statistics that user has from historic particiations tournament
       parameters:
-        - name: token
-          required: true
-          in: query
-          description: the user session token
-          schema:
-            type: string
         - name: apiKey
           required: true
           in: query
           description: the auth apiKey token
+          schema:
+            type: string
+        - name: token
+          required: true
+          in: query
+          description: the user session token
           schema:
             type: string
       responses:
@@ -585,16 +629,16 @@ paths:
       operationId: AchievementsController_getActiveAchievements
       summary: fetch owned achievements
       parameters:
-        - name: token
-          required: true
-          in: query
-          description: the user session token
-          schema:
-            type: string
         - name: apiKey
           required: true
           in: query
           description: the auth apiKey token
+          schema:
+            type: string
+        - name: token
+          required: true
+          in: query
+          description: the user session token
           schema:
             type: string
       responses:
@@ -617,16 +661,16 @@ paths:
       operationId: AchievementsController_getSessionAchievements
       summary: fetch achievements that user has from the latest tournament
       parameters:
-        - name: token
-          required: true
-          in: query
-          description: the user session token
-          schema:
-            type: string
         - name: apiKey
           required: true
           in: query
           description: the auth apiKey token
+          schema:
+            type: string
+        - name: token
+          required: true
+          in: query
+          description: the user session token
           schema:
             type: string
       responses:
@@ -647,9 +691,10 @@ paths:
       operationId: AchievementsController_getAchievement
       summary: fetch document achievement by Id
       parameters:
-        - name: id
+        - name: apiKey
           required: true
-          in: path
+          in: query
+          description: the auth apiKey token
           schema:
             type: string
         - name: token
@@ -658,10 +703,9 @@ paths:
           description: the user session token
           schema:
             type: string
-        - name: apiKey
+        - name: id
           required: true
-          in: query
-          description: the auth apiKey token
+          in: path
           schema:
             type: string
       responses:
@@ -679,9 +723,19 @@ info:
   title: IndiGG Platform API
   description: IndiGG Platform API for surfacing gaming quests and tournaments.
   version: '1.0'
-  contact: {}
+  contact:
+    name: IndiGG Platform Engineering Team
+    url: https://indi.gg
+    email: support@indi.gg
+  license:
+    name: Copyright (C) Indi.gg LTD - All Rights Reserved
+    url: https://indi.gg
 tags: []
-servers: []
+servers:
+  - url: https://platform-api.indi.gg
+    description: production Environment
+  - url: https://platform-api.devindi.gg
+    description: staging Environment
 components:
   securitySchemes:
     api_key:
@@ -690,6 +744,187 @@ components:
       name: apiKey
       description: Parnter API Key - for application specific calls
   schemas:
+    EntrypointResultDTO:
+      type: object
+      properties:
+        context:
+          type: object
+        content:
+          type: string
+        name:
+          type: string
+        short_name:
+          type: string
+        description:
+          type: string
+        theme_color:
+          type: string
+        background_color:
+          type: string
+        display:
+          type: string
+        start_url:
+          type: string
+        scope:
+          type: string
+        orientation:
+          type: string
+        lang:
+          type: string
+        icons:
+          type: array
+          items:
+            type: string
+      required:
+        - context
+        - content
+        - name
+        - short_name
+        - description
+        - theme_color
+        - background_color
+        - display
+        - start_url
+        - scope
+        - orientation
+        - lang
+        - icons
+    EventingMetadataDto:
+      type: object
+      properties:
+        tournamentId:
+          type: string
+        playerId:
+          type: string
+        gameId:
+          type: string
+      required:
+        - tournamentId
+        - playerId
+        - gameId
+    EventingPayloadScoreDto:
+      type: object
+      properties:
+        type:
+          type: string
+        score:
+          type: number
+      required:
+        - type
+        - score
+    EventingPayloadProgressDto:
+      type: object
+      properties:
+        type:
+          type: string
+        value:
+          type: string
+      required:
+        - type
+        - value
+    EventingPayloadDto:
+      type: object
+      properties:
+        score:
+          $ref: '#/components/schemas/EventingPayloadScoreDto'
+        progress:
+          $ref: '#/components/schemas/EventingPayloadProgressDto'
+      required:
+        - score
+        - progress
+    EventingSubmitDto:
+      type: object
+      properties:
+        eventId:
+          type: string
+        eventType:
+          type: string
+        timestamp:
+          type: string
+        metadata:
+          $ref: '#/components/schemas/EventingMetadataDto'
+        payload:
+          $ref: '#/components/schemas/EventingPayloadDto'
+      required:
+        - eventId
+        - eventType
+        - timestamp
+        - metadata
+        - payload
+    SessionDTO:
+      type: object
+      properties:
+        session_id:
+          type: string
+        session_start_time:
+          type: number
+        token:
+          type: string
+        user_id:
+          type: string
+        score:
+          type: number
+        wallet_balance:
+          type: number
+        wallet_address:
+          type: string
+        joined_tournaments:
+          type: array
+          items:
+            type: string
+      required:
+        - session_id
+        - session_start_time
+        - token
+        - user_id
+        - score
+        - wallet_balance
+        - wallet_address
+        - joined_tournaments
+    SessionStartReqDTO:
+      type: object
+      properties:
+        gamer_id:
+          type: string
+        email:
+          type: string
+        username:
+          type: string
+        level:
+          type: number
+        rank:
+          type: number
+        date_joined:
+          type: number
+        phonenumber:
+          type: string
+        name:
+          type: string
+        playertag:
+          type: string
+        location_name:
+          type: string
+        location:
+          type: object
+      required:
+        - gamer_id
+        - email
+        - username
+        - level
+        - rank
+        - date_joined
+        - phonenumber
+        - name
+        - playertag
+        - location_name
+        - location
+    SessionStartRespDTO:
+      type: object
+      properties:
+        token:
+          type: string
+      required:
+        - token
     TournamentBaseDto:
       type: object
       properties:
@@ -750,15 +985,43 @@ components:
       required:
         - user_id
         - score
-    TokenDto:
+    TokenRespDto:
       type: object
-      properties: {}
+      properties:
+        value:
+          type: number
+        id:
+          type: string
+        description:
+          type: string
+        assetUri:
+          type: string
+      required:
+        - value
+        - id
+        - description
+        - assetUri
     TokenValueDto:
       type: object
-      properties: {}
+      properties:
+        value:
+          type: number
+      required:
+        - value
     StatisticDto:
       type: object
-      properties: {}
+      properties:
+        id:
+          type: string
+      required:
+        - id
     AchievementDto:
       type: object
-      properties: {}
+      properties:
+        id:
+          type: string
+      required:
+        - id
+externalDocs:
+  description: Developer Documentation
+  url: https://indigg-api-docs.netlify.app/
