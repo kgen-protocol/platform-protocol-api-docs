@@ -8,6 +8,11 @@ The following is a list of API touchpoints that the game developer will need to 
 
 for detailed OpenApi Specs, [click here >>](/openapi.yaml)
 
+- Prod Environment Swagger API Explorer [click here >>](https://platform-api.indi.gg/api-docs)
+- Stage Environment Swagger API Explorer [click here >>](https://platform-api.devindigg.com/api-docs)
+
+To get the API key, needed to connect to the APIs touchpoints, please follow the instructions [here >>](/docs/tech-integration/api-key)
+
 ```text
 POST `/api/v1/connect` - Connect to the lndiGG Tournament Protocol and receive an API key.
 GET: `/api/v1/entrypoint/ctabtn` - Get the entrypoint of the CTA Button to render

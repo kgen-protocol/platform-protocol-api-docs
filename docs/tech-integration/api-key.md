@@ -27,5 +27,4 @@ https://<api-domain/api/v1/path?apiKey=<the api key>
 
 If the API key is not included in the request or is invalid, the API will return a `401` error.
 
-
 ![tournaments-active](/img/tournaments-flow.png)
