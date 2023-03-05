@@ -734,7 +734,7 @@ tags: []
 servers:
   - url: https://platform-api.indi.gg
     description: production Environment
-  - url: https://platform-api.devindi.gg
+  - url: https://platform-api.devindigg.com
     description: staging Environment
 components:
   securitySchemes:
