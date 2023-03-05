@@ -792,62 +792,150 @@ components:
     EventingMetadataDto:
       type: object
       properties:
-        tournamentId:
-          type: string
         playerId:
           type: string
+          description: id of the user in the game
+        tournamentId:
+          type: string
+          description: id of the tournament in the game
         gameId:
           type: string
+          description: the game Id, if relevant
+        matchId:
+          type: string
+          description: the match Id, if relevant
+        lobbyId:
+          type: string
+          description: the lobby Id, if relevant
+        level:
+          type: number
+          description: level of user or area, if relevant
+        areaCode:
+          type: number
+          description: id of area code, if relevant
+        difficulty:
+          type: number
+          description: id of game difficulty, if relevant
       required:
-        - tournamentId
         - playerId
+        - tournamentId
         - gameId
+        - matchId
+        - lobbyId
+        - level
+        - areaCode
+        - difficulty
     EventingPayloadScoreDto:
       type: object
       properties:
-        type:
-          type: string
-        score:
+        value:
           type: number
+          description: the score value
       required:
-        - type
-        - score
+        - value
+    EventingLevelUpDto:
+      type: object
+      properties:
+        value:
+          type: string
+          description: user levelup event
+      required:
+        - value
     EventingPayloadProgressDto:
       type: object
       properties:
-        type:
-          type: string
         value:
           type: string
+          description: user progression in the game
       required:
-        - type
+        - value
+    EventingMatchResultDto:
+      type: object
+      properties:
+        value:
+          description: mtachIds that user have won or joined in the game
+          type: array
+          items:
+            type: string
+      required:
+        - value
+    EventingTournamentDto:
+      type: object
+      properties:
+        value:
+          description: tournamentids that user have joined in the game
+          type: array
+          items:
+            type: string
+      required:
+        - value
+    EventingLobbyDto:
+      type: object
+      properties:
+        value:
+          description: loby Ids that user have joined in the game
+          type: array
+          items:
+            type: string
+      required:
         - value
     EventingPayloadDto:
       type: object
       properties:
+        achievement:
+          description: payload if user has been attributed
+          allOf:
+            - $ref: '#/components/schemas/EventingPayloadScoreDto'
+        levelup:
+          description: payload if user has levelup
+          allOf:
+            - $ref: '#/components/schemas/EventingLevelUpDto'
         score:
-          $ref: '#/components/schemas/EventingPayloadScoreDto'
+          description: payload to updaye user score
+          allOf:
+            - $ref: '#/components/schemas/EventingPayloadScoreDto'
         progress:
-          $ref: '#/components/schemas/EventingPayloadProgressDto'
+          description: payload to track user progress
+          allOf:
+            - $ref: '#/components/schemas/EventingPayloadProgressDto'
+        matchResult:
+          description: payload if user has won a match
+          allOf:
+            - $ref: '#/components/schemas/EventingMatchResultDto'
+        matchJoined:
+          description: payload if user has joined a match
+          allOf:
+            - $ref: '#/components/schemas/EventingMatchResultDto'
+        tournamentJoined:
+          description: payload if user has joined a tournament
+          allOf:
+            - $ref: '#/components/schemas/EventingTournamentDto'
+        lobbyJoined:
+          description: payload if user has joined a lobby
+          allOf:
+            - $ref: '#/components/schemas/EventingLobbyDto'
       required:
+        - achievement
+        - levelup
         - score
         - progress
+        - matchResult
+        - matchJoined
+        - tournamentJoined
+        - lobbyJoined
     EventingSubmitDto:
       type: object
       properties:
-        eventId:
-          type: string
-        eventType:
-          type: string
         timestamp:
-          type: string
+          type: number
+          description: >-
+            timestamp of the event submition from the client side - in
+            milliseconds
         metadata:
           $ref: '#/components/schemas/EventingMetadataDto'
         payload:
           $ref: '#/components/schemas/EventingPayloadDto'
       required:
-        - eventId
-        - eventType
         - timestamp
         - metadata
         - payload
