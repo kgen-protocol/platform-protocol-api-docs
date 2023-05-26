@@ -1,0 +1,8 @@
+{
+  "label": "Quest Attribution",
+  "position": 5,
+  "link": {
+    "type": "generated-index",
+    "description": "The quest attribution solution allows game developers to track events that occur within their games. By implementing a tracking pixel using HTML and JavaScript, developers can monitor and analyze various game-related activities."
+  }
+}
