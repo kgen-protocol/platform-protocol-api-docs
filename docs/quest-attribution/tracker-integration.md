@@ -21,11 +21,10 @@ Before proceeding with the integration, make sure you have the following:
       &gameId=8724801273
       &eventId=510280c8-3c6d-4ceb-985e-21126ead121d
       &questId=416289c8-3c6d-4ceb-985e-21126ead121d
-      &userId=3eab2dbe-fb9e-11ed-8735-325096b39f47
-      &gamerId=455ea6ae-fb9e-11ed-b311-325096b39f47
-      &walletId=f0f363c4-fb9e-11ed-9c1b-325096b39f47
-      &email=user@example.com
-      " />
+      &userId={userId}
+      &gamerId={gamerId}
+      &walletId={walletId}
+      &email={email}" />
 ```
 
 ## Integrating the Pixel Drop
@@ -37,12 +36,49 @@ Replace the following placeholders in the code snippet with the actual values ob
 
 - `{userId}`: The user ID of the player on IndiGG.
 - `{gamerId}`: The ID of the game player specific to the respective game.
-- `{email}`: The email address associated with the user's IndiGG account.
-- `{walletId}`: The ID of the player's wallet within the IndiGG platform.
+- `{email}`:(Optional) The email address associated with the user's IndiGG account.
+- `{walletId}`:(Optional) The ID of the player's wallet within the IndiGG platform.
 
 The game developers should ensure that these placeholders are substituted with the corresponding values from the query parameters.
 
 Insert the modified code snippet into the appropriate location in their game's code.
+
+Below is a code example that demonstrates the integration process in Html.
+
+```html
+<!-- Game redirecton url -->
+https://sample-game.com?userId=IndiGGUserID&gamerId=gamePlayerUid&email=indiggUser@example.com
+
+<!-- HTML -->
+<img src="https://platform-api.devindigg.com/
+      ?gameAccountId=dac6087e-cedf-4b41-b271-1b7bc7c76dcf
+      &gameId=8724801273
+      &eventId=510280c8-3c6d-4ceb-985e-21126ead121d
+      &questId=416289c8-3c6d-4ceb-985e-21126ead121d
+      &userId={userId}
+      &gamerId={gamerId}
+      &walletId={walletId}
+      &email={email}" />
+
+
+<!-- JavaScript -->
+<script>
+  const pixelImgTag = document.querySelector('#pixel-image');
+  const urlParams = new URLSearchParams(window.location.search);
+
+  // Extract the required query parameter values
+  const userId = urlParams.get('userId');
+  const gamerId = urlParams.get('gamerId');
+  const walletId = urlParams.get('walletId');
+  const email = urlParams.get('email');
+
+  pixelImgTag.src = pixelImgTag.src
+    .replace('{userId}', userId)
+    .replace('{gamerId}', gamerId)
+    .replace('{walletId}', walletId);
+    .replace('{email}', email);
+</script>
+```
 
 ## Testing the Integration
 To ensure that the pixel drop integration is working correctly, follow these steps:
