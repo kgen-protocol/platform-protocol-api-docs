@@ -21,8 +21,11 @@ Before proceeding with the integration, make sure you have the following:
       &gameId=8724801273
       &eventId=510280c8-3c6d-4ceb-985e-21126ead121d
       &questId=416289c8-3c6d-4ceb-985e-21126ead121d
-      &userId=indigg-user-id(query param value)
-      &gamerId=player-id-in-context-of-respective-game(query param value)" />
+      &userId=3eab2dbe-fb9e-11ed-8735-325096b39f47
+      &gamerId=455ea6ae-fb9e-11ed-b311-325096b39f47
+      &walletId=f0f363c4-fb9e-11ed-9c1b-325096b39f47
+      &email=user@example.com
+      " />
 ```
 
 ## Integrating the Pixel Drop
@@ -32,9 +35,10 @@ Obtain the code snippet provided by the game developer dashboard.
 
 Replace the following placeholders in the code snippet with the actual values obtained from the query parameters when a player is redirected to their game from the indi.gg website:
 
-- `{userId}`: The user ID of the player.
-- `{gamerId}`: The ID of the game player.
-- `{questId}`: The ID of the quest or mission associated with the event (if applicable).
+- `{userId}`: The user ID of the player on IndiGG.
+- `{gamerId}`: The ID of the game player specific to the respective game.
+- `{email}`: The email address associated with the user's IndiGG account.
+- `{walletId}`: The ID of the player's wallet within the IndiGG platform.
 
 The game developers should ensure that these placeholders are substituted with the corresponding values from the query parameters.
 

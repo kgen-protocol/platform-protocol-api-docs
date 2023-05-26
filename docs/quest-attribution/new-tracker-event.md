@@ -44,7 +44,9 @@ After creating a tracker event, you will be provided with a code snippet to inco
       &eventId=510280c8-3c6d-4ceb-985e-21126ead121d
       &questId=416289c8-3c6d-4ceb-985e-21126ead121d
       &userId={userId}
-      &gamerId={gamerId}" />
+      &gamerId={gamerId}
+      &walletId={walletId}
+      &email={email}" />
 ```
 
 Make sure to replace the placeholder values in the code snippet with the actual values specific to your game and event.
