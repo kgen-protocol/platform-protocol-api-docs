@@ -43,41 +43,42 @@ The game developers should ensure that these placeholders are substituted with t
 
 Insert the modified code snippet into the appropriate location in their game's code.
 
+Sample redirection url
+```
+https://sample-game.com?userId=IndiGGUserID&gamerId=gamePlayerUid&email=indiggUser@example.com
+```
+
+
 Below is a code example that demonstrates the integration process in Html.
 
-```html
-<!-- Game redirecton url -->
-https://sample-game.com?userId=IndiGGUserID&gamerId=gamePlayerUid&email=indiggUser@example.com
+```javascript
+// Create a new image element
+const img = document.createElement('img');
 
-<!-- HTML -->
-<img src="https://platform-api.devindigg.com/
-      ?gameAccountId=dac6087e-cedf-4b41-b271-1b7bc7c76dcf
-      &gameId=8724801273
-      &eventId=510280c8-3c6d-4ceb-985e-21126ead121d
-      &questId=416289c8-3c6d-4ceb-985e-21126ead121d
-      &userId={userId}
-      &gamerId={gamerId}
-      &walletId={walletId}
-      &email={email}" />
+// get the parameters of questId and userId from the url
+const urlParams = new URLSearchParams(window.location.search);
 
 
-<!-- JavaScript -->
-<script>
-  const pixelImgTag = document.querySelector('#pixel-image');
-  const urlParams = new URLSearchParams(window.location.search);
+// Game Account ID, Game ID, Event ID values are provided by the gameDev dashboard, when creating a new event
+// User ID, Email & wallet ID are the values that you will need to provide through the url quest parameters
+const gameAccountId = 'dac6087e-cedf-4b41-b271-1b7bc7c76dcf';
+const gameId = '8724801273';
+const eventId = '510280c8-3c6d-4ceb-985e-21126ead121d';
+const questId = '416289c8-3c6d-4ceb-985e-21126ead121d'
+const userId = urlParams.get('userId'); // This is the user ID that you will need to provide
+const email = urlParams.get('email'); // This is the email of the gamer that you will need to provide
+const walletId = urlParams.get('walletId'); // This is the wallet ID of the user that you will need to provide
+const url = `https://tracker.indi.gg/?gameAccountId=${gameAccountId}&gameId=${gameId}&eventId=${eventId}&questId=${questId}&userId=${userId}`;
 
-  // Extract the required query parameter values
-  const userId = urlParams.get('userId');
-  const gamerId = urlParams.get('gamerId');
-  const walletId = urlParams.get('walletId');
-  const email = urlParams.get('email');
+// Set the image's source
+img.src = url
 
-  pixelImgTag.src = pixelImgTag.src
-    .replace('{userId}', userId)
-    .replace('{gamerId}', gamerId)
-    .replace('{walletId}', walletId);
-    .replace('{email}', email);
-</script>
+// Set the image's size
+img.width = 1;
+img.height = 1;
+
+// Add the image to the body of the document
+document.body.appendChild(img);
 ```
 
 ## Testing the Integration
