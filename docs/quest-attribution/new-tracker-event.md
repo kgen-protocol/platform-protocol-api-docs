@@ -29,6 +29,8 @@ To create a new tracker event, follow these steps:
    - **Description**: Provide a brief description of the event.
    - **Event Type**: Specify the type or category of the event.
    - **Quest ID**: If the event is related to a specific quest or mission, provide the quest ID (Kindly contact Indigg Community team).
+   - **Stage**: (Optional) Stage with respect to the quest.
+
 
 6. Review the entered information to ensure its accuracy and completeness.
 7. Click the "Submit" button to create the new tracker event.
@@ -43,6 +45,7 @@ After creating a tracker event, you will be provided with a code snippet to inco
       &gameId=8724801273
       &eventId=510280c8-3c6d-4ceb-985e-21126ead121d
       &questId=416289c8-3c6d-4ceb-985e-21126ead121d
+      &stage=1
       &userId={userId}
       &gamerId={gamerId}
       &walletId={walletId}
