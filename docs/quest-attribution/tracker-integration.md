@@ -64,11 +64,12 @@ const urlParams = new URLSearchParams(window.location.search);
 const gameAccountId = 'dac6087e-cedf-4b41-b271-1b7bc7c76dcf';
 const gameId = '8724801273';
 const eventId = '510280c8-3c6d-4ceb-985e-21126ead121d';
-const questId = '416289c8-3c6d-4ceb-985e-21126ead121d'
+const questId = '416289c8-3c6d-4ceb-985e-21126ead121d';
+const stage = 1;
 const userId = urlParams.get('userId'); // This is the user ID that you will need to provide
 const email = urlParams.get('email'); // This is the email of the gamer that you will need to provide
 const walletId = urlParams.get('walletId'); // This is the wallet ID of the user that you will need to provide
-const url = `https://tracker.indi.gg/?gameAccountId=${gameAccountId}&gameId=${gameId}&eventId=${eventId}&questId=${questId}&userId=${userId}`;
+const url = `https://tracker.indi.gg/?gameAccountId=${gameAccountId}&gameId=${gameId}&eventId=${eventId}&questId=${questId}&stage=${stage}&userId=${userId}`;
 
 // Set the image's source
 img.src = url
