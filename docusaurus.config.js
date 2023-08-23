@@ -96,7 +96,7 @@ const config = {
         respectPrefersColorScheme: true,
       },
       navbar: {
-        title: 'lndiGG Leaderboard Protocol',
+        title: 'lndiGG Tournament Protocol',
         logo: {
           alt: 'IndiGG Logo',
           src: 'img/logo.svg',
