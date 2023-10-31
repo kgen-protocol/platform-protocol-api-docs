@@ -6,7 +6,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'lndiGG Tournament Protocol',
+  title: 'lndiGG Esports Protocol',
   tagline:
     'A competitive gaming platform that allows your players to Play, Own & Earn and Experience a host of engaging on-chain quests, tournaments and NFTs in an existing or new game.',
   favicon: 'img/favicon.ico',
@@ -96,7 +96,7 @@ const config = {
         respectPrefersColorScheme: true,
       },
       navbar: {
-        title: 'lndiGG Tournament Protocol',
+        title: 'lndiGG Esports Protocol',
         logo: {
           alt: 'IndiGG Logo',
           src: 'img/logo.svg',
