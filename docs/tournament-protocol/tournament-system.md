@@ -4,11 +4,11 @@ sidebar_position: 1
 
 # Tournament System
 
-The tournament system is a key feature of the lndiGG Tournament Protocol that enables game developers to host on-chain tournaments and incentivize players with rewards. The following are the details of the tournament system:
+The tournament system is a key feature of the lndiGG Esports Protocol that enables game developers to host on-chain tournaments and incentivize players with rewards. The following are the details of the tournament system:
 
 ![screens](/img/tournament-system-flow.png)
 
-1. All users with a semi-custodial wallet have access to the protocol (Soul bound token): Any user who has a semi-custodial wallet can access the lndiGG Tournament Protocol by registering and creating a Soul bound token on the blockchain.
+1. All users with a semi-custodial wallet have access to the protocol (Soul bound token): Any user who has a semi-custodial wallet can access the lndiGG Esports Protocol by registering and creating a Soul bound token on the blockchain.
 2. Users buy into each tournament with predefined Indi Coin price point (Proof of Participation): To participate in a tournament, users must buy into the tournament with a predefined amount of Indi Coin. This ensures that users have a stake in the tournament and are motivated to perform well.
 3. Reward Pool is created per tournament of user Buy-ins: Each tournament has a reward pool that is created based on the buy-ins of the participating users. The more users that participate in a tournament, the larger the reward pool will be.
 4. 15% Rake, split equally between IndiGG & the developer from the reward pool: A 15% rake is taken from the reward pool, which is split equally between IndiGG and the game developer.

@@ -4,7 +4,7 @@ sidebar_position: 2
 
 # API Touchpoints
 
-The following is a list of API touchpoints that the game developer will need to use to integrate with the lndiGG Tournament Protocol:
+The following is a list of API touchpoints that the game developer will need to use to integrate with the lndiGG Esports Protocol:
 
 for detailed OpenApi Specs, [click here >>](/openapi.yaml)
 
@@ -14,7 +14,7 @@ for detailed OpenApi Specs, [click here >>](/openapi.yaml)
 To get the API key, needed to connect to the APIs touchpoints, please follow the instructions [here >>](/docs/tech-integration/api-key)
 
 ```text
-POST `/api/v1/connect` - Connect to the lndiGG Tournament Protocol and receive an API key.
+POST `/api/v1/connect` - Connect to the lndiGG Esports Protocol and receive an API key.
 GET: `/api/v1/entrypoint/ctabtn` - Get the entrypoint of the CTA Button to render
 GET: `/api/v1/entrypoint/interstitial` - Get the entrypoint of the Interstitial screen to render
 GET: `/api/v1/entrypoint/takeover` - Get the entrypoint of the Takeover screen to render

@@ -14,7 +14,7 @@ const FeatureList: FeatureItem[] = [
     Svg: require('@site/static/img/undraw_gaming_re_cma2.svg').default,
     description: (
       <>
-        Host on-chain tournaments and incentivize your players with rewards using the lndiGG Tournament Protocol. With easy API integrations and semi-custodial wallet functionality, the lndiGG Tournament Protocol is the perfect solution for game developers looking to increase player engagement and competitiveness.
+        Host on-chain tournaments and incentivize your players with rewards using the lndiGG Esports Protocol. With easy API integrations and semi-custodial wallet functionality, the lndiGG Esports Protocol is the perfect solution for game developers looking to increase player engagement and competitiveness.
       </>
     ),
   },
@@ -23,7 +23,7 @@ const FeatureList: FeatureItem[] = [
     Svg: require('@site/static/img/undraw_select_player_64ca.svg').default,
     description: (
       <>
-        By leveraging the power of smart contracts and the blockchain, the lndiGG Tournament Protocol provides a secure and transparent tournament system. With proof of participation and reward recorded on-chain, users can be sure that their rewards are secure and the process is transparent.
+        By leveraging the power of smart contracts and the blockchain, the lndiGG Esports Protocol provides a secure and transparent tournament system. With proof of participation and reward recorded on-chain, users can be sure that their rewards are secure and the process is transparent.
       </>
     ),
   },
@@ -32,7 +32,7 @@ const FeatureList: FeatureItem[] = [
     Svg: require('@site/static/img/undraw_game_day_ucx9.svg').default,
     description: (
       <>
-        The lndiGG Tournament Protocol allows game developers to customize the reward system to fit the theme and genre of their game. With leaderboard smart contracts, quests, SBTs, and NFTs, the possibilities are endless. The customizable reward system provides an exciting and immersive gameplay experience for users, increasing player engagement and retention.
+        The lndiGG Esports Protocol allows game developers to customize the reward system to fit the theme and genre of their game. With leaderboard smart contracts, quests, SBTs, and NFTs, the possibilities are endless. The customizable reward system provides an exciting and immersive gameplay experience for users, increasing player engagement and retention.
       </>
     ),
   },
