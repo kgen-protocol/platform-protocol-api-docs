@@ -113,3 +113,4 @@ Example Response:
 }
 ```
 This operation provides a comprehensive list of rewards that a gamer has earned, including details about each reward's status, creation time, and associated amounts. 
+
