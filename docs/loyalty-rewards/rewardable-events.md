@@ -6,7 +6,7 @@ sidebar_position: 1
 
 Game developers can utilize dedicated APIs to effortlessly register, update, and delete rewardable events in their games. These integrations offer precise control over the reward system, enabling developers to adapt and enhance the gaming experience, keeping players engaged and motivated through dynamic challenges and rewards.
 
-## Register the event
+## Register or Update the event
 
 Game developers can manage rewardable events on the Indigg platform by using a PUT request at the designated endpoint to create or update events.
 ```text
@@ -25,6 +25,7 @@ PUT - {{rewards_system_url}}/admin/rewardable-events
     "eventDescription": "Reward gamer on successfully opening a daily free gift chest",
     "rewardAmount": 10,
     "entityType": "GAME"
+    // "isActive": true
 }
 ```
 Explanation:
@@ -33,7 +34,7 @@ Explanation:
 - `eventDescription`: A brief description of the event, providing additional context. In this case, "Reward gamer on successfully opening a daily free gift chest."
 - `rewardAmount`: The amount of the reward associated with the event. In this example, it is set to 10.
 - `entityType`: Specifies the type of entity related to the event. In this context, it is set to "GAME."
-
+- `isActive` : The isActive field in the provided payload is a boolean attribute that can be used to temporarily set the status of the rewardable event. 
 ### Response
 Succesfull response for the above request
 ```text
@@ -50,6 +51,25 @@ Succesfull response for the above request
     "updatedAt": "2024-01-19T12:18:47.623568881Z"
 }
 ```
+- `eventID`: The unique identifier of the specific rewardable event.
+
+### Request Body (Update Event):
+To update an existing event, include the eventID in the payload along with other parameters you want to change. The system will replace the existing event with the updated details.
+```text
+    {
+    "eventID": "dc3806e6-e56b-4da7-90e3-6b8e57307482",
+    "eventType": "UpdatedEventType",
+    "eventName": "UpdatedEventName",
+    "eventDescription": "UpdatedEventDescription",
+    "rewardAmount": 20,
+    "entityType": "UPDATED_ENTITY_TYPE"
+}
+```
+This will update the existing event with the specified eventID, modifying the specified parameters accordingly.
+
+Use this API to create new events or update existing ones.
+When updating, provide the eventID of an already existing event in the payload, and the system will replace the event with the updated details.
+
 
 ## Get all the Rewardable events
 After successfully registering rewardable events, game developers can retrieve a list of active events through a GET request to the following endpoint:
@@ -62,7 +82,8 @@ GET - {{rewards_system_url}}/admin/rewardable-events?isActive=true
 - `clientSecret` : [Your Client Secret]
 
 ### Query Paramter
-- `isActive`: true
+- `isActive`: A boolean parameter to filter events based on their activation status. If not set, it retrieves all events. If set to true, it retrieves only active events.
+
 
 ### Response
 Upon making the request, the system will provide a comprehensive list of currently active rewardable events, offering essential information including event type, name, description, reward amount, and any other pertinent details, all created by the game developer.
@@ -145,11 +166,13 @@ DELETE - {{rewards_system_url}}/admin/rewardable-events/{eventID}
 
 ### Request paramter
 - `eventID`: The unique identifier of the specific rewardable event.
-Example:
+
 ```text
+Example:
 DELETE - {{rewards_system_url}}/admin/rewardable-events/c93ff468-7d7b-44f0-9cd9-74d
 ```
 ### Response
 The system will confirm the successful deletion of the specified rewardable event with a status code of 204, indicating no content.
+
 
 

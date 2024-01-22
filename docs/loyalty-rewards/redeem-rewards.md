@@ -96,4 +96,29 @@ Example:
   }
 ```
 ### Response
-The status code 201 Created indicates that the OTP verification was successful, and the user is authenticated.
+Status Code: 200
+Message: "Users linked successfully"
+
+## Wallet: Withdraw
+This operation allows users to initiate a withdrawal from their wallet. Below are the details for implementing the wallet withdrawal process.
+```text
+POST-{{rewards_system_url}}/api/proxy/wallet/withdraw
+```
+
+### Request Header
+- `Content-Type`: application/json
+- `clientID` : [Your Client ID]
+- `clientSecret` : [Your Client Secret]
+- `user-jwt-token`: [User JWT Token]
+
+### Response
+Example response:
+```text
+  {
+    "gamer_id": "gamer12345",
+    "bonus": 100,
+    "message": "Withdrawn Successfully"
+}
+The status code 200 indicates a successful withdrawal.
+The message provides information about the withdrawal, including the gamer ID (gamer_id), the bonus amount withdrawn (bonus), and a confirmation message (message).
+```
