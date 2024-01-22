@@ -2,12 +2,13 @@
 sidebar_position: 3
 ---
 
-# Authentication and Wallet Withdrawl
+# Redeem Rewards
 
+To access and utilize their earned rewards, gamers can initiate a process where the rewards collected in their Indigg custodian wallet are transferred to their non-custodian wallet. This allows users to freely use or spend their rewards across various purposes. To initiate this process, the gamer must transition to an Indigg user, which involves setting up a non-custodian wallet through OTP validation. Below are the steps to follow for this withdrawal process
 
-## Authentication OTP Registration
+## Auth: OTP Registration
 
-This operation involves registering a user for authentication using a one-time password (OTP). Below are the details for implementing this operation:
+This operation focuses on registering a user for authentication purposes using a one-time password (OTP). Below are the details outlining the implementation of this user registration process.
 ```text
 POST - {{rewards_system_url}}/api/proxy/auth/otp/register
 ```
@@ -23,22 +24,21 @@ Parameters:
 - `countryCode`: The country code for the phone number.
 Example:
 ```text
-{
-    "phone_number": "[YOUR_PHONE_NO.]",
+  {
+    "phone_number": "[GAMER_PHONE_NO.]",
     "countryCode": "+91"
-}
-
+  }
 ```
 ### Response
 Example Response:
 ```text
-{
+  {
     "authCode": "2735",
     "isNewUser": true
-}
+  }
 ```
-## Authentication OTP Resend
-This operation involves resending the OTP to the user for authentication. Below are the details for implementing this operation:
+## Auth: OTP Resend
+This operation is dedicated to resending the one-time password (OTP) to the user for authentication purposes. Below are the details outlining how to implement this OTP resending process.
 ```text
 POST - {{rewards_system_url}}/api/proxy/auth/otp/resend
 ```
@@ -54,22 +54,22 @@ Parameters:
 - `countryCode`: The country code for the phone number.
 Example:
 ```text
-{
-    "phone_number": "[YOUR_PHONE_NO.]",
+  {
+    "phone_number": "[GAMER_PHONE_NO.]",
     "countryCode": "+91"
-}
+  }
 
 ```
 ### Response
 Example Response:
 ```text
-{
+  {
     "authCode": "2735",
     "isNewUser": true
-}
+  }
 ```
-## Authentication OTP Verification
-This operation involves verifying the OTP submitted by the user for authentication. Below are the details for implementing this operation:
+## Auth: OTP Verification
+This operation is focused on verifying the one-time password (OTP) submitted by the user for authentication purposes. Below are the details for implementing this OTP verification proces.
 ```text
 POST - {{rewards_system_url}}/api/proxy/auth/otp/verify
 ```
@@ -88,12 +88,12 @@ Parameters:
 
 Example:
 ```text
-{
+  {
     "phone_number": "90248xx921",
     "countryCode": "+91",
     "authCode": 2735,
     "otp": 596097
-}
+  }
 ```
 ### Response
 The status code 201 Created indicates that the OTP verification was successful, and the user is authenticated.

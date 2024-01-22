@@ -4,11 +4,11 @@ sidebar_position: 1
 
 # Rewardable Events
 
-Third-party clients communicate with Indigg to register and retrieve information about rewardable events, including their status and details. This involves utilizing various HTTP methods, such as PUT, GET, and DELETE, on the specified URLs within the rewards system.
+Game developers can utilize dedicated APIs to effortlessly register, update, and delete rewardable events in their games. These integrations offer precise control over the reward system, enabling developers to adapt and enhance the gaming experience, keeping players engaged and motivated through dynamic challenges and rewards.
 
 ## Register the event
 
-In the process of server-to-server integration, third-party game developers can register rewardable events on the Indigg platform. This registration is initiated by making a PUT request to the following endpoint: 
+Game developers can manage rewardable events on the Indigg platform by using a PUT request at the designated endpoint to create or update events.
 ```text
 PUT - {{rewards_system_url}}/admin/rewardable-events
 ```
@@ -64,8 +64,8 @@ GET - {{rewards_system_url}}/admin/rewardable-events?isActive=true
 ### Query Paramter
 - `isActive`: true
 
-### Response 
-The system will respond with a list of active rewardable events created by the game developer. Each event will contain details such as event type, name, description, reward amount, and any other relevant information.
+### Response
+Upon making the request, the system will provide a comprehensive list of currently active rewardable events, offering essential information including event type, name, description, reward amount, and any other pertinent details, all created by the game developer.
 ```text
 {
     "rewardableEvents": [
@@ -99,7 +99,7 @@ The system will respond with a list of active rewardable events created by the g
 ```
 
 ## Get a specific Rewardable event
-To retrieve details about a specific rewardable event created by the game developer, a GET request can be made to the following endpoint:
+For obtaining specific details about a rewardable event crafted, simply initiate a GET request to the designated endpoint.
 ```text
 GET - {{rewards_system_url}}/admin/rewardable-events/{eventID}
 ```
@@ -116,7 +116,7 @@ GET - {{rewards_system_url}}/admin/rewardable-events/a4ded2a5-6f7a-4116-874c-435
 ```
 
 ### Response
-The system will respond with detailed information about the specified rewardable event.
+The system will provide comprehensive details for the specified rewardable event.
 ```text
 {
     "eventID": "082aca7d-d0b8-4179-ba81-5eb64df247f5",
@@ -133,7 +133,7 @@ The system will respond with detailed information about the specified rewardable
 ```
 
 ## Delete a specific Rewardable event
-To remove a specific rewardable event created by the game developer, a DELETE request can be made to the following endpoint:
+To delete a particular rewardable event created, you can send a DELETE request to the following endpoint.
 ```text
 DELETE - {{rewards_system_url}}/admin/rewardable-events/{eventID}
 ```
@@ -150,6 +150,6 @@ Example:
 DELETE - {{rewards_system_url}}/admin/rewardable-events/c93ff468-7d7b-44f0-9cd9-74d
 ```
 ### Response
-The system will respond to confirm the successful deletion of the specified rewardable event with the status of 204 with no content.
+The system will confirm the successful deletion of the specified rewardable event with a status code of 204, indicating no content.
 
 
