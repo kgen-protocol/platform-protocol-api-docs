@@ -96,8 +96,12 @@ Example:
   }
 ```
 ### Response
-Status Code: 200
-Message: "Users linked successfully"
+```text
+  {
+    "message": "successfully verified OTP & identity-associated"
+}
+Status : 201 Created
+```
 
 ## Wallet: Withdraw
 This operation allows users to initiate a withdrawal from their wallet. Below are the details for implementing the wallet withdrawal process.
