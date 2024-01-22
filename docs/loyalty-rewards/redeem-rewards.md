@@ -119,6 +119,6 @@ Example response:
     "bonus": 100,
     "message": "Withdrawn Successfully"
 }
+```
 The status code 200 indicates a successful withdrawal.
 The message provides information about the withdrawal, including the gamer ID (gamer_id), the bonus amount withdrawn (bonus), and a confirmation message (message).
-```
