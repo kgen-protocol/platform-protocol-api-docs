@@ -99,14 +99,14 @@ Example:
 ```text
   {
     "message": "successfully verified OTP & identity-associated"
-}
+  }
 ```
 Status : 201 Created
 
 ## Wallet: Withdraw
-This operation allows users to initiate a withdrawal from their wallet. Below are the details for implementing the wallet withdrawal process.
+This operation enables users to transfer funds from their custodian wallet to their non-custodian wallet, which has been created as part of the OTP (One-Time Password) verification process. The funds can then be utilized for various purposes, including spending on Kstore and more.
 ```text
-POST-{{rewards_system_url}}/api/proxy/wallet/withdraw
+POST - {{rewards_system_url}}/api/proxy/wallet/withdraw
 ```
 
 ### Request Header

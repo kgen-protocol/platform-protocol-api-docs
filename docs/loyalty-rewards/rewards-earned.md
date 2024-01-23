@@ -72,7 +72,7 @@ POST - {{rewards_system_url}}/api/event-reward-user-claims/events/{{eventID}}
 Example Response:
 ```text
   {
-    "userID": "d5b2e760-1b6c-4296-a89f-1da0ffe8c414___20aa954e-52d5-4298-b44c-d84a64ddbb97",
+    "userID": "20aa954e-52d5-4298-b44c-d84a64ddbb97",
     "rewardID": "69e39cef-6325-4e48-ba05-b0c394d132f5",
     "eventID": "082aca7d-d0b8-4179-ba81-5eb64df247f5",
     "rewardStatus": "REWARDED",
@@ -101,7 +101,7 @@ Example Response:
   {
     "rewards": [
       {
-        "userID": "d5b2e760-1b6c-4296-a89f-1da0ffe8c414___20aa954e-52d5-4298-b44c-d84a64ddbb97",
+        "userID": "20aa954e-52d5-4298-b44c-d84a64ddbb97",
         "rewardID": "9226e317-cf3e-44f2-9f40-65fa771d9a3d",
         "eventID": "082aca7d-d0b8-4179-ba81-5eb64df247f5",
         "rewardStatus": "REWARDED",
