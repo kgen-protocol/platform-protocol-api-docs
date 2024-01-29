@@ -1,0 +1,8 @@
+{
+  "label": "Loyalty Rewards",
+  "position": 7,
+  "link": {
+    "type": "generated-index",
+    "description": "Loyalty rewards integration with Indigg offers game developers a seamless way to enhance player engagement and retention. This system allows developers to register specific in-game activities that are eligible for rewards, such as reaching milestones or completing challenges.\n\nIndigg provides the framework for tracking these activities, and when the game informs Indigg of a player's achievement, Indigg then successfully distributes the corresponding rewards, creating a more rewarding gaming experience. This approach not only keeps players engaged but also provides monetization opportunities and valuable data insights for game developers, ultimately leading to a more satisfying gaming environment.\n\nFor integration credentials, game developers are kindly requested to contact Indigg to begin the integration process."
+  }
+}

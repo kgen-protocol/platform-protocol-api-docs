@@ -1,6 +1,6 @@
 {
   "label": "IndiGG Wallet API",
-  "position": 4,
+  "position": 5,
   "link": {
     "type": "generated-index",
     "description": "The Shadow Wallet is a secure, upgradeable on-chain wallet that supports receiving and transferring ERC20, ERC721, and ERC1155 tokens. It provides a seamless user experience with access control for deployers and owners, ensuring a smooth handover of wallet management. Designed with future extensibility in mind, the Shadow Wallet offers a scalable solution for developers and product owners in the ever-evolving blockchain ecosystem."
