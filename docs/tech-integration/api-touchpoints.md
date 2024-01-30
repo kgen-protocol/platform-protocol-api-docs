@@ -11,7 +11,7 @@ for detailed OpenApi Specs, [click here >>](/openapi.yaml)
 - Prod Environment Swagger API Explorer [click here >>](https://platform-api.indi.gg/api-docs)
 - Stage Environment Swagger API Explorer [click here >>](https://platform-api.devindigg.com/api-docs)
 
-To get the API key, needed to connect to the APIs touchpoints, please follow the instructions [here >>](/docs/tech-integration/api-key)
+To get the Client id and Secret, needed to connect to the APIs touchpoints, please follow the instructions [here >>](/docs/tech-integration/api-key)
 
 # API Descriptions for Gamer Session Management
 
