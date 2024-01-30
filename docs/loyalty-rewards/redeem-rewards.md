@@ -119,7 +119,7 @@ POST - {{rewards_system_url}}/api/proxy/wallet/withdraw
 Example response:
 ```text
   {
-    "gamer_id": "gamer12345",
+    "gamer_id": "49c29ca7-800b-4acc-b393-49e5ea089b0e",
     "bonus": 100,
     "message": "Withdrawn Successfully"
   }
