@@ -12,6 +12,21 @@ Game developers can manage rewardable events on the Indigg platform by using a P
 ```text
 PUT - {{rewards_system_url}}/admin/rewardable-events
 ```
+### cURL Example
+```text
+curl --location --request PUT 'https://stage-platform-rewards.devindigg.com/admin/rewardable-events' \
+--header 'x-client-id;' \
+--header 'x-client-secret;' \
+--header 'Content-Type: application/json' \
+--data '{   
+    "eventType": "DailyBonus",
+    "eventName": "Unlocking the daily gift",
+    "eventDescription": "Reward gamer on succesfully opening a daily free gift chest",
+    "rewardAmount": 10,
+    "entityType": "GAME"
+    
+}'
+```
 ### Request Header
 - `Content-Type`: application/json
 - `clientID` : [Your Client ID]
@@ -76,6 +91,13 @@ After successfully registering rewardable events, game developers can retrieve a
 ```text
 GET - {{rewards_system_url}}/admin/rewardable-events?isActive=true
 ```
+### cURL Example
+```text
+curl --location --request PUT 'https://stage-platform-rewards.devindigg.com/admin/rewardable-events' \
+curl --location 'https://stage-platform-rewards.devindigg.com/admin/rewardable-events?isActive=true' \
+--header 'x-client-id: d5b2e760-1b6c-4296-a89f-1da0ffe8c414' \
+--header 'x-client-secret: R3k9FqLsNwPv7GjX5tHmY2e6WzVxZ8bC'
+```
 ### Request Header
 - `Content-Type`: application/json
 - `clientID` : [Your Client ID]
@@ -124,6 +146,12 @@ For obtaining specific details about a rewardable event crafted, simply initiate
 ```text
 GET - {{rewards_system_url}}/admin/rewardable-events/{eventID}
 ```
+### cURL Example
+```text
+curl --location 'https://stage-platform-rewards.devindigg.com/admin/rewardable-events/a4ded2a5-6f7a-4116-874c-435af9831cda' \
+--header 'x-client-id: d5b2e760-1b6c-4296-a89f-1da0ffe8c414' \
+--header 'x-client-secret: R3k9FqLsNwPv7GjX5tHmY2e6WzVxZ8bC'
+```
 ### Request Header
 - `Content-Type`: application/json
 - `clientID` : [Your Client ID]
@@ -157,6 +185,12 @@ The system will provide comprehensive details for the specified rewardable event
 To delete a particular rewardable event created, you can send a DELETE request to the following endpoint.
 ```text
 DELETE - {{rewards_system_url}}/admin/rewardable-events/{eventID}
+```
+### cURL Example
+```text
+curl --location --request DELETE 'https://stage-platform-rewards.devindigg.com/admin/rewardable-events/a4ded2a5-6f7a-4116-874c-435af9831cda' \
+--header 'x-client-id: d5b2e760-1b6c-4296-a89f-1da0ffe8c414' \
+--header 'x-client-secret: R3k9FqLsNwPv7GjX5tHmY2e6WzVxZ8bC'
 ```
 ### Request Header
 - `Content-Type`: application/json
