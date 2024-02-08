@@ -12,6 +12,16 @@ This operation involves creating an Indigg-specific session for a gamer within t
 ```text
 POST - {{rewards_system_url}}/api/proxy/auth/user/session
 ```
+### cURL Example
+```text
+curl --location 'https://stage-platform-rewards.devindigg.com/api/proxy/auth/user/session' \
+--header 'x-client-id: d5b2e760-1b6c-4296-a89f-1da0ffe8c414' \
+--header 'x-client-secret: R3k9FqLsNwPv7GjX5tHmY2e6WzVxZ8bC' \
+--header 'Content-Type: application/json' \
+--data '{
+    "user_id": "crook"
+}'
+```
 ### Request Header
 - `Content-Type`: application/json
 - `clientID` : [Your Client ID]
@@ -59,10 +69,15 @@ This operation entails the creation of a reward when a user achieves a milestone
 ```text
 POST - {{rewards_system_url}}/api/event-reward-user-claims/events/{{eventID}}
 ```
+### cURL Example
+```text
+curl --location --request POST 'https://stage-platform-rewards.devindigg.com/api/event-reward-user-claims/events/81368ea8-b10f-4efa-a5d6-98d0059a0a18' \
+--header 'user-jwt-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJxd2VydHkiLCJjbGllbnRfaWQiOiJkNWIyZTc2MC0xYjZjLTQyOTYtYTg5Zi0xZGEwZmZlOGM0MTQiLCJpYXQiOjE3MDcwNDE1OTIsImlzcyI6ImQ1YjJlNzYwLTFiNmMtNDI5Ni1hODlmLTFkYTBmZmU4YzQxNCIsImV4cCI6MTcwNzEyNzk5MiwidXNlcl9pZCI6InF3ZXJ0eSIsInRoaXJkX3BhcnR5X2NsaWVudF9pZCI6ImQ1YjJlNzYwLTFiNmMtNDI5Ni1hODlmLTFkYTBmZmU4YzQxNCIsInRoaXJkX3BhcnR5X2NsaWVudF9uYW1lIjoiTHVkbyIsIm5hbWVzcGFjZWRfdGhpcmRfcGFydHlfdXNlcl9pZCI6ImQ1YjJlNzYwLTFiNmMtNDI5Ni1hODlmLTFkYTBmZmU4YzQxNF9fX3F3ZXJ0eSIsIndhbGxldF9hZGRyZXNzIjoiMHg0QzU4NzQ5OThiRTM5OEJEN0VBMjliQmIyMUZGZjc1MDZhRGY2MzlEIiwiaXNfbmV3X3VzZXIiOnRydWV9.__jPqcFvnQxrH1wmf20yle1Ffj5hJHmIuSE-HiRG8eE' \
+--header 'Content-Type: text/plain' \
+--data '@'
+```
 ### Request Header
 - `Content-Type`: application/json
-- `clientID` : [Your Client ID]
-- `clientSecret` : [Your Client Secret]
 - `user-jwt-token`: [User JWT Token]
 
 ### Path Parameter
@@ -89,10 +104,13 @@ This operation involves retrieving and showcasing all the rewards that a gamer h
 ```text
 GET - {{rewards_system_url}}/api/event-reward-user-claims/user
 ```
+### cURL Example
+```text
+curl --location 'https://stage-platform-rewards.devindigg.com/api/event-reward-user-claims/user' \
+--header 'user-jwt-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJxd2VydHkiLCJjbGllbnRfaWQiOiJkNWIyZTc2MC0xYjZjLTQyOTYtYTg5Zi0xZGEwZmZlOGM0MTQiLCJpYXQiOjE3MDcwNDE1OTIsImlzcyI6ImQ1YjJlNzYwLTFiNmMtNDI5Ni1hODlmLTFkYTBmZmU4YzQxNCIsImV4cCI6MTcwNzEyNzk5MiwidXNlcl9pZCI6InF3ZXJ0eSIsInRoaXJkX3BhcnR5X2NsaWVudF9pZCI6ImQ1YjJlNzYwLTFiNmMtNDI5Ni1hODlmLTFkYTBmZmU4YzQxNCIsInRoaXJkX3BhcnR5X2NsaWVudF9uYW1lIjoiTHVkbyIsIm5hbWVzcGFjZWRfdGhpcmRfcGFydHlfdXNlcl9pZCI6ImQ1YjJlNzYwLTFiNmMtNDI5Ni1hODlmLTFkYTBmZmU4YzQxNF9fX3F3ZXJ0eSIsIndhbGxldF9hZGRyZXNzIjoiMHg0QzU4NzQ5OThiRTM5OEJEN0VBMjliQmIyMUZGZjc1MDZhRGY2MzlEIiwiaXNfbmV3X3VzZXIiOnRydWV9.__jPqcFvnQxrH1wmf20yle1Ffj5hJHmIuSE-HiRG8eE'
+```
 ### Request Header
 - `Content-Type`: application/json
-- `clientID` : [Your Client ID]
-- `clientSecret` : [Your Client Secret]
 - `user-jwt-token`: [User JWT Token]
 
 ### Response
