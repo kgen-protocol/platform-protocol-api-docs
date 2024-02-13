@@ -71,7 +71,7 @@ Succesfull response for the above request
 ### Request Body (Update Event):
 To update an existing event, include the eventID in the payload along with other parameters you want to change. The system will replace the existing event with the updated details.
 ```text
-    {
+{
     "eventID": "dc3806e6-e56b-4da7-90e3-6b8e57307482",
     "eventType": "UpdatedEventType",
     "eventName": "UpdatedEventName",
