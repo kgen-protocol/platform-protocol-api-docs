@@ -6,5 +6,5 @@ Kratos Store is the go-to destination for gamers looking to redeem their hard-ea
 
 ![Image](../../../../static/img/image9.png)
 
-Click here to view Kratos store. 
+Click [click here >>](https://indi.gg/k-store/)  to view Kratos store. 
 
