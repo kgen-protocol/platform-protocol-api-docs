@@ -96,15 +96,14 @@ const config = {
         respectPrefersColorScheme: true,
       },
       navbar: {
-        title: 'lndiGG Esports Protocol',
+        title: 'IndiGG',
         logo: {
           alt: 'IndiGG Logo',
           src: 'img/logo.svg',
         },
         items: [
           {
-            type: 'doc',
-            docId: 'intro',
+            to:'docs/category/introduction',
             position: 'left',
             label: 'Documentation',
           },
@@ -124,11 +123,16 @@ const config = {
             title: 'Docs',
             items: [
               {
-                label: 'Documentation',
-                to: '/docs/intro',
+                label: 'Loyalty Protocol',
+                to: 'docs/category/introduction-1',
+              },
+              {
+                label: 'Esports Protocol',
+                to: 'docs/category/introduction',
               },
             ],
           },
+          
           {
             title: 'Community',
             items: [
