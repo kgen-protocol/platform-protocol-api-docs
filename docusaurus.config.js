@@ -6,9 +6,9 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'KGen Economy Protocol',
+  title: 'lndiGG Esports Protocol',
   tagline:
-    'KGeN Economy protocols create a virtuous cycle of adoption for all stakeholders in the KGen network - the gamer, game developers and the advertiser. Powering the transition to a transparent player centric economy.',
+    'A competitive gaming platform that allows your players to Play, Own & Earn and Experience a host of engaging on-chain quests, tournaments and NFTs in an existing or new game.',
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
