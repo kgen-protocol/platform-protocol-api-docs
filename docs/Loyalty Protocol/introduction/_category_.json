@@ -1,8 +1,0 @@
-{
-  "label": "Introduction",
-  "position": 1,
-  "link": {
-    "type": "generated-index",
-    "description": "KGen Loyalty protocol offers game developers a suite of APIs to seamlessly integrate a new loyalty reward into their game’s core loop. The protocol includes a reward system using KCash, which players can earn by playing the game and redeem for real-world items, such as gift vouchers from the Kratos Store.This approach creates a win-win situation for both players and game developers. It not only enhances the player experience by making the game more rewarding but also ensures that game developers benefit from more engaged and delighted players, ultimately leading to an increase in player LTV.Building with Kratos is a swift and straightforward process. Get in touch with us to explore the possibilities!"
-  }
-}

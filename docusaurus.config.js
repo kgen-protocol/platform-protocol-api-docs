@@ -103,7 +103,7 @@ const config = {
         },
         items: [
           {
-            to:'docs/category/introduction',
+            to:'docs/Esport Protocol V1/introduction',
             position: 'left',
             label: 'Documentation',
           },
@@ -124,11 +124,11 @@ const config = {
             items: [
               {
                 label: 'Loyalty Protocol',
-                to: 'docs/category/introduction-1',
+                to: 'docs/Loyalty Protocol V1/introduction',
               },
               {
                 label: 'Esports Protocol',
-                to: 'docs/category/introduction',
+                to: 'docs/Esport Protocol V1/introduction',
               },
             ],
           },
