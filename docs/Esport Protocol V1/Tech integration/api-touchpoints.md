@@ -4,12 +4,11 @@ sidebar_position: 2
 
 # API Touchpoints
 
-The following is a list of API touchpoints that the game developer will need to use to integrate with the lndiGG ESports Protocol:
+The following is a list of API touchpoints that the game developer will need to use to integrate with the KGeN ESports Protocol:
 
-for detailed OpenApi Specs, [click here >>](/openapi.yaml)
 
-- Prod Environment Swagger API Explorer [click here >>](https://platform-api.indi.gg/api-docs)
-- Stage Environment Swagger API Explorer [click here >>](https://platform-api.devindigg.com/api-docs)
+- Prod Environment Swagger API Explorer [click here >>](https://platform-api.indi.gg/docs)
+- Stage Environment Swagger API Explorer [click here >>](https://platform-api.devindigg.com/docs)
 
 Contact the admin to get your clientID and clientSecret.
 
