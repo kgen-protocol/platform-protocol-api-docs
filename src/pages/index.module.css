@@ -20,8 +20,22 @@
   }
 }
 
+@media screen and (max-width: 796px) {
+  .buttonsContainer {
+    flex-direction: column;
+    justify-content: center;
+    gap: 15px
+  }
+}
+
 .buttons {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.buttonsContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
