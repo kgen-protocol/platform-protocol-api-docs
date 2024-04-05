@@ -15,7 +15,7 @@ sidebar_position: 1
 | GET `/api/wallet/balance` | Retrieve the balance details from the user's wallet. | Obtain information about the user's wallet balance and related attributes. |
 | GET `/api/wallet/transactions/list` | Retrieve a list of transactions associated with the user's wallet. | Get a detailed view of all transactions related to the user's wallet. |
 | POST `/api/wallet/withdraw` | Transfer the user's earned balance from the custodian wallet to their non-custodian wallet. | Handle transactions within the platform for withdrawing earned balance. |
-| POST `/api/proxy/auth/user/session` | Create an Indigg-specific session for a gamer. | Establish a secure session for the gamer within the gaming application. |
+| POST `/api/proxy/auth/user/session` | Create an KGeN-specific session for a gamer. | Establish a secure session for the gamer within the gaming application. |
 | POST `/api/event-reward-user-claims/events/{eventID}` | Create a reward for a user when they achieve a specific event. | Record rewards for specific events when users achieve corresponding milestones. |
 | GET `/api/event-reward-user-claims/user` | Retrieve all rewards earned by a gamer. | Obtain a comprehensive list of rewards earned by the gamer throughout their gaming journey. |
 | GET `/api/v1/statistics/_historic?token={token}` | Provide historical data regarding a user's participation in gaming activities, specifically within the context of tournaments. | Obtain historical statistics and participation details for a user. |

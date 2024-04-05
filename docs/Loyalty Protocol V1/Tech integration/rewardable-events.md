@@ -8,13 +8,13 @@ Game developers can utilize dedicated APIs to effortlessly register, update, and
 
 ## Register or Update the event
 
-Game developers can manage rewardable events on the Indigg platform by using a PUT request at the designated endpoint to create or update events.
+Game developers can manage rewardable events on the KGeN platform by using a PUT request at the designated endpoint to create or update events.
 ```text
 PUT - {{rewards_system_url}}/admin/rewardable-events
 ```
 ### cURL Example
 ```text
-curl --location --request PUT 'https://stage-platform-rewards.devindigg.com/admin/rewardable-events' \
+curl --location --request PUT 'https://stage-platform-rewards.devKGeN.com/admin/rewardable-events' \
 --header 'x-client-id;' \
 --header 'x-client-secret;' \
 --header 'Content-Type: application/json' \
@@ -93,8 +93,8 @@ GET - {{rewards_system_url}}/admin/rewardable-events?isActive=true
 ```
 ### cURL Example
 ```text
-curl --location --request PUT 'https://stage-platform-rewards.devindigg.com/admin/rewardable-events' \
-curl --location 'https://stage-platform-rewards.devindigg.com/admin/rewardable-events?isActive=true' \
+curl --location --request PUT 'https://stage-platform-rewards.devKGeN.com/admin/rewardable-events' \
+curl --location 'https://stage-platform-rewards.devKGeN.com/admin/rewardable-events?isActive=true' \
 --header 'x-client-id: d5b2e760-1b6c-4296-a89f-1da0ffe8c414' \
 --header 'x-client-secret: R3k9FqLsNwPv7GjX5tHmY2e6WzVxZ8bC'
 ```
@@ -148,7 +148,7 @@ GET - {{rewards_system_url}}/admin/rewardable-events/{eventID}
 ```
 ### cURL Example
 ```text
-curl --location 'https://stage-platform-rewards.devindigg.com/admin/rewardable-events/a4ded2a5-6f7a-4116-874c-435af9831cda' \
+curl --location 'https://stage-platform-rewards.devKGeN.com/admin/rewardable-events/a4ded2a5-6f7a-4116-874c-435af9831cda' \
 --header 'x-client-id: d5b2e760-1b6c-4296-a89f-1da0ffe8c414' \
 --header 'x-client-secret: R3k9FqLsNwPv7GjX5tHmY2e6WzVxZ8bC'
 ```
@@ -188,7 +188,7 @@ DELETE - {{rewards_system_url}}/admin/rewardable-events/{eventID}
 ```
 ### cURL Example
 ```text
-curl --location --request DELETE 'https://stage-platform-rewards.devindigg.com/admin/rewardable-events/a4ded2a5-6f7a-4116-874c-435af9831cda' \
+curl --location --request DELETE 'https://stage-platform-rewards.devKGeN.com/admin/rewardable-events/a4ded2a5-6f7a-4116-874c-435af9831cda' \
 --header 'x-client-id: d5b2e760-1b6c-4296-a89f-1da0ffe8c414' \
 --header 'x-client-secret: R3k9FqLsNwPv7GjX5tHmY2e6WzVxZ8bC'
 ```

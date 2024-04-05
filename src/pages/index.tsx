@@ -47,7 +47,7 @@ function FooterButtons() {
       <Link
         className="button button--secondary button--lg"
         to="/docs/Esport%20Protocol%20V1/introduction">
-         KGeN Esports Protocol
+         KGeN ESports Protocol
       </Link>
       <Link
         className="button button--secondary button--lg"
@@ -63,14 +63,14 @@ function KGenInfo() {
     <div style={{ padding: '200px', fontSize: '18px' }} className="kgen-info">
       <h1>lntroduction</h1>
       <p>
-        KGeN Esports and Loyalty protocols are tools that help game developers boost player engagement and monetization. These are easy-to-integrate APIs that retrofit into the existing core loop of the game.
+        KGeN ESports and Loyalty protocols are tools that help game developer boost player engagement and monetization. These are easy-to-integrate APIs that retrofit into the existing core loop of the game.
         Once implemented, a game can reward engaged and competitive players with a new currency called KCash, which can be redeemed for real-world rewards at the Kratos Store. These rewards include a wide array of vouchers and gift cards across the world.
         Real-world rewards are a proven mechanism of improving gamer engagement and retention over the years. It improves the player experience by introducing encashable game rewards and ensures that game developers benefit from a more engaged core audience that turns into game advocates, ultimately leading to increased player LTV.
       </p>
 
-      <h1>KGeN Esports Protocol</h1>
+      <h1>KGeN ESports Protocol</h1>
       <p>
-        Engage players with competitive Tournaments. Game developers can host tournaments and incentivize players with KCash rewards using the KGeN Esports Protocol. With easy API integrations and wallet functionality, the KGeN Esports Protocol is the perfect solution for game developers looking to increase player engagement and competitiveness.
+        Engage players with competitive Tournaments. Game developers can host tournaments and incentivize players with KCash rewards using the KGeN ESports Protocol. With easy API integrations and wallet functionality, the KGeN ESports Protocol is the perfect solution for game developers looking to increase player engagement and competitiveness.
       </p>
 
       <h1>KGeN Loyalty Protocol</h1>

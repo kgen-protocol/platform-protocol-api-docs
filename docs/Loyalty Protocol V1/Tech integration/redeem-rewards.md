@@ -4,7 +4,7 @@ sidebar_position: 3
 
 # Redeem Rewards
 
-To access and utilize their earned rewards, gamers can initiate a process where the rewards collected in their Indigg custodian wallet are transferred to their non-custodian wallet. This allows users to freely use or spend their rewards across various purposes. To initiate this process, the gamer must transition to an Indigg user, which involves setting up a non-custodian wallet through OTP validation. Below are the steps to follow for this withdrawal process
+To access and utilize their earned rewards, gamers can initiate a process where the rewards collected in their KGeN custodian wallet are transferred to their non-custodian wallet. This allows users to freely use or spend their rewards across various purposes. To initiate this process, the gamer must transition to an KGeN user, which involves setting up a non-custodian wallet through OTP validation. Below are the steps to follow for this withdrawal process
 
 ## Auth: OTP Registration
 
@@ -14,7 +14,7 @@ POST - {{rewards_system_url}}/api/proxy/auth/otp/register
 ```
 ### cURL Example
 ```text
-curl --location 'https://stage-platform-rewards.devindigg.com/api/proxy/auth/otp/register' \
+curl --location 'https://stage-platform-rewards.devKGeN.com/api/proxy/auth/otp/register' \
 --header 'user-jwt-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJlZmtoZWlraHdpaGV3aWhlZml3YWFhYWEiLCJjbGllbnRfaWQiOiJkNWIyZTc2MC0xYjZjLTQyOTYtYTg5Zi0xZGEwZmZlOGM0MTQiLCJpYXQiOjE3MDA0NjY2MzQsImlzcyI6ImQ1YjJlNzYwLTFiNmMtNDI5Ni1hODlmLTFkYTBmZmU4YzQxNCIsImV4cCI6MTcwMDU1MzAzNCwidXNlcl9pZCI6ImVma2hlaWtod2loZXdpaGVmaXdhYWFhYSIsInRoaXJkX3BhcnR5X2NsaWVudF9pZCI6ImQ1YjJlNzYwLTFiNmMtNDI5Ni1hODlmLTFkYTBmZmU4YzQxNCIsIm5hbWVzcGFjZWRfdGhpcmRfcGFydHlfdXNlcl9pZCI6ImQ1YjJlNzYwLTFiNmMtNDI5Ni1hODlmLTFkYTBmZmU4YzQxNF9fX2Vma2hlaWtod2loZXdpaGVmaXdhYWFhYSIsIndhbGxldF9hZGRyZXNzIjoiMHg3ODg5RmRGNTQ4RkMxNzEzYzYxMUZCNTJlQTY0QUNDYmZmMWIwMzIyIn0.PeCYQvVPuzjMgJ4NFqpqvtnHHKBWIZFbKIEkSnmgnjw' \
 --header 'Content-Type: application/json' \
 --data '{
@@ -52,7 +52,7 @@ POST - {{rewards_system_url}}/api/proxy/auth/otp/resend
 ```
 ### cURL Example
 ```text
-curl --location 'https://stage-platform-rewards.devindigg.com/api/proxy/auth/otp/resend' \
+curl --location 'https://stage-platform-rewards.devKGeN.com/api/proxy/auth/otp/resend' \
 --header 'user-jwt-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJxd2VydHkiLCJjbGllbnRfaWQiOiJkNWIyZTc2MC0xYjZjLTQyOTYtYTg5Zi0xZGEwZmZlOGM0MTQiLCJpYXQiOjE3MDcwNDE1OTIsImlzcyI6ImQ1YjJlNzYwLTFiNmMtNDI5Ni1hODlmLTFkYTBmZmU4YzQxNCIsImV4cCI6MTcwNzEyNzk5MiwidXNlcl9pZCI6InF3ZXJ0eSIsInRoaXJkX3BhcnR5X2NsaWVudF9pZCI6ImQ1YjJlNzYwLTFiNmMtNDI5Ni1hODlmLTFkYTBmZmU4YzQxNCIsInRoaXJkX3BhcnR5X2NsaWVudF9uYW1lIjoiTHVkbyIsIm5hbWVzcGFjZWRfdGhpcmRfcGFydHlfdXNlcl9pZCI6ImQ1YjJlNzYwLTFiNmMtNDI5Ni1hODlmLTFkYTBmZmU4YzQxNF9fX3F3ZXJ0eSIsIndhbGxldF9hZGRyZXNzIjoiMHg0QzU4NzQ5OThiRTM5OEJEN0VBMjliQmIyMUZGZjc1MDZhRGY2MzlEIiwiaXNfbmV3X3VzZXIiOnRydWV9.__jPqcFvnQxrH1wmf20yle1Ffj5hJHmIuSE-HiRG8eE' \
 --header 'Content-Type: application/json' \
 --data '{
@@ -91,7 +91,7 @@ POST - {{rewards_system_url}}/api/proxy/auth/otp/verify
 ```
 ### cURL Example
 ```text
-curl --location 'https://stage-platform-rewards.devindigg.com/api/proxy/auth/otp/verify' \
+curl --location 'https://stage-platform-rewards.devKGeN.com/api/proxy/auth/otp/verify' \
 --header 'user-jwt-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJlZmtoZWlraHdpaGV3aWhlZml3YWFhYWEiLCJjbGllbnRfaWQiOiJkNWIyZTc2MC0xYjZjLTQyOTYtYTg5Zi0xZGEwZmZlOGM0MTQiLCJpYXQiOjE3MDA0NjY2MzQsImlzcyI6ImQ1YjJlNzYwLTFiNmMtNDI5Ni1hODlmLTFkYTBmZmU4YzQxNCIsImV4cCI6MTcwMDU1MzAzNCwidXNlcl9pZCI6ImVma2hlaWtod2loZXdpaGVmaXdhYWFhYSIsInRoaXJkX3BhcnR5X2NsaWVudF9pZCI6ImQ1YjJlNzYwLTFiNmMtNDI5Ni1hODlmLTFkYTBmZmU4YzQxNCIsIm5hbWVzcGFjZWRfdGhpcmRfcGFydHlfdXNlcl9pZCI6ImQ1YjJlNzYwLTFiNmMtNDI5Ni1hODlmLTFkYTBmZmU4YzQxNF9fX2Vma2hlaWtod2loZXdpaGVmaXdhYWFhYSIsIndhbGxldF9hZGRyZXNzIjoiMHg3ODg5RmRGNTQ4RkMxNzEzYzYxMUZCNTJlQTY0QUNDYmZmMWIwMzIyIn0.PeCYQvVPuzjMgJ4NFqpqvtnHHKBWIZFbKIEkSnmgnjw' \
 --header 'Content-Type: application/json' \
 --data '{
@@ -137,7 +137,7 @@ GET {{rewards_system_url}}/api/wallet/balance
 
 ### cURL Example
 ```text
-curl --location 'https://stage-platform-rewards.devindigg.com/api/wallet/balance' \
+curl --location 'https://stage-platform-rewards.devKGeN.com/api/wallet/balance' \
 --header 'user-jwt-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJBSyIsImNsaWVudF9pZCI6ImQ1YjJlNzYwLTFiNmMtNDI5Ni1hODlmLTFkYTBmZmU4YzQxNCIsImlhdCI6MTcwNzM3NTUwMCwiaXNzIjoiZDViMmU3NjAtMWI2Yy00Mjk2LWE4OWYtMWRhMGZmZThjNDE0IiwiZXhwIjoxNzA3NDYxOTAwLCJ1c2VyX2lkIjoiQUsiLCJ0aGlyZF9wYXJ0eV9jbGllbnRfaWQiOiJkNWIyZTc2MC0xYjZjLTQyOTYtYTg5Zi0xZGEwZmZlOGM0MTQiLCJ0aGlyZF9wYXJ0eV9jbGllbnRfbmFtZSI6Ikx1ZG8iLCJuYW1lc3BhY2VkX3RoaXJkX3BhcnR5X3VzZXJfaWQiOiJkNWIyZTc2MC0xYjZjLTQyOTYtYTg5Zi0xZGEwZmZlOGM0MTRfX19BSyIsIndhbGxldF9hZGRyZXNzIjoiMHg0ZWNDMTNlRkMyZEU2NjI5NjEzNTUyNjY0NjNDNjExNjEyZjRiRTA3IiwiaXNfbmV3X3VzZXIiOmZhbHNlfQ.miqUD-oaY2os1Lnffr9Mykk4H9FEUHUDQTeqTtkZG_g'
 ```
 ### Request Header
@@ -184,7 +184,7 @@ GET {{rewards_system_url}}/api/wallet/transactions/list
 
 ### cURL Example
 ```text
-curl --location 'https://stage-platform-rewards.devindigg.com/api/wallet/transactions/list' \
+curl --location 'https://stage-platform-rewards.devKGeN.com/api/wallet/transactions/list' \
 --header 'user-jwt-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJBSyIsImNsaWVudF9pZCI6ImQ1YjJlNzYwLTFiNmMtNDI5Ni1hODlmLTFkYTBmZmU4YzQxNCIsImlhdCI6MTcwNzM3NTUwMCwiaXNzIjoiZDViMmU3NjAtMWI2Yy00Mjk2LWE4OWYtMWRhMGZmZThjNDE0IiwiZXhwIjoxNzA3NDYxOTAwLCJ1c2VyX2lkIjoiQUsiLCJ0aGlyZF9wYXJ0eV9jbGllbnRfaWQiOiJkNWIyZTc2MC0xYjZjLTQyOTYtYTg5Zi0xZGEwZmZlOGM0MTQiLCJ0aGlyZF9wYXJ0eV9jbGllbnRfbmFtZSI6Ikx1ZG8iLCJuYW1lc3BhY2VkX3RoaXJkX3BhcnR5X3VzZXJfaWQiOiJkNWIyZTc2MC0xYjZjLTQyOTYtYTg5Zi0xZGEwZmZlOGM0MTRfX19BSyIsIndhbGxldF9hZGRyZXNzIjoiMHg0ZWNDMTNlRkMyZEU2NjI5NjEzNTUyNjY0NjNDNjExNjEyZjRiRTA3IiwiaXNfbmV3X3VzZXIiOmZhbHNlfQ.miqUD-oaY2os1Lnffr9Mykk4H9FEUHUDQTeqTtkZG_g'
 ```
 ### Request Header
@@ -251,7 +251,7 @@ POST - {{rewards_system_url}}/api/wallet/withdraw
 ```
 ### cURL Example
 ```text
-curl --location --request POST 'https://stage-platform-rewards.devindigg.com/api/wallet/withdraw' \
+curl --location --request POST 'https://stage-platform-rewards.devKGeN.com/api/wallet/withdraw' \
 --header 'user-jwt-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJBSyIsImNsaWVudF9pZCI6ImQ1YjJlNzYwLTFiNmMtNDI5Ni1hODlmLTFkYTBmZmU4YzQxNCIsImlhdCI6MTcwNzM3NTUwMCwiaXNzIjoiZDViMmU3NjAtMWI2Yy00Mjk2LWE4OWYtMWRhMGZmZThjNDE0IiwiZXhwIjoxNzA3NDYxOTAwLCJ1c2VyX2lkIjoiQUsiLCJ0aGlyZF9wYXJ0eV9jbGllbnRfaWQiOiJkNWIyZTc2MC0xYjZjLTQyOTYtYTg5Zi0xZGEwZmZlOGM0MTQiLCJ0aGlyZF9wYXJ0eV9jbGllbnRfbmFtZSI6Ikx1ZG8iLCJuYW1lc3BhY2VkX3RoaXJkX3BhcnR5X3VzZXJfaWQiOiJkNWIyZTc2MC0xYjZjLTQyOTYtYTg5Zi0xZGEwZmZlOGM0MTRfX19BSyIsIndhbGxldF9hZGRyZXNzIjoiMHg0ZWNDMTNlRkMyZEU2NjI5NjEzNTUyNjY0NjNDNjExNjEyZjRiRTA3IiwiaXNfbmV3X3VzZXIiOmZhbHNlfQ.miqUD-oaY2os1Lnffr9Mykk4H9FEUHUDQTeqTtkZG_g'
 ```
 ### Request Header

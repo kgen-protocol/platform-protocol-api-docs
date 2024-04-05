@@ -4,7 +4,7 @@ sidebar_position: 2
 
 # API Touchpoints
 
-The following is a list of API touchpoints that the game developer will need to use to integrate with the lndiGG Esports Protocol:
+The following is a list of API touchpoints that the game developer will need to use to integrate with the lndiGG ESports Protocol:
 
 for detailed OpenApi Specs, [click here >>](/openapi.yaml)
 
@@ -464,7 +464,7 @@ Upon successful claim of rewards, the server responds with a JSON object contain
 # API Documentation: Wallet Withdrawal API
 
 ## Endpoint: POST `/api/v1/wallet/_withdraw?token={token}`
-This endpoint facilitates the transfer of a user's earned balance from a custodial wallet to their Indigg wallet. It is designed to handle transactions within the platform without requiring additional information from the user in the request body.
+This endpoint facilitates the transfer of a user's earned balance from a custodial wallet to their KGeN wallet. It is designed to handle transactions within the platform without requiring additional information from the user in the request body.
 
 #### Request Header
 - `Content-Type`: application/json
@@ -477,7 +477,7 @@ This endpoint does not require a request body. The necessary information for the
 ### Response Structure
 Upon successful completion of the withdrawal process, the server responds with a JSON object containing key details of the transaction:
 
-- `userIndiggWalletAddr`: The address of the user's Indigg wallet.
+- `userKGeNWalletAddr`: The address of the user's KGeN wallet.
 - `earnedBalance`: The amount of earned balance that was transferred.
 - `status`: The status of the transaction, typically 'SUCCESS'.
 - `message`: A confirmation message, usually indicating successful withdrawal.
@@ -485,14 +485,14 @@ Upon successful completion of the withdrawal process, the server responds with a
 #### Example Response
 ```json
 {
-  "userIndiggWalletAddr": "user_indigg_wallet_address",
+  "userKGeNWalletAddr": "user_KGeN_wallet_address",
   "earnedBalance": 100,
   "status": "SUCCESS",
   "message": "Withdrawn Successfully"
 }
 ```
 
-# API Touchpoints for lndiGG Esports Protocol
+# API Touchpoints for lndiGG ESports Protocol
 
 ## API Descriptions
 

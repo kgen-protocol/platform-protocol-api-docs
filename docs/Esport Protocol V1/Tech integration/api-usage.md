@@ -14,8 +14,8 @@ sidebar_position: 1
 | GET `/api/v1/wallet/lazyChain/balance?token={token}` | Retrieve the balance details of a user's wallet. | this will be used to get wallet balance of the user |
 | GET `/api/v1/wallet/lazyChain/transactions/:wallet_address?token={token}` | Retrieve the transaction history of a specific wallet address. |this will be used to get the transaction history of the wallet of the specific user |
 | POST `/api/v1/verification/otp/_request?token={token}` | Generate a One Time Password (OTP) for user verification. | Request an OTP for authentication or user confirmation processes. |
-| POST `/api/v1/verification/otp/_verify?token={token}` | Verify the One Time Password (OTP) sent to a user's phone number. | this is used for link custodial wallet to indigg wallet |
+| POST `/api/v1/verification/otp/_verify?token={token}` | Verify the One Time Password (OTP) sent to a user's phone number. | this is used for link custodial wallet to KGeN wallet |
 | GET `/api/v1/rewards?token={token}` | Provide information about the rewards a user has earned. | this is used to get what are all the unclaimed rewards for the user|
 | POST `/api/v1/rewards/_claim?token={token}` | Allow users to claim their earned rewards. | this will be called when the user is claiming the rewards |
-| POST `/api/v1/wallet/_withdraw?token={token}` | Transfer a user's earned balance from a custodial wallet to their Indigg wallet. | this will be called on withdraw cta |
+| POST `/api/v1/wallet/_withdraw?token={token}` | Transfer a user's earned balance from a custodial wallet to their KGeN wallet. | this will be called on withdraw cta |
 | GET `/api/v1/statistics/_historic?token={token}` | Provide historical data regarding a user's participation in gaming activities, specifically within the context of tournaments. | Obtain historical statistics and participation details for a user. |

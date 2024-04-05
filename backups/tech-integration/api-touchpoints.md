@@ -4,7 +4,7 @@ sidebar_position: 2
 
 # API Touchpoints
 
-The following is a list of API touchpoints that the game developer will need to use to integrate with the lndiGG Esports Protocol:
+The following is a list of API touchpoints that the game developer will need to use to integrate with the lndiGG ESports Protocol:
 
 for detailed OpenApi Specs, [click here >>](/openapi.yaml)
 
@@ -492,7 +492,7 @@ Upon successful completion of the withdrawal process, the server responds with a
 }
 ```
 
-# API Touchpoints for lndiGG Esports Protocol
+# API Touchpoints for lndiGG ESports Protocol
 
 ## API Descriptions
 
