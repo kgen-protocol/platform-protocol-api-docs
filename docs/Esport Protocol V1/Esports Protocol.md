@@ -13,16 +13,16 @@ Upon launching the game for the first time post-protocol implementation, a user'
 
 # Flow Diagram
 
-![Image](../../static/img/Eimage12.png)
+![Image](../../static/Images/Esports/es_02_flow.png)
 
 
 # User Onboarding
 
 When a player launches the game for the first time the API creates a wallet for the user and deposits with 50 Bonus KCash to enter into on-going tournaments. The player can opt-in to link their wallet with their phone number through an OTP validation to take custody of their wallet. However this is not a mandatory step during the onboarding. The user can opt-in again at the time of redemption.
 
-![Image](../../static/img/Eimage4.png)
-![Image](../../static/img/Eimage7.png)
-![Image](../../static/img/Eimage13.png)
+![Image](../../static/Images/Esports/es_03_user_onboard_image18.png)
+<!-- ![Image](../../static/Images/Esports/es_10_KCash_02_iimage7.png)
+![Image](../../static/Images/Esports/es_11_KCash_03_iimage9.png) -->
 
 # Tournament Leaderboard
 
@@ -33,9 +33,9 @@ When a tournament is active in the game, players have the opportunity to join wi
 
 
 
-![Image](../../static/img/Eimage10.png)
-![Image](../../static/img/Eimage8.png)
-![Image](../../static/img/Eimage5.png)
+![Image](../../static/Images/Esports/es_04_tourament_01_image13.png)
+![Image](../../static/Images/Esports/es_05_tourament_02_image10.png)
+![Image](../../static/Images/Esports/es_06_tourament_03_image8.png)
 
 
 If a player manages to rank in the top 40% of the leaderboard, they can earn up to 6x their entry fee. 
@@ -47,6 +47,6 @@ Top 9% gets 1x of the entry fee
 
 After the tournament concludes, players receive a notification about the results and their reward. 
 
-![Image](../../static/img/Eimage9.png)
-![Image](../../static/img/Eimage3.png)
+![Image](../../static/Images/Esports/es_07_tourament_04_image11.png)
+![Image](../../static/Images/Esports/es_08_tourament_05_image4.png)
 

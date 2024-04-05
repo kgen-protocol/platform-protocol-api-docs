@@ -6,9 +6,9 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'lndiGG Esports Protocol',
+  title: 'KGeN Economy ProtocolsKGeN Economy Protocols',
   tagline:
-    'A competitive gaming platform that allows your players to Play, Own & Earn and Experience a host of engaging on-chain quests, tournaments and NFTs in an existing or new game.',
+    'KGeN Economy protocols create a virtuous cycle of adoption for all stakeholders in the KGen network - the gamer, game developers and the advertiser. Powering the transition to a transparent player centric economy.',
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
@@ -123,11 +123,11 @@ const config = {
             title: 'Docs',
             items: [
               {
-                label: 'Loyalty Protocol',
+                label: 'KGeN Loyalty Protocol',
                 to: 'docs/Loyalty Protocol V1/introduction',
               },
               {
-                label: 'Esports Protocol',
+                label: 'KGeN Esports Protocol',
                 to: 'docs/Esport Protocol V1/introduction',
               },
             ],

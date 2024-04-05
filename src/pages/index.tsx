@@ -6,12 +6,12 @@ import Layout from '@theme/Layout';
 import HomepageFeatures from '@site/src/components/HomepageFeatures';
 import styles from './index.module.css';
 function HomepageHeader() {
-  const {siteConfig} = useDocusaurusContext();
+  const { siteConfig } = useDocusaurusContext();
   return (
     <header className={clsx('hero hero--primary', styles.heroBanner)}>
       <div className="container">
         <h1 className="hero__title">{siteConfig.title}</h1>
-        <p className="hero__subtitle" style={{color: "#eef9fd"}}>{siteConfig.tagline}</p>
+        <p className="hero__subtitle" style={{ color: "#eef9fd" }}>{siteConfig.tagline}</p>
         <div className={styles.buttons}>
           <Link
             className="button button--secondary button--lg"
@@ -24,13 +24,13 @@ function HomepageHeader() {
   );
 }
 export default function Home(): JSX.Element {
-  const {siteConfig} = useDocusaurusContext();
+  const { siteConfig } = useDocusaurusContext();
   return (
     <Layout
       title={`Hello from ${siteConfig.title}`}
       description={siteConfig.tagline}>
       <HomepageHeader />
-      <KGenInfo/> 
+      <KGenInfo />
     </Layout>
   );
 }
@@ -45,22 +45,22 @@ function FooterButtons() {
       }
     }>
       <Link
-            className="button button--secondary button--lg"
-            to="/docs/Esport%20Protocol%20V1/introduction">
-           Esports Protocol
-          </Link>
-          <Link
-            className="button button--secondary button--lg"
-            to="docs/Loyalty%20Protocol%20V1/introduction">
-            Loyalty Protocol
-          </Link>
+        className="button button--secondary button--lg"
+        to="/docs/Esport%20Protocol%20V1/introduction">
+         KGeN Esports Protocol
+      </Link>
+      <Link
+        className="button button--secondary button--lg"
+        to="docs/Loyalty%20Protocol%20V1/introduction">
+        KGeN Loyalty Protocol
+      </Link>
     </div>
   );
 }
 
 function KGenInfo() {
   return (
-    <div style={{ padding: '100px' , fontSize:'18px'}} className="kgen-info">
+    <div style={{ padding: '200px', fontSize: '18px' }} className="kgen-info">
       <h1>lntroduction</h1>
       <p>
         KGeN Esports and Loyalty protocols are tools that help game developers boost player engagement and monetization. These are easy-to-integrate APIs that retrofit into the existing core loop of the game.
@@ -79,11 +79,13 @@ function KGenInfo() {
       </p>
       <h1>System Overview </h1>
       <p>
-      KGeN eSports and Loyalty protocols are available as self-service plug-and-play modules, allowing game developers to select the best fit for their game's success. Kratos also offers support throughout the integration process to ensure a smooth experience. (We need a CTA to apply for integration)
+        KGeN eSports and Loyalty protocols are available as self-service plug-and-play modules, allowing game developers to select the best fit for their game's success. Kratos also offers support throughout the integration process to ensure a smooth experience. (We need a CTA to apply for integration)
       </p>
-      <img src="/img/flow_front.png" alt="System Overview" style={{minWidth:"100%",maxHeight: '70%'}}/>
+      <div style={{ textAlign: 'center' }}>
+        <img src="/img/flow_front.png" alt="System Overview" style={{ maxWidth: '75%' }} />
+      </div>
       <p>If you're interested in learning more about the protocols, continue reading.</p>
-      <FooterButtons/>
+      <FooterButtons />
     </div>
   );
 }
