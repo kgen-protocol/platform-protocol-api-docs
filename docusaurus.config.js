@@ -6,7 +6,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'KGeN Economy ProtocolsKGeN Economy Protocols',
+  title: 'KGeN Economy Protocols',
   tagline:
     'KGeN Economy protocols create a virtuous cycle of adoption for all stakeholders in the KGen network - the gamer, game developers and the advertiser. Powering the transition to a transparent player centric economy.',
   favicon: 'img/favicon.ico',
