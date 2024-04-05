@@ -720,11 +720,11 @@ paths:
         - *ref_12
         - apiKey: []
 info:
-  title: IndiGG Platform API
-  description: IndiGG Platform API for surfacing gaming quests and tournaments.
+  title: KGeN Platform API
+  description: KGeN Platform API for surfacing gaming quests and tournaments.
   version: '1.0'
   contact:
-    name: IndiGG Platform Engineering Team
+    name: KGeN Platform Engineering Team
     url: https://indi.gg
     email: support@indi.gg
   license:

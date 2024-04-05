@@ -6,9 +6,9 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'lndiGG Esports Protocol',
+  title: 'KGeN Economy Protocols',
   tagline:
-    'A competitive gaming platform that allows your players to Play, Own & Earn and Experience a host of engaging on-chain quests, tournaments and NFTs in an existing or new game.',
+    'KGeN Economy protocols create a virtuous cycle of adoption for all stakeholders in the KGeN network - the gamer, game developers and the advertiser. Powering the transition to a transparent player centric economy.',
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
@@ -96,22 +96,21 @@ const config = {
         respectPrefersColorScheme: true,
       },
       navbar: {
-        title: 'lndiGG Esports Protocol',
+        title: 'KGeN',
         logo: {
           alt: 'IndiGG Logo',
-          src: 'img/logo.svg',
+          src: 'img/kgen_logo.webp',
         },
         items: [
           {
-            type: 'doc',
-            docId: 'intro',
+            to:'docs/Esport Protocol V1/introduction',
             position: 'left',
             label: 'Documentation',
           },
           // {to: '/blog', label: 'Blog', position: 'left'},
           {
-            href: 'https://indi.gg',
-            label: 'indiGG',
+            href: 'https://kgen.io',
+            label: 'KGeN',
             position: 'right',
           },
         ],
@@ -124,21 +123,26 @@ const config = {
             title: 'Docs',
             items: [
               {
-                label: 'Documentation',
-                to: '/docs/intro',
+                label: 'KGeN Loyalty Protocol',
+                to: 'docs/Loyalty Protocol V1/introduction',
+              },
+              {
+                label: 'KGeN ESports Protocol',
+                to: 'docs/Esport Protocol V1/introduction',
               },
             ],
           },
+          
           {
             title: 'Community',
             items: [
               {
                 label: 'Discord',
-                href: 'https://discord.com/invite/igg',
+                href: 'https://discord.gg/kgen',
               },
               {
                 label: 'Twitter',
-                href: 'https://twitter.com/IndiGG_DAO',
+                href: 'https://twitter.com/KGeN_IO',
               },
             ],
           },
@@ -146,8 +150,8 @@ const config = {
             title: 'More',
             items: [
               {
-                label: 'indi.gg',
-                href: 'https://indi.gg',
+                label: 'KGeN',
+                href: 'https://kgen.io',
               },
             ],
           },
