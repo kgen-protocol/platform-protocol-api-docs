@@ -21,7 +21,7 @@ When a player joins, the API automatically generates a wallet to provide joining
 
 Players have the option to download the [KGeN mobile App](https://play.google.com/store/apps/details?id=com.indiggcommunity&hl=en&gl=US) from the Google Play Store or visit the [website](https://kgen.io/gamer), where they can sign up and verify their identity using the same mobile number. This allows them to link both wallets and transfer their earned KCash for redemption of real-world rewards.
 
-# KStore
+# Kratos Store
 Kratos Store is the go-to destination for gamers looking to redeem their hard-earned KCash. The store offers a range of products, including Steam Vouchers, Game currency packs, gift vouchers, gaming cards, gaming accessories and merchandise.
 
 Check out the [store](https://kgen.io/gamer/k-store), it’s live! 
