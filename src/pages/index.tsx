@@ -37,13 +37,7 @@ export default function Home(): JSX.Element {
 
 function FooterButtons() {
   return (
-    <div style={
-      {
-        display: 'flex',
-        justifyContent: 'space-between',
-        padding: '20px'
-      }
-    }>
+    <div className={styles.buttonsContainer}>
       <Link
         className="button button--secondary button--lg"
         to="/docs/Esport%20Protocol%20V1/introduction">
@@ -60,11 +54,11 @@ function FooterButtons() {
 
 function KGenInfo() {
   return (
-    <div style={{ padding: '200px', fontSize: '18px' }} className="kgen-info">
+    <div style={{ display: "flex", flexDirection: "column", padding: '50px 15vw', fontSize: '18px' }} className="kgen-info">
       <h1>lntroduction</h1>
       <p>
         KGeN ESports and Loyalty protocols are tools that help game developer boost player engagement and monetization. These are easy-to-integrate APIs that retrofit into the existing core loop of the game.
-        Once implemented, a game can reward engaged and competitive players with a new currency called KCash, which can be redeemed for real-world rewards at the Kratos Store. These rewards include a wide array of vouchers and gift cards across the world.
+        Once implemented, a  game can reward engaged and competitive players with a new currency called KCash, which can be redeemed for real-world rewards at the Kratos Store. These rewards include a wide array of vouchers and gift cards across the world.
         Real-world rewards are a proven mechanism of improving gamer engagement and retention over the years. It improves the player experience by introducing encashable game rewards and ensures that game developers benefit from a more engaged core audience that turns into game advocates, ultimately leading to increased player LTV.
       </p>
 
@@ -82,7 +76,7 @@ function KGenInfo() {
         KGeN eSports and Loyalty protocols are available as self-service plug-and-play modules, allowing game developers to select the best fit for their game's success. Kratos also offers support throughout the integration process to ensure a smooth experience. (We need a CTA to apply for integration)
       </p>
       <div style={{ textAlign: 'center' }}>
-        <img src="/img/flow_front.png" alt="System Overview" style={{ maxWidth: '75%' }} />
+        <img src="/img/flow_front.png" alt="System Overview" style={{ maxWidth: '50vw' }} />
       </div>
       <p>If you're interested in learning more about the protocols, continue reading.</p>
       <FooterButtons />
