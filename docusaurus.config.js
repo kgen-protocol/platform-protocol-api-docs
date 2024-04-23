@@ -9,7 +9,7 @@ const config = {
   title: 'KGeN Economy Protocols',
   tagline:
     'KGeN Economy protocols create a virtuous cycle of adoption for all stakeholders in the KGeN network - the gamer, game developers and the advertiser. Powering the transition to a transparent player centric economy.',
-  favicon: 'img/favicon.ico',
+  favicon: 'img/kgen_logo.webp',
 
   // Set the production url of your site here
   url: 'https://api-docs.indi.gg',
@@ -156,7 +156,7 @@ const config = {
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} Indi.gg, Inc. Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} KGeN.io, Inc. Built with Docusaurus.`,
       },
       prism: {
         theme: lightCodeTheme,
