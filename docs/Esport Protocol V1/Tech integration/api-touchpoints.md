@@ -16,7 +16,7 @@ Contact the admin to get your clientID and clientSecret.
 
 ## Creating Gamer Sessions
 
-### Endpoint: POST `/api/v1/session`
+### Endpoint: POST `/s2s/session`
 This endpoint is used to create or retrieve the current session context for a user (gamer).
 
 #### Request Header
@@ -26,47 +26,82 @@ This endpoint is used to create or retrieve the current session context for a us
 
 #### Request Body
 A JSON object containing the following fields:
-- `gamer_id`: [GAMER_ID] – The unique identifier of the gamer.
-- `device_id`: [DEVICE_ID] – Identifier of the device being used.
-- `email`: [EMAIL] – Gamer's email address.
-- `username`: [USERNAME] – Gamer's username.
-- `level`: [LEVEL] – The current level of the gamer in the game.
-- `rank`: [RANK] – The gamer's rank.
-- `date_joined`: [DATE_JOINED] – The date the gamer joined.
-- `phonenumber`: [PHONE_NUMBER] – Gamer's phone number.
-- `name`: [NAME] – The real name of the gamer.
-- `playertag`: [PLAYERTAG] – Gamer's tag within the game.
-- `location_name`: [LOCATION_NAME] – Name of the gamer's location.
-- `location`: [LOCATION] – Geographical location details.
+- `user_id`: The unique identifier of the user.
+- `gamer_id`: The unique identifier of the gamer.
+- `name`: The real name of the gamer.
+- `username`: Gamer's username.
+- `email`: Gamer's email address.
+- `device_id`: Identifier of the device being used.
+- `phonenumber`: Gamer's phone number.
+- `level`: The current level of the gamer in the game.
+- `rank`: The gamer's rank.
+- `date_joined`: The date the gamer joined.
+- `playertag`: Gamer's tag within the game.
+- `location`: Geographical location details.
+- `location_name`: Name of the gamer's location.
+- `device_model`: Device model of the gamer's device.
+- `screen_height`: Screen height of the gamer's device.
+- `screen_width`: Screen width of the gamer's device.
+- `os_name`: Name  of the gamer's OS.
+- `os_version`: Version of the gamer's OS.
+- `browser_name`: Name of the gamer's browser.
+- `fb_login`: FB Login of the gamer.
+- `google_login`: Google Login of the gamer.
+- `app_version`: App Version of the gamer.
 
 #### Response
 The response returns a JSON object with session details:
-- `gamer_id`: [GAMER_ID] – Echoes back the gamer's ID.
-- `appId`: [APP_ID] – Application ID where the session is created.
-- `accountId`: [ACCOUNT_ID] – Account ID associated with the gamer.
-- `session_id`: [SESSION_ID] – Unique ID for the current session.
-- `wallet_address`: [WALLET_ADDRESS] – Gamer's wallet address, if applicable.
-- `session_start_time`: [SESSION_START_TIME] – Timestamp marking the start of the session.
-- `token`: [TOKEN] – A token for session validation or further API calls.
+- `gamer_id`: Echoes back the gamer's ID.
+- `appId`: Application ID where the session is created.
+- `token`: A token for session validation or further API calls.
+- `linkedMobileNumber`: Gamer's linked mobile number.
+- `session_id`: Unique ID for the current session.
+- `user_id`: The unique identifier of the user.
+- `name`: The real name of the gamer.
+- `username`: Gamer's username.
+- `email`: Gamer's email address.
+- `device_id`: Identifier of the device being used.
+- `phonenumber`: Gamer's phone number.
+- `level`: The current level of the gamer in the game.
+- `rank`: The gamer's rank.
+- `date_joined`: The date the gamer joined.
+- `playertag`: Gamer's tag within the game.
+- `location`: Geographical location details.
+- `location_name`: Name of the gamer's location.
+- `device_model`: Device model of the gamer's device.
+- `screen_height`: Screen height of the gamer's device.
+- `screen_width`: Screen width of the gamer's device.
+- `os_name`: Name  of the gamer's OS.
+- `os_version`: Version of the gamer's OS.
+- `browser_name`: Name of the gamer's browser.
+- `fb_login`: FB Login of the gamer.
+- `google_login`: Google Login of the gamer.
+- `app_version`: App Version of the gamer.
+- `indigg_id`: IndiggID provided by KGeN.
+- `indigg_wallet_address`: Gamer's wallet address in KGeN.
+- `third_party_client_id`: Gamer's third party clientID.
+- `third_party_client_name`: Gamer's third party clientName.
+- `namespaced_third_party_user_id`: Gamer's third party userID.
+- `wallet_address`: Gamer's wallet address, if applicable.
+- `is_new_user`: Is the gamer new to KGeN or not.
+- `access_token`: Access Token provided by KGeN.
+- `refresh_token`: Refresh Token provided by KGeN.
+- `linked_phone`: Gamer's linked phone number.
+- `session_start_time`: Timestamp marking the start of the session.
 
 ### Use Case
 This endpoint is primarily used for initializing a session when a gamer starts a game or logs into a system. It helps in tracking and managing gamer activity and can be crucial for features like saved game progress, customization, and in-game purchases.
 
 # API Documentation: Eventing API
 
-## Endpoint: POST `/api/v1/eventing?token={token}`
+## Endpoint: POST `/fe/esports/tournaments/{tournamentId}/score`
 This endpoint is used for submitting various game-related events, capturing key data about player actions and achievements within a game.
 
 #### Request Header
 - `Content-Type`: application/json
-- `x-clientID`: [Your Client ID] – Your unique client identifier.
-- `x-clientSecret`: [Your Client Secret] – Your client secret for authentication.
+- `user-jwt-token`: Users JWT token for authentication.
 
 ### Request Structure
-
-#### `timestamp`
-   - **Type:** Integer
-   - **Description:** Represents the time at which the event is recorded, typically in a Unix timestamp format.
 
 #### `metadata`
    - **Type:** Object
@@ -75,90 +110,61 @@ This endpoint is used for submitting various game-related events, capturing key 
      - `playerId` (String): Unique identifier for the player.
      - `tournamentId` (String): Identifier for the tournament.
      - `gameId` (String): Identifier for the game.
-     - `matchId` (String): Identifier for the match.
-     - `lobbyId` (String): Identifier for the lobby.
-     - `level` (Integer): Numeric level in the game or tournament.
-     - `areaCode` (Integer): Geographical area code.
-     - `difficulty` (Integer): Difficulty level of the game or match.
 
 #### `payload`
    - **Type:** Object
    - **Description:** Contains the specific details of the event.
    - **Fields:**
-     - `achievement`:
-       - `value` (Integer): Numeric value representing the achievement.
-     - `levelup`:
-       - `value` (String): Description or identifier for the level-up event.
      - `score`:
        - `value` (Integer): Numeric score value.
-     - `progress`:
-       - `value` (String): Description or state of progress.
-     - `matchResult`:
-       - `value` (Array of Strings): Outcomes or results of the match.
-     - `matchJoined`:
-       - `value` (Array of Strings): Information about the match joined.
-     - `tournamentJoined`:
-       - `value` (Array of Strings): Details about the tournament joined.
-     - `lobbyJoined`:
-       - `value` (Array of Strings): Information about the lobby joined.
 
 ### Response
 - **`response`:** 
-  - **Type:** Boolean
-  - **Description:** Indicates if the operation was successful. Returns `true` for a successful operation.
+  - **Type:** Object
+  - **Description:** Indicates if the operation was successful.
+  - **Field:** `"message"`
+  - **Value:** `"leaderboard score update successful"`
 
-### Use Cases
+### Use Case
 
-- **Achievement Tracking:** Record when a player achieves a specific milestone in the game.
-- **Level Progression:** Log details of a player's level-up events.
-- **Score Updates:** Send updates about player scores.
-- **Match Tracking:** Record the outcomes of matches, information about joined matches, tournaments, and lobbies.
-
-### Description
-The `/api/v1/eventing` endpoint is crucial for real-time event tracking in gaming contexts. It captures detailed information about players' actions, progress, and achievements, enabling a dynamic and responsive gaming experience. This data can be used for analytics, personalized player experiences, and maintaining the integrity of the gaming environment.
+- **Score Update:** Updates the scores of the player.
 
 # API Documentation: Active Tournaments API
 
-## Endpoint: GET `/api/v1/tournaments/_active?token={token}`
+## Endpoint: GET `/fe/esports/tournaments/active`
 This endpoint retrieves a list of active tournaments. It's designed to provide up-to-date information about ongoing tournaments within a gaming platform or service.
 
 #### Request Header
 - `Content-Type`: application/json
-- `x-clientID`: [Your Client ID] – Your unique client identifier.
-- `x-clientSecret`: [Your Client Secret] – Your client secret for authentication.
+- `user-jwt-token`: Users JWT token for authentication.
 
 ### Response Structure
 The response is a JSON array, with each element representing an active tournament. Each tournament object includes the following fields:
 
-- `ends_at_date`: The date when the tournament ends.
-- `min_registration_start_limit`: Minimum registration start limit.
-- `participants_count`: Current count of participants in the tournament.
-- `game_uid`: Unique identifier for the game associated with the tournament.
 - `tournament_uid`: Unique identifier for the tournament.
-- `starts_at_timestamp`: Timestamp for when the tournament starts.
-- `theme`: Theme of the tournament, if any.
-- `created_at`: Timestamp for when the tournament was created.
+- `game_uid`: Unique identifier for the game associated with the tournament.
+- `tournament_status`: Tournament's status.
+- `title`: Tournament's title.
+- `description`: Tournament's description.
 - `buy_in_price`: The entry fee or buy-in price for the tournament.
-- `ends_at_timestamp`: Timestamp for when the tournament ends.
-- `entry_type`: Type of entry, e.g., 'TeamBased'.
-- `total_players_rewarded`: Total number of players who will be rewarded in the tournament.
-- `updated_at`: Timestamp for the last update made to the tournament.
-- `schedules_at_date`: The scheduled date for the tournament.
-- `moves_to_lobby_at_date`: The date when participants move to the lobby.
-- `locks_at_timestamp`: Timestamp indicating when the tournament locks.
+- `tournament_size`: The size of the tournament.
+- `participants_count`: Current count of participants in the tournament.
 - `schedules_at_timestamp`: Timestamp for when the tournament is scheduled.
-- `lock_type`: Type of lock used for the tournament, e.g., 'Duration'.
-- `locks_at_date`: The date when the tournament locks
+- `starts_at_timestamp`: Timestamp for when the tournament starts.
+- `moves_to_lobby_at_timestamp`: The timestamp when participants move to the lobby.
+- `locks_at_timestamp`: Timestamp indicating when the tournament locks.
+- `ends_at_timestamp`: Timestamp for when the tournament ends.
+- `created_at`: Timestamp for when the tournament was created.
+- `updated_at`: Timestamp for the last update made to the tournament.
 
 # API Documentation: Tournaments Session API
 
-## Endpoint: GET `/api/v1/tournaments/_session?token={token}`
+## Endpoint: GET `/fe/esports/tournaments/participated`
 This endpoint is designed to list the tournaments in which a user has participated. It's a useful tool for players to keep track of their tournament activities and histories.
 
 #### Request Header
 - `Content-Type`: application/json
-- `x-clientID`: [Your Client ID] – Your unique client identifier.
-- `x-clientSecret`: [Your Client Secret] – Your client secret for authentication.
+- `user-jwt-token`: Users JWT token for authentication.
 
 ### Response Structure
 The response is a JSON array containing the unique identifiers (UIDs) of the tournaments the user has participated in. Each element in the array is a tournament UID.
@@ -168,50 +174,47 @@ The response is a JSON array containing the unique identifiers (UIDs) of the tou
 [
     "818796d3-7c33-44dd-a130-d2593a2eca53"
 ]
-
 ```
 
 # API Documentation: Tournament Details API
 
-## Endpoint: GET `/api/v1/tournaments/{tournamentId}?token={token}`
+## Endpoint: GET `/fe/esports/tournaments/{tournamentUID}`
 This endpoint is used to retrieve detailed information about a specific tournament, identified by its unique tournament ID.
 
 #### Request Header
 - `Content-Type`: application/json
-- `x-clientID`: [Your Client ID] – Your unique client identifier.
-- `x-clientSecret`: [Your Client Secret] – Your client secret for authentication.
+- `user-jwt-token`: Users JWT token for authentication.
 
 ### Path Parameters
-- `tournamentId`: The unique identifier of the tournament whose details are to be retrieved.
+- `tournamentUID`: The unique identifier of the tournament whose details are to be retrieved.
 
 ### Response Structure
 The response is a JSON object containing comprehensive details about the tournament. The fields included in the response are:
 
-- `ends_at_date`: The date when the tournament ends.
-- `min_registration_start_limit`: Minimum registration start limit.
-- `participants_count`: Current count of participants in the tournament.
-- `game_uid`: Unique identifier for the game associated with the tournament.
 - `tournament_uid`: Unique identifier for the tournament.
-- `starts_at_timestamp`: Timestamp for when the tournament starts.
-- `theme`: Theme of the tournament, if any.
-- `created_at`: Timestamp for when the tournament was created.
+- `game_uid`: Unique identifier for the game associated with the tournament.
+- `tournament_status`: Tournament's status.
+- `title`: Tournament's title.
+- `description`: Tournament's description.
 - `buy_in_price`: The entry fee or buy-in price for the tournament.
+- `tournament_size`: The size of the tournament.
+- `participants_count`: Current count of participants in the tournament.
+- `schedules_at_timestamp`: Timestamp for when the tournament is scheduled.
+- `starts_at_timestamp`: Timestamp for when the tournament starts.
+- `moves_to_lobby_at_timestamp`: The timestamp when participants move to the lobby.
+- `locks_at_timestamp`: Timestamp indicating when the tournament locks.
 - `ends_at_timestamp`: Timestamp for when the tournament ends.
-- `entry_type`: Type of entry, e.g., 'TeamBased'.
-- `total_players_rewarded`: Total number of players who will be rewarded in the tournament.
+- `created_at`: Timestamp for when the tournament was created.
 - `updated_at`: Timestamp for the last update made to the tournament.
-- `schedules_at_date`: The scheduled date for the tournament.
-- `moves_to_lobby_at_date`: The date when participants move to the lobby
 
 # API Documentation: Tournament Leaderboard API
 
-## Endpoint: GET `/api/v1/leaderboards/_byTournament/{tournamentId}?token={token}`
+## Endpoint: GET `/fe/esports/tournaments/{tournamentUID}/leaderboard`
 This endpoint provides the leaderboard details for a specific tournament. It's crucial for displaying player standings and scores within a tournament context.
 
 #### Request Header
 - `Content-Type`: application/json
-- `x-clientID`: [Your Client ID] – Your unique client identifier.
-- `x-clientSecret`: [Your Client Secret] – Your client secret for authentication.
+- `user-jwt-token`: Users JWT token for authentication.
 
 ### Path Parameters
 - `tournamentId`: The unique identifier of the tournament for which the leaderboard information is requested.
@@ -224,6 +227,8 @@ The response is a JSON object containing details about the tournament's leaderbo
   - `score`: The score of the user in the tournament.
 - `price_pool`: The total prize pool available in the tournament.
 - `winners`: An array of winners, if available. Each entry in the array is an object containing details about the winning users.
+  - `user_id`: The unique identifier of the winning user.
+  - `reward`: The reward of the winning user in the tournament.
 
 #### Example Response
 ```json
@@ -235,19 +240,23 @@ The response is a JSON object containing details about the tournament's leaderbo
     }
   ],
   "price_pool": 40,
-  "winners": []
+  "winners": [
+    {
+      "user_id": "user",
+      "score": 1
+    }
+  ]
 }
 ```
 
 # API Documentation: Wallet Balance API
 
-## Endpoint: GET `/api/v1/wallet/lazyChain/balance?token={token}`
+## Endpoint: GET `/fe/wallet/balance`
 This endpoint is used to retrieve the balance details of a user's wallet, particularly in the context of a gaming platform or service that involves financial transactions or token exchanges.
 
 #### Request Header
 - `Content-Type`: application/json
-- `x-clientID`: [Your Client ID] – Your unique client identifier.
-- `x-clientSecret`: [Your Client Secret] – Your client secret for authentication.
+- `user-jwt-token`: Users JWT token for authentication.
 
 ### Response Structure
 The response is a JSON object containing various details about the wallet's balance and related attributes.
@@ -256,13 +265,14 @@ The response is a JSON object containing various details about the wallet's bala
 - `earned_balance`: The balance amount earned through gameplay or rewards.
 - `bought_balance`: The balance amount that has been purchased or deposited into the wallet.
 - `bonus_balance`: Any bonus amounts added to the wallet.
-- `wallet_transaction_error`: A Boolean flag indicating if there was an error in the wallet transactions.
-- `created_at`: Timestamp for when the wallet record was created.
-- `modified_at`: Timestamp for the last modification to the wallet record.
-- `lazy_balance_delta`: The change in balance that hasn't been updated on the chain yet.
-- `is_lazy_balance_updated`: A Boolean indicating whether the lazy balance has been updated.
 - `lazy_balance`: The current balance in the wallet that hasn't been committed to the chain.
 - `on_chain_balance`: The balance that is recorded on the blockchain.
+- `wallet_transaction_error`: A Boolean flag indicating if there was an error in the wallet transactions.
+- `lazy_balance_delta`: The change in balance that hasn't been updated on the chain yet.
+- `is_lazy_balance_updated`: A Boolean indicating whether the lazy balance has been updated.
+- `created_at`: Timestamp for when the wallet record was created.
+- `modified_at`: Timestamp for the last modification to the wallet record.
+- `minWalletBalToWithdraw`: The minimum balance amount that is required to withdraw. 
 
 #### Example Response
 ```json
@@ -270,37 +280,33 @@ The response is a JSON object containing various details about the wallet's bala
     "wallet_address": "[WALLET_ADDRESS]",
     "earned_balance": 0,
     "bought_balance": 0,
-    "bonus_balance": 0,
+    "bonus_balance": 50,
+    "lazy_balance": 50,
+    "on_chain_balance": 0,
     "wallet_transaction_error": false,
-    "created_at": "2024-01-29T17:53:26.934052",
-    "modified_at": "2024-01-29T17:53:26.934052",
-    "lazy_balance_delta": 0,
-    "is_lazy_balance_updated": true,
-    "lazy_balance": 0,
-    "on_chain_balance": 0
+    "lazy_balance_delta": 50,
+    "is_lazy_balance_updated": false,
+    "created_at": "",
+    "modified_at": "",
+    "minWalletBalToWithdraw": 0
 }
-
-
 ```
 
 # API Documentation: Wallet Transaction History API
 
-## Endpoint: GET `/api/v1/wallet/lazyChain/transactions/:wallet_address?token={token}`
-This endpoint retrieves the transaction history of a specific wallet address, providing a detailed view of all transactions associated with it.
+## Endpoint: GET `/fe/wallet/transactions`
+This endpoint retrieves the transaction history of a specific user, providing a detailed view of all transactions associated with it.
 
 #### Request Header
 - `Content-Type`: application/json
-- `x-clientID`: [Your Client ID] – Your unique client identifier.
-- `x-clientSecret`: [Your Client Secret] – Your client secret for authentication.
-
-### Path Parameters
-- `wallet_address`: The unique blockchain address of the wallet whose transaction history is being requested.
+- `user-jwt-token`: Users JWT token for authentication.
 
 ### Response Structure
-The response is a JSON object with two key arrays: `fromTransactions` and `toTransactions`. Each array contains transaction objects detailing the history of transactions.
+The response is a JSON object with `last_evaluated_key` for pagination and three key arrays: `fromTransactions`, `toTransactions` and `transactions`. Each array contains transaction objects detailing the history of transactions.
 
-- `fromTransactions`: Transactions sent from the specified wallet.
-- `toTransactions`: Transactions received by the specified wallet.
+- `fromTransactions`: Transactions sent from the specified user.
+- `toTransactions`: Transactions received by the specified user.
+- `transactions`: Transactions by the specified user.
 
 Each transaction object includes fields such as:
 - `uid`: Unique identifier of the transaction.
@@ -308,7 +314,6 @@ Each transaction object includes fields such as:
 - `to_wallet`: Receiver's masked wallet address.
 - `amount`: Amount of the transaction.
 - `sync_status`: Status of the transaction synchronization.
-- `sync_error`: Any errors during synchronization.
 - Additional transaction details (timestamps, gas fees, block number, etc.).
 
 #### Example Response
@@ -321,7 +326,6 @@ Each transaction object includes fields such as:
       "to_wallet": "0x3c*****f040",
       "amount": 50,
       "sync_status": "COMPLETED",
-      "sync_error": null,
       "created_at": "2024-01-20T08:06:36.568965",
       ...
     }
@@ -333,23 +337,33 @@ Each transaction object includes fields such as:
       "to_wallet": "0x3c*****f040",
       "amount": 75,
       "sync_status": "PENDING",
-      "sync_error": "Network Delay",
       "created_at": "2024-01-22T09:15:20.568965",
       ...
     }
-  ]
+  ],
+  "toTransactions": [
+    {
+      "uid": "5abeabc6-f6bb-448d-bd40-89c11d8dc2e0",
+      "from_wallet": "0xb6*****75d6",
+      "to_wallet": "0xce*****55ff",
+      "amount": 50,
+      "sync_status": "PENDING",
+      "created_at": "2024-08-19T21:57:48.694297+05:30",
+      ...
+    }
+  ],
+  "last_evaluated_key": ""
 }
 ```
 
 # API Documentation: OTP Request API
 
-## Endpoint: POST `/api/v1/verification/otp/_request?token={token}`
+## Endpoint: POST `/fe/users/auth/otp/register`
 This endpoint is used for generating a One Time Password (OTP) for user verification purposes, commonly in authentication or user confirmation processes.
 
 #### Request Header
 - `Content-Type`: application/json
-- `x-clientID`: [Your Client ID] – Your unique client identifier.
-- `x-clientSecret`: [Your Client Secret] – Your client secret for authentication.
+- `user-jwt-token`: Users JWT token for authentication.
 
 ### Request Body
 The client needs to send a JSON object with the following information to request an OTP:
@@ -364,6 +378,13 @@ The client needs to send a JSON object with the following information to request
   "countryCode": "XX"
 }
 ```
+
+### Request Body
+The client get a JSON object with the following information in response:
+
+- `authCode`: The authentication code which is required for verification along with OTP.
+- `isNewUser`: Bool value whether the user is new user or not.
+
 #### Example Response
 ```json
 {
@@ -374,13 +395,12 @@ The client needs to send a JSON object with the following information to request
 
 # API Documentation: OTP Verification API
 
-## Endpoint: POST `/api/v1/verification/otp/_verify?token={token}`
+## Endpoint: POST `/fe/users/auth/otp/verify`
 This endpoint is used for verifying the One Time Password (OTP) sent to a user's phone number. It is a critical step in the user authentication or verification process, especially in systems that use OTPs for enhanced security.
 
 #### Request Header
 - `Content-Type`: application/json
-- `x-clientID`: [Your Client ID] – Your unique client identifier.
-- `x-clientSecret`: [Your Client Secret] – Your client secret for authentication.
+- `user-jwt-token`: Users JWT token for authentication.
 
 ### Request Body
 To verify an OTP, the client must send a JSON object containing the following information:
@@ -398,6 +418,7 @@ To verify an OTP, the client must send a JSON object containing the following in
   "authCode": 1234,
   "otp": 5678
 }
+```
 
 #### Example Response
 ```json
@@ -408,13 +429,12 @@ To verify an OTP, the client must send a JSON object containing the following in
 
 # API Documentation: Rewards Information API
 
-## Endpoint: GET `/api/v1/rewards?token={token}`
+## Endpoint: GET `/fe/esports/rewards/claim`
 This endpoint is designed to provide users with information about the rewards they have earned. It's a key feature for platforms that offer reward-based incentives or achievements.
 
 #### Request Header
 - `Content-Type`: application/json
-- `x-clientID`: [Your Client ID] – Your unique client identifier.
-- `x-clientSecret`: [Your Client Secret] – Your client secret for authentication.
+- `user-jwt-token`: Users JWT token for authentication.
 
 ### Response Structure
 The server responds with a JSON object that includes details about the user's total claimable rewards and specific information about each claimable reward.
@@ -437,13 +457,12 @@ The server responds with a JSON object that includes details about the user's to
 
 # API Documentation: Claim Rewards API
 
-## Endpoint: POST `/api/v1/rewards/_claim?token={token}`
+## Endpoint: POST `/fe/esports/rewards/claim`
 This endpoint is used by users to claim their earned rewards. It's an important feature for platforms that offer rewards or incentives based on user activities or achievements.
 
 #### Request Header
 - `Content-Type`: application/json
-- `x-clientID`: [Your Client ID] – Your unique client identifier.
-- `x-clientSecret`: [Your Client Secret] – Your client secret for authentication.
+- `user-jwt-token`: Users JWT token for authentication.
 
 ### Request
 To claim rewards, the user typically needs to make a POST request to this endpoint. The specifics of the request payload (if any) depend on the implementation. It may include user identification, specific reward IDs to claim, or other relevant information.
@@ -462,32 +481,25 @@ Upon successful claim of rewards, the server responds with a JSON object contain
 
 # API Documentation: Wallet Withdrawal API
 
-## Endpoint: POST `/api/v1/wallet/_withdraw?token={token}`
+## Endpoint: POST `/fe/wallet/withdraw`
 This endpoint facilitates the transfer of a user's earned balance from a custodial wallet to their KGeN wallet. It is designed to handle transactions within the platform without requiring additional information from the user in the request body.
 
 #### Request Header
 - `Content-Type`: application/json
-- `x-clientID`: [Your Client ID] – Your unique client identifier.
-- `x-clientSecret`: [Your Client Secret] – Your client secret for authentication.
+- `user-jwt-token`: Users JWT token for authentication.
 
 ### Request
 This endpoint does not require a request body. The necessary information for the withdrawal is presumably derived from the user's session or authentication context.
 
 ### Response Structure
-Upon successful completion of the withdrawal process, the server responds with a JSON object containing key details of the transaction:
+Upon successful completion of the withdrawal process, the server responds with a JSON object containing:
 
-- `userKGeNWalletAddr`: The address of the user's KGeN wallet.
-- `earnedBalance`: The amount of earned balance that was transferred.
-- `status`: The status of the transaction, typically 'SUCCESS'.
-- `message`: A confirmation message, usually indicating successful withdrawal.
+- `msg`: A confirmation message, usually indicating successful withdrawal.
 
 #### Example Response
 ```json
 {
-  "userKGeNWalletAddr": "user_KGeN_wallet_address",
-  "earnedBalance": 100,
-  "status": "SUCCESS",
-  "message": "Withdrawn Successfully"
+  "msg": "wallet withdrawl successful"
 }
 ```
 
@@ -497,16 +509,12 @@ Upon successful completion of the withdrawal process, the server responds with a
 
 ### Historic Participation and Statistics
 
-#### Endpoint: GET `/api/v1/statistics/_historic?token={token}`
+#### Endpoint: GET `/fe/esports/statistics/historic`
 This endpoint provides historical data regarding a user's participation in gaming activities, specifically within the context of tournaments.
 
 ##### Request Header
 - `Content-Type`: application/json
-- `x-clientID`: [Your Client ID] – Your unique client identifier.
-- `x-clientSecret`: [Your Client Secret] – Your client secret for authentication.
-
-##### Query Parameters
-- `token`: The authentication token for the user session.
+- `user-jwt-token`: Users JWT token for authentication.
 
 ##### Response Structure
 The response is a JSON array, where each element is an object containing historical statistics and participation details of the user. Each object includes:

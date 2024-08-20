@@ -10,11 +10,11 @@ To access and utilize their earned rewards, gamers can initiate a process where 
 
 This operation focuses on registering a user for authentication purposes using a one-time password (OTP). Below are the details outlining the implementation of this user registration process.
 ```text
-POST - {{rewards_system_url}}/api/proxy/auth/otp/register
+POST - {{plat-protocols-base-url}}/fe/users/auth/otp/register
 ```
 ### cURL Example
-```text
-curl --location 'https://stage-platform-rewards.devKGeN.com/api/proxy/auth/otp/register' \
+```bash
+curl --location 'https://stage-platform-protocols.kgen.io/fe/users/auth/otp/register' \
 --header 'user-jwt-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJlZmtoZWlraHdpaGV3aWhlZml3YWFhYWEiLCJjbGllbnRfaWQiOiJkNWIyZTc2MC0xYjZjLTQyOTYtYTg5Zi0xZGEwZmZlOGM0MTQiLCJpYXQiOjE3MDA0NjY2MzQsImlzcyI6ImQ1YjJlNzYwLTFiNmMtNDI5Ni1hODlmLTFkYTBmZmU4YzQxNCIsImV4cCI6MTcwMDU1MzAzNCwidXNlcl9pZCI6ImVma2hlaWtod2loZXdpaGVmaXdhYWFhYSIsInRoaXJkX3BhcnR5X2NsaWVudF9pZCI6ImQ1YjJlNzYwLTFiNmMtNDI5Ni1hODlmLTFkYTBmZmU4YzQxNCIsIm5hbWVzcGFjZWRfdGhpcmRfcGFydHlfdXNlcl9pZCI6ImQ1YjJlNzYwLTFiNmMtNDI5Ni1hODlmLTFkYTBmZmU4YzQxNF9fX2Vma2hlaWtod2loZXdpaGVmaXdhYWFhYSIsIndhbGxldF9hZGRyZXNzIjoiMHg3ODg5RmRGNTQ4RkMxNzEzYzYxMUZCNTJlQTY0QUNDYmZmMWIwMzIyIn0.PeCYQvVPuzjMgJ4NFqpqvtnHHKBWIZFbKIEkSnmgnjw' \
 --header 'Content-Type: application/json' \
 --data '{
@@ -31,15 +31,15 @@ Parameters:
 - `phone_number`: The phone number to which the OTP will be sent for registration.
 - `countryCode`: The country code for the phone number.
 Example:
-```text
+```json
   {
-    "phone_number": "[GAMER_PHONE_NO.]",
+    "phone_number": "9876543219",
     "countryCode": "+91"
   }
 ```
 ### Response
 Example Response:
-```text
+```json
   {
     "authCode": "2735",
     "isNewUser": true
@@ -48,15 +48,15 @@ Example Response:
 ## Auth: OTP Resend
 This operation is dedicated to resending the one-time password (OTP) to the user for authentication purposes. Below are the details outlining how to implement this OTP resending process.
 ```text
-POST - {{rewards_system_url}}/api/proxy/auth/otp/resend
+POST - {{plat-protocols-base-url}}/fe/users/auth/otp/resend
 ```
 ### cURL Example
-```text
-curl --location 'https://stage-platform-rewards.devKGeN.com/api/proxy/auth/otp/resend' \
+```bash
+curl --location 'https://stage-platform-protocols.kgen.io/fe/users/auth/otp/resend' \
 --header 'user-jwt-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJxd2VydHkiLCJjbGllbnRfaWQiOiJkNWIyZTc2MC0xYjZjLTQyOTYtYTg5Zi0xZGEwZmZlOGM0MTQiLCJpYXQiOjE3MDcwNDE1OTIsImlzcyI6ImQ1YjJlNzYwLTFiNmMtNDI5Ni1hODlmLTFkYTBmZmU4YzQxNCIsImV4cCI6MTcwNzEyNzk5MiwidXNlcl9pZCI6InF3ZXJ0eSIsInRoaXJkX3BhcnR5X2NsaWVudF9pZCI6ImQ1YjJlNzYwLTFiNmMtNDI5Ni1hODlmLTFkYTBmZmU4YzQxNCIsInRoaXJkX3BhcnR5X2NsaWVudF9uYW1lIjoiTHVkbyIsIm5hbWVzcGFjZWRfdGhpcmRfcGFydHlfdXNlcl9pZCI6ImQ1YjJlNzYwLTFiNmMtNDI5Ni1hODlmLTFkYTBmZmU4YzQxNF9fX3F3ZXJ0eSIsIndhbGxldF9hZGRyZXNzIjoiMHg0QzU4NzQ5OThiRTM5OEJEN0VBMjliQmIyMUZGZjc1MDZhRGY2MzlEIiwiaXNfbmV3X3VzZXIiOnRydWV9.__jPqcFvnQxrH1wmf20yle1Ffj5hJHmIuSE-HiRG8eE' \
 --header 'Content-Type: application/json' \
 --data '{
-    "phone_number": "8220024048",
+    "phone_number": "9876543219",
     "countryCode": "+91"
 }'
 ```
@@ -69,16 +69,16 @@ Parameters:
 - `phone_number`: The phone number to which the OTP will be sent for registration.
 - `countryCode`: The country code for the phone number.
 Example:
-```text
+```json
   {
-    "phone_number": "[GAMER_PHONE_NO.]",
+    "phone_number": "9876543219",
     "countryCode": "+91"
   }
 
 ```
 ### Response
 Example Response:
-```text
+```json
   {
     "authCode": "2735",
     "isNewUser": true
@@ -87,11 +87,11 @@ Example Response:
 ## Auth: OTP Verification
 This operation is focused on verifying the one-time password (OTP) submitted by the user for authentication purposes. Below are the details for implementing this OTP verification proces.
 ```text
-POST - {{rewards_system_url}}/api/proxy/auth/otp/verify
+POST - {{plat-protocols-base-url}}/fe/users/auth/otp/verify
 ```
 ### cURL Example
-```text
-curl --location 'https://stage-platform-rewards.devKGeN.com/api/proxy/auth/otp/verify' \
+```bash
+curl --location 'https://stage-platform-protocols.kgen.io/fe/users/auth/otp/verify' \
 --header 'user-jwt-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJlZmtoZWlraHdpaGV3aWhlZml3YWFhYWEiLCJjbGllbnRfaWQiOiJkNWIyZTc2MC0xYjZjLTQyOTYtYTg5Zi0xZGEwZmZlOGM0MTQiLCJpYXQiOjE3MDA0NjY2MzQsImlzcyI6ImQ1YjJlNzYwLTFiNmMtNDI5Ni1hODlmLTFkYTBmZmU4YzQxNCIsImV4cCI6MTcwMDU1MzAzNCwidXNlcl9pZCI6ImVma2hlaWtod2loZXdpaGVmaXdhYWFhYSIsInRoaXJkX3BhcnR5X2NsaWVudF9pZCI6ImQ1YjJlNzYwLTFiNmMtNDI5Ni1hODlmLTFkYTBmZmU4YzQxNCIsIm5hbWVzcGFjZWRfdGhpcmRfcGFydHlfdXNlcl9pZCI6ImQ1YjJlNzYwLTFiNmMtNDI5Ni1hODlmLTFkYTBmZmU4YzQxNF9fX2Vma2hlaWtod2loZXdpaGVmaXdhYWFhYSIsIndhbGxldF9hZGRyZXNzIjoiMHg3ODg5RmRGNTQ4RkMxNzEzYzYxMUZCNTJlQTY0QUNDYmZmMWIwMzIyIn0.PeCYQvVPuzjMgJ4NFqpqvtnHHKBWIZFbKIEkSnmgnjw' \
 --header 'Content-Type: application/json' \
 --data '{
@@ -113,16 +113,16 @@ Parameters:
 - `otp`: The one-time password submitted by the user.
 
 Example:
-```text
+```json
   {
-    "phone_number": "90248xx921",
+    "phone_number": "9876543219",
     "countryCode": "+91",
     "authCode": 2735,
     "otp": 596097
   }
 ```
 ### Response
-```text
+```json
   {
     "message": "successfully verified OTP & identity-associated"
   }
@@ -132,12 +132,12 @@ Status : 201 Created
 ## Wallet Balance Retrieval
 This endpoint retrieves the balance details from the user's wallet.
 ```text
-GET {{rewards_system_url}}/api/wallet/balance
+GET - {{plat-protocols-base-url}}/fe/wallet/balance
 ```
 
 ### cURL Example
-```text
-curl --location 'https://stage-platform-rewards.devKGeN.com/api/wallet/balance' \
+```bash
+curl --location 'https://stage-platform-protocols.kgen.io/fe/wallet/balance' \
 --header 'user-jwt-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJBSyIsImNsaWVudF9pZCI6ImQ1YjJlNzYwLTFiNmMtNDI5Ni1hODlmLTFkYTBmZmU4YzQxNCIsImlhdCI6MTcwNzM3NTUwMCwiaXNzIjoiZDViMmU3NjAtMWI2Yy00Mjk2LWE4OWYtMWRhMGZmZThjNDE0IiwiZXhwIjoxNzA3NDYxOTAwLCJ1c2VyX2lkIjoiQUsiLCJ0aGlyZF9wYXJ0eV9jbGllbnRfaWQiOiJkNWIyZTc2MC0xYjZjLTQyOTYtYTg5Zi0xZGEwZmZlOGM0MTQiLCJ0aGlyZF9wYXJ0eV9jbGllbnRfbmFtZSI6Ikx1ZG8iLCJuYW1lc3BhY2VkX3RoaXJkX3BhcnR5X3VzZXJfaWQiOiJkNWIyZTc2MC0xYjZjLTQyOTYtYTg5Zi0xZGEwZmZlOGM0MTRfX19BSyIsIndhbGxldF9hZGRyZXNzIjoiMHg0ZWNDMTNlRkMyZEU2NjI5NjEzNTUyNjY0NjNDNjExNjEyZjRiRTA3IiwiaXNfbmV3X3VzZXIiOmZhbHNlfQ.miqUD-oaY2os1Lnffr9Mykk4H9FEUHUDQTeqTtkZG_g'
 ```
 ### Request Header
@@ -146,7 +146,7 @@ curl --location 'https://stage-platform-rewards.devKGeN.com/api/wallet/balance' 
 
 ### Response
 Example response:
-```text
+```json
   {
     "wallet_address": "0x4ecc13efc2de662961355266463c611612f4be07",
     "earned_balance": 40,
@@ -179,12 +179,12 @@ Explanation:
 ## Wallet Transactions List
 This endpoint retrieves a list of transactions associated with the user's wallet.
 ```text
-GET {{rewards_system_url}}/api/wallet/transactions/list
+GET - {{plat-protocols-base-url}}/fe/wallet/transactions
 ```
 
 ### cURL Example
-```text
-curl --location 'https://stage-platform-rewards.devKGeN.com/api/wallet/transactions/list' \
+```bash
+curl --location 'https://stage-platform-protocols.kgen.io/fe/wallet/transactions' \
 --header 'user-jwt-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJBSyIsImNsaWVudF9pZCI6ImQ1YjJlNzYwLTFiNmMtNDI5Ni1hODlmLTFkYTBmZmU4YzQxNCIsImlhdCI6MTcwNzM3NTUwMCwiaXNzIjoiZDViMmU3NjAtMWI2Yy00Mjk2LWE4OWYtMWRhMGZmZThjNDE0IiwiZXhwIjoxNzA3NDYxOTAwLCJ1c2VyX2lkIjoiQUsiLCJ0aGlyZF9wYXJ0eV9jbGllbnRfaWQiOiJkNWIyZTc2MC0xYjZjLTQyOTYtYTg5Zi0xZGEwZmZlOGM0MTQiLCJ0aGlyZF9wYXJ0eV9jbGllbnRfbmFtZSI6Ikx1ZG8iLCJuYW1lc3BhY2VkX3RoaXJkX3BhcnR5X3VzZXJfaWQiOiJkNWIyZTc2MC0xYjZjLTQyOTYtYTg5Zi0xZGEwZmZlOGM0MTRfX19BSyIsIndhbGxldF9hZGRyZXNzIjoiMHg0ZWNDMTNlRkMyZEU2NjI5NjEzNTUyNjY0NjNDNjExNjEyZjRiRTA3IiwiaXNfbmV3X3VzZXIiOmZhbHNlfQ.miqUD-oaY2os1Lnffr9Mykk4H9FEUHUDQTeqTtkZG_g'
 ```
 ### Request Header
@@ -193,65 +193,67 @@ curl --location 'https://stage-platform-rewards.devKGeN.com/api/wallet/transacti
 
 ### Response
 Example response:
-```text
-  {
-    "transactions": [
-        {
-            "uid": "130474e4-0dd4-429b-afb3-e5dcffe02f52",
-            "from_wallet": "0x746ff551e1c43baa0181bb8aee61a75260470516",
-            "to_wallet": "0x4ecc13efc2de662961355266463c611612f4be07",
-            "amount": 40,
-            "sync_status": "COMPLETED",
-            "requesting_system": "Loyalty",
-            "gas_fee_payer": "SYSTEM",
-            "webhook_url": "",
-            "description": {
-                "eventDescription": "TestEvtForWalletWithdraw updated",
-                "eventID": "743e6976-1624-49a8-a44c-28a0e6be8078",
-                "eventName": "Daily Chest Open - 2 ",
-                "eventRewardCategory": "EARNED",
-                "rewardAmount": 40,
-                "rewardCreatedAt": "2024-02-08T07:00:53.024177411Z",
-                "rewardID": "1189466b-205c-4842-8794-a02da8ae2f79"
-            },
-            "created_at": "2024-02-08T12:30:56.605356",
-            "modified_at": "2024-02-08T17:58:34.742217"
-        }
-    ],
-    "last_evaluated_key": ""
+```json
+{
+  "fromTransactions": [
+    {
+      "uid": "b6c88b12-373e-4cc7-8fd4-2e083273e35e",
+      "from_wallet": "0x7d*****f0a2",
+      "to_wallet": "0x3c*****f040",
+      "amount": 50,
+      "sync_status": "COMPLETED",
+      "created_at": "2024-01-20T08:06:36.568965",
+      ...
+    }
+  ],
+  "toTransactions": [
+    {
+      "uid": "d7f88b13-374e-4cc7-8fd4-2e083273e36f",
+      "from_wallet": "0x4d*****f1a3",
+      "to_wallet": "0x3c*****f040",
+      "amount": 75,
+      "sync_status": "PENDING",
+      "created_at": "2024-01-22T09:15:20.568965",
+      ...
+    }
+  ],
+  "toTransactions": [
+    {
+      "uid": "5abeabc6-f6bb-448d-bd40-89c11d8dc2e0",
+      "from_wallet": "0xb6*****75d6",
+      "to_wallet": "0xce*****55ff",
+      "amount": 50,
+      "sync_status": "PENDING",
+      "created_at": "2024-08-19T21:57:48.694297+05:30",
+      ...
+    }
+  ],
+  "last_evaluated_key": ""
 }
 ```
 Explanation:
-- `transactions` (array): An array containing details of each transaction.
-- `uid` (string): The unique identifier for the transaction.
-- `from_wallet` (string): The wallet address from which the amount was transferred.
-- `to_wallet` (string): The wallet address to which the amount was transferred.
-- `amount` (number): The amount transferred in the transaction.
-- `sync_status` (string): The synchronization status of the transaction.
-- `requesting_system` (string): The system that initiated the transaction.
-- `gas_fee_payer` (string): The entity responsible for paying the gas fee.
-- `webhook_url` (string): The webhook URL associated with the transaction.
-- `description` (object): Additional description of the transaction.
-  - `eventDescription` (string): Description of the event associated with the transaction.
-  - `eventID` (string): The ID of the event associated with the transaction.
-  - `eventName` (string): The name of the event associated with the transaction.
-  - `eventRewardCategory` (string): The reward category of the event associated with the transaction.
-  - `rewardAmount` (number): The amount of reward associated with the transaction.
-  - `rewardCreatedAt` (string): The timestamp when the reward was created.
-  - `rewardID` (string): The ID of the reward associated with the transaction.
-- `created_at` (string): The timestamp when the transaction was created.
-- `modified_at` (string): The timestamp when the transaction was last modified.
-- `last_evaluated_key` (string): The last evaluated key for pagination, if applicable.
+The response is a JSON object with `last_evaluated_key` for pagination and three key arrays: `fromTransactions`, `toTransactions` and `transactions`. Each array contains transaction objects detailing the history of transactions.
 
+- `fromTransactions`: Transactions sent from the specified user.
+- `toTransactions`: Transactions received by the specified user.
+- `transactions`: Transactions by the specified user.
+
+Each transaction object includes fields such as:
+- `uid`: Unique identifier of the transaction.
+- `from_wallet`: Sender's masked wallet address.
+- `to_wallet`: Receiver's masked wallet address.
+- `amount`: Amount of the transaction.
+- `sync_status`: Status of the transaction synchronization.
+- Additional transaction details (timestamps, gas fees, block number, etc.).
 
 ## Wallet: Withdraw
 This operation enables users to transfer funds from their custodian wallet to their non-custodian wallet, which has been created as part of the OTP (One-Time Password) verification process. The funds can then be utilized for various purposes, including spending on Kratos Store and more.
 ```text
-POST - {{rewards_system_url}}/api/wallet/withdraw
+POST - {{plat-protocols-base-url}}/fe/wallet/withdraw
 ```
 ### cURL Example
-```text
-curl --location --request POST 'https://stage-platform-rewards.devKGeN.com/api/wallet/withdraw' \
+```bash
+curl --location --request POST 'https://stage-platform-protocols.kgen.io/fe/wallet/withdraw' \
 --header 'user-jwt-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJBSyIsImNsaWVudF9pZCI6ImQ1YjJlNzYwLTFiNmMtNDI5Ni1hODlmLTFkYTBmZmU4YzQxNCIsImlhdCI6MTcwNzM3NTUwMCwiaXNzIjoiZDViMmU3NjAtMWI2Yy00Mjk2LWE4OWYtMWRhMGZmZThjNDE0IiwiZXhwIjoxNzA3NDYxOTAwLCJ1c2VyX2lkIjoiQUsiLCJ0aGlyZF9wYXJ0eV9jbGllbnRfaWQiOiJkNWIyZTc2MC0xYjZjLTQyOTYtYTg5Zi0xZGEwZmZlOGM0MTQiLCJ0aGlyZF9wYXJ0eV9jbGllbnRfbmFtZSI6Ikx1ZG8iLCJuYW1lc3BhY2VkX3RoaXJkX3BhcnR5X3VzZXJfaWQiOiJkNWIyZTc2MC0xYjZjLTQyOTYtYTg5Zi0xZGEwZmZlOGM0MTRfX19BSyIsIndhbGxldF9hZGRyZXNzIjoiMHg0ZWNDMTNlRkMyZEU2NjI5NjEzNTUyNjY0NjNDNjExNjEyZjRiRTA3IiwiaXNfbmV3X3VzZXIiOmZhbHNlfQ.miqUD-oaY2os1Lnffr9Mykk4H9FEUHUDQTeqTtkZG_g'
 ```
 ### Request Header
@@ -260,12 +262,10 @@ curl --location --request POST 'https://stage-platform-rewards.devKGeN.com/api/w
 
 ### Response
 Example response:
-```text
-  {
-    "gamer_id": "20aa954e-52d5-4298-b44c-d84a64ddbb97",
-    "bonus": 100,
-    "message": "Withdrawn Successfully"
-  }
+```json
+{
+  "msg": "wallet withdrawl successful"
+}
 ```
 The status code 200 indicates a successful withdrawal.
 The message provides information about the withdrawal, including the gamer ID (gamer_id), the bonus amount withdrawn (bonus), and a confirmation message (message).
