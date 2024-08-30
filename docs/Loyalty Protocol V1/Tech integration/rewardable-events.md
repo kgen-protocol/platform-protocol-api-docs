@@ -9,9 +9,9 @@ Game developers can utilize dedicated APIs to effortlessly register, update, and
 ## Register or Update the event
 
 Game developers can manage rewardable events on the KGeN platform by using a PUT request at the designated endpoint to create or update events.
-```text
-PUT - {{plat-protocols-base-url}}/s2s/loyalty/rewardable-events
-```
+
+### Endpoint: PUT `/s2s/loyalty/rewardable-events`
+
 ### cURL Example
 ```bash
 curl --location --request PUT 'https://stage-platform-protocols.kgen.io/s2s/loyalty/rewardable-events' \
@@ -57,7 +57,7 @@ Explanation:
 - `rewardCategory`: The category of the reward e.g. "EARNED".
 - `entityType`: Specifies the type of entity related to the event. In this context, it is set to "GAME."
 - `isActive` : The isActive field in the provided payload is a boolean attribute that can be used to temporarily set the status of the rewardable event. 
-- `isActivityTraceEnabled`: Wether activity trace enabled or not.
+- `isActivityTraceEnabled`: Whether activity trace enabled or not.
 - `activityTraceActivityID`: Activity trace unique ID.
 ### Response
 Succesfull response for the above request
@@ -105,9 +105,9 @@ When updating, provide the eventID of an already existing event in the payload, 
 
 ## Get all the Rewardable events
 After successfully registering rewardable events, game developers can retrieve a list of active events through a GET request to the following endpoint:
-```text
-GET - {{plat-protocols-base-url}}/s2s/loyalty/rewardable-events?isActive=true
-```
+
+### Endpoint: GET `/s2s/loyalty/rewardable-events?isActive=true`
+
 ### cURL Example
 ```bash
 curl --location 'https://stage-platform-protocols.kgen.io/s2s/loyalty/rewardable-events?isActive=true' \
@@ -165,9 +165,9 @@ Upon making the request, the system will provide a comprehensive list of current
 
 ## Get a specific Rewardable event
 For obtaining specific details about a rewardable event crafted, simply initiate a GET request to the designated endpoint.
-```text
-GET - {{plat-protocols-base-url}}/s2s/loyalty/rewardable-events/{eventID}
-```
+
+### Endpoint: GET `/s2s/loyalty/rewardable-events/{eventID}`
+
 ### cURL Example
 ```bash
 curl --location 'https://stage-platform-protocols.kgen.io/s2s/loyalty/rewardable-events/a4ded2a5-6f7a-4116-874c-435af9831cda' \
@@ -182,9 +182,8 @@ curl --location 'https://stage-platform-protocols.kgen.io/s2s/loyalty/rewardable
 ### Request paramter
 - `eventID`: The unique identifier of the specific rewardable event.
 Example:
-```text
-GET - {{plat-protocols-base-url}}/s2s/loyalty/rewardable-events/a4ded2a5-6f7a-874c-435af9831cda
-```
+
+### Endpoint: GET `/s2s/loyalty/rewardable-events/a4ded2a5-6f7a-874c-435af9831cda`
 
 ### Response
 The system will provide comprehensive details for the specified rewardable event.
@@ -208,9 +207,9 @@ The system will provide comprehensive details for the specified rewardable event
 
 ## Delete a specific Rewardable event
 To delete a particular rewardable event created, you can send a DELETE request to the following endpoint.
-```text
-DELETE - {{plat-protocols-base-url}}/s2s/loyalty/rewardable-events/{eventID}
-```
+
+### Endpoint: DELETE `/s2s/loyalty/rewardable-events/{eventID}`
+
 ### cURL Example
 ```bash
 curl --location --request DELETE 'https://stage-platform-protocols.kgen.io/s2s/loyalty/rewardable-events/a4ded2a5-6f7a-4116-874c-435af9831cda' \
@@ -226,11 +225,8 @@ curl --location --request DELETE 'https://stage-platform-protocols.kgen.io/s2s/l
 - `eventID`: The unique identifier of the specific rewardable event.
 
 Example:
-```text
-DELETE - {{plat-protocols-base-url}}/s2s/loyalty/rewardable-events/c93ff468-7d7b-44f0-9cd9-74d
-```
+
+### Endpoint: DELETE `/s2s/loyalty/rewardable-events/c93ff468-7d7b-44f0-9cd9-74d`
+
 ### Response
 The system will confirm the successful deletion of the specified rewardable event with a status code of 204, indicating no content.
-
-
-

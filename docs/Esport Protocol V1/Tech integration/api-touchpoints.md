@@ -2,16 +2,6 @@
 sidebar_position: 2
 ---
 
-# API Touchpoints
-
-The following is a list of API touchpoints that the game developer will need to use to integrate with the KGeN ESports Protocol:
-
-
-- Prod Environment Swagger API Explorer [click here >>](https://platform-api.indi.gg/docs)
-- Stage Environment Swagger API Explorer [click here >>](https://platform-api.devindigg.com/docs)
-
-Contact the admin to get your clientID and clientSecret.
-
 # API Descriptions for Gamer Session Management
 
 ## Creating Gamer Sessions
@@ -127,7 +117,7 @@ This endpoint is used for submitting various game-related events, capturing key 
 
 ### Use Case
 
-- **Score Update:** Updates the scores of the player.
+- **Score Update:** Updates the scores of the player in tournament.
 
 # API Documentation: Active Tournaments API
 
@@ -217,7 +207,7 @@ This endpoint provides the leaderboard details for a specific tournament. It's c
 - `user-jwt-token`: Users JWT token for authentication.
 
 ### Path Parameters
-- `tournamentId`: The unique identifier of the tournament for which the leaderboard information is requested.
+- `tournamentUID`: The unique identifier of the tournament for which the leaderboard information is requested.
 
 ### Response Structure
 The response is a JSON object containing details about the tournament's leaderboard, prize pool, and winners.
@@ -430,7 +420,7 @@ To verify an OTP, the client must send a JSON object containing the following in
 # API Documentation: Rewards Information API
 
 ## Endpoint: GET `/fe/esports/rewards/claim`
-This endpoint is designed to provide users with information about the rewards they have earned. It's a key feature for platforms that offer reward-based incentives or achievements.
+This endpoint is designed to provide users with information about the claimable rewards they have earned. It's a key feature for platforms that offer reward-based incentives or achievements.
 
 #### Request Header
 - `Content-Type`: application/json

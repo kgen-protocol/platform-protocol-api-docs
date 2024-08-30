@@ -9,9 +9,9 @@ To access and utilize their earned rewards, gamers can initiate a process where 
 ## Auth: OTP Registration
 
 This operation focuses on registering a user for authentication purposes using a one-time password (OTP). Below are the details outlining the implementation of this user registration process.
-```text
-POST - {{plat-protocols-base-url}}/fe/users/auth/otp/register
-```
+
+### Endpoint: POST `/fe/users/auth/otp/register`
+
 ### cURL Example
 ```bash
 curl --location 'https://stage-platform-protocols.kgen.io/fe/users/auth/otp/register' \
@@ -47,9 +47,9 @@ Example Response:
 ```
 ## Auth: OTP Resend
 This operation is dedicated to resending the one-time password (OTP) to the user for authentication purposes. Below are the details outlining how to implement this OTP resending process.
-```text
-POST - {{plat-protocols-base-url}}/fe/users/auth/otp/resend
-```
+
+### Endpoint: POST `/fe/users/auth/otp/resend`
+
 ### cURL Example
 ```bash
 curl --location 'https://stage-platform-protocols.kgen.io/fe/users/auth/otp/resend' \
@@ -86,9 +86,9 @@ Example Response:
 ```
 ## Auth: OTP Verification
 This operation is focused on verifying the one-time password (OTP) submitted by the user for authentication purposes. Below are the details for implementing this OTP verification proces.
-```text
-POST - {{plat-protocols-base-url}}/fe/users/auth/otp/verify
-```
+
+### Endpoint: POST `/fe/users/auth/otp/verify`
+
 ### cURL Example
 ```bash
 curl --location 'https://stage-platform-protocols.kgen.io/fe/users/auth/otp/verify' \
@@ -124,16 +124,15 @@ Example:
 ### Response
 ```json
   {
-    "message": "successfully verified OTP & identity-associated"
+    "message": "Users linked successfully"
   }
 ```
 Status : 201 Created
 
 ## Wallet Balance Retrieval
 This endpoint retrieves the balance details from the user's wallet.
-```text
-GET - {{plat-protocols-base-url}}/fe/wallet/balance
-```
+
+### Endpoint: GET `/fe/wallet/balance`
 
 ### cURL Example
 ```bash
@@ -178,9 +177,8 @@ Explanation:
 
 ## Wallet Transactions List
 This endpoint retrieves a list of transactions associated with the user's wallet.
-```text
-GET - {{plat-protocols-base-url}}/fe/wallet/transactions
-```
+
+### Endpoint: GET `/fe/wallet/transactions`
 
 ### cURL Example
 ```bash
@@ -248,9 +246,9 @@ Each transaction object includes fields such as:
 
 ## Wallet: Withdraw
 This operation enables users to transfer funds from their custodian wallet to their non-custodian wallet, which has been created as part of the OTP (One-Time Password) verification process. The funds can then be utilized for various purposes, including spending on Kratos Store and more.
-```text
-POST - {{plat-protocols-base-url}}/fe/wallet/withdraw
-```
+
+### Endpoint: POST `/fe/wallet/withdraw`
+
 ### cURL Example
 ```bash
 curl --location --request POST 'https://stage-platform-protocols.kgen.io/fe/wallet/withdraw' \
@@ -264,7 +262,7 @@ curl --location --request POST 'https://stage-platform-protocols.kgen.io/fe/wall
 Example response:
 ```json
 {
-  "msg": "wallet withdrawl successful"
+  "msg": "wallet withdrawal successful"
 }
 ```
 The status code 200 indicates a successful withdrawal.

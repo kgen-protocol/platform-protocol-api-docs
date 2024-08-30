@@ -9,9 +9,9 @@ Within the context of participants immersed in the game crafted by the developer
 ## Create KGeN specific session for the gamer
 
 This operation involves creating an KGeN-specific session for a gamer within the gaming application, ensuring secure interaction between the game server and the KGeN platform. The session is crucial for facilitating personalized and protected interactions. Below are the details for implementing this operation.
-```text
-POST - {{plat-protocols-base-url}}/s2s/session/
-```
+
+### Endpoint: POST `/s2s/session`
+
 ### cURL Example
 ```bash
 curl --location 'https://stage-platform-protocols.kgen.io/s2s/session/' \
@@ -94,9 +94,9 @@ This operation establishes a session for the user, enabling secure and personali
 ## Creating Rewards for Achieved Events
 
 This operation entails the creation of a reward when a user achieves a milestone during specific events. Below are the details for implementing this process.
-```text
-POST - {{plat-protocols-base-url}}/fe/loyalty/event-reward-user-claims/events/{eventID}
-```
+
+### Endpoint: POST `/fe/loyalty/event-reward-user-claims/events/{eventID}`
+
 ### cURL Example
 ```bash
 curl --location --request POST 'https://stage-platform-protocols.kgen.io/fe/loyalty/event-reward-user-claims/events/81368ea8-b10f-4efa-a5d6-98d0059a0a18' \
@@ -127,9 +127,9 @@ This operation records rewards for specific events when users achieve correspond
 ## Showcase All Rewards Earned by the Gamer
 
 This operation involves retrieving and showcasing all the rewards that a gamer has earned throughout their gaming journey. Below are the details for implementing this operation.
-```text
-GET - {{plat-protocols-base-url}}/fe/loyalty/event-reward-user-claims/user
-```
+
+### Endpoint: GET `/fe/loyalty/event-reward-user-claims/user`
+
 ### cURL Example
 ```bash
 curl --location 'https://stage-platform-protocols.kgen.io/fe/loyalty/event-reward-user-claims/user' \
