@@ -200,6 +200,12 @@ Example response:
       "to_wallet": "0x3c*****f040",
       "amount": 50,
       "sync_status": "COMPLETED",
+      "description": { 
+        "platformProtocolsTxnAmount": 50,
+        "platformProtocolsTxnDescription": "Tournament fee deduct",
+        "platformProtocolsTxnName": "Tournament fee deduct",
+        "type": "JOIN"
+      },
       "created_at": "2024-01-20T08:06:36.568965",
       ...
     }
@@ -211,6 +217,12 @@ Example response:
       "to_wallet": "0x3c*****f040",
       "amount": 75,
       "sync_status": "PENDING",
+      "description": { 
+        "platformProtocolsTxnAmount": 50,
+        "platformProtocolsTxnDescription": "Tournament fee deduct",
+        "platformProtocolsTxnName": "Tournament fee deduct",
+        "type": "JOIN"
+      },
       "created_at": "2024-01-22T09:15:20.568965",
       ...
     }
@@ -222,6 +234,12 @@ Example response:
       "to_wallet": "0xce*****55ff",
       "amount": 50,
       "sync_status": "PENDING",
+      "description": { 
+        "platformProtocolsTxnAmount": 50,
+        "platformProtocolsTxnDescription": "Tournament fee deduct",
+        "platformProtocolsTxnName": "Tournament fee deduct",
+        "type": "JOIN"
+      },
       "created_at": "2024-08-19T21:57:48.694297+05:30",
       ...
     }
@@ -241,6 +259,11 @@ Each transaction object includes fields such as:
 - `from_wallet`: Sender's masked wallet address.
 - `to_wallet`: Receiver's masked wallet address.
 - `amount`: Amount of the transaction.
+- `description`: An object which contains following feilds:
+  - `platformProtocolsTxnAmount`: Amount of the transaction.
+  - `platformProtocolsTxnDescription`: Description of the transaction.
+  - `platformProtocolsTxnName`: Name of the transaction.
+  - `type`: Type of the transaction.
 - `sync_status`: Status of the transaction synchronization.
 - Additional transaction details (timestamps, gas fees, block number, etc.).
 
