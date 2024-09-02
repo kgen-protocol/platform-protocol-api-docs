@@ -51,7 +51,7 @@ curl --location --request PUT 'https://stage-platform-protocols.kgen.io/s2s/loya
 ```
 Explanation:
 - `eventType`: The type of the event, for example, "DailyBonus."
-- `eventName`: A descriptive name for the event, such as "Unlocking the daily gift."
+- `eventName`: A descriptive name for the event (only for display purpose), such as "Unlocking the daily gift."
 - `eventDescription`: A brief description of the event, providing additional context. In this case, "Reward gamer on successfully opening a daily free gift chest."
 - `rewardAmount`: The amount of the reward associated with the event. In this example, it is set to 10.
 - `rewardCategory`: The category of the reward e.g. "EARNED".
