@@ -307,7 +307,8 @@ Each transaction object includes fields such as:
   - `platformProtocolsTxnAmount`: Amount of the transaction.
   - `platformProtocolsTxnDescription`: Description of the transaction.
   - `platformProtocolsTxnName`: Name of the transaction.
-  - `type`: Type of the transaction.
+  - `type`: Purpose of the transaction.
+  - `platformProtocolsTxnType`: Indicates the type of transaction, such as CREDIT or DEBIT.
 - `sync_status`: Status of the transaction synchronization.
 - Additional transaction details (timestamps, gas fees, block number, etc.).
 

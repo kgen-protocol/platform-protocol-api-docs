@@ -18,4 +18,3 @@ sidebar_position: 1
 | POST `/s2s/session` | Create an KGeN-specific session for a gamer. | Establish a secure session for the gamer within the gaming application. |
 | POST `/fe/loyalty/event-reward-user-claims/events/{eventID}` | Create a reward for a user when they achieve a specific event. | Record rewards for specific events when users achieve corresponding milestones. |
 | GET `/fe/loyalty/event-reward-user-claims/user` | Retrieve all rewards earned by a gamer. | Obtain a comprehensive list of rewards earned by the gamer throughout their gaming journey. |
-| GET `/fe/esports/statistics/historic` | Provide historical data regarding a user's participation in gaming activities, specifically within the context of tournaments. | Obtain historical statistics and participation details for a user. |
