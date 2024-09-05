@@ -82,6 +82,58 @@ The response returns a JSON object with session details:
 ### Use Case
 This endpoint is primarily used for initializing a session when a gamer starts a game or logs into a system. It helps in tracking and managing gamer activity and can be crucial for features like saved game progress, customization, and in-game purchases.
 
+# API Documentation: Join Tournament API
+
+## Endpoint: POST `/fe/esports/tournaments/{tournamentId}/join`
+This endpoint is used for registering a player to participate in a specific tournament, capturing their entry into the competitive event.
+
+#### Request Header
+- `Content-Type`: application/json
+- `user-jwt-token`: Users JWT token for authentication.
+
+### Request Structure
+
+#### `joiningStake`
+   - **Type:** int
+   - **Description:** Entry fee of the tournament.
+
+### Response
+- **`response`:** 
+  - **Type:** Object
+  - **Description:** Indicates if the operation was successful.
+  - **Field:** `"message"`
+  - **Value:** `"user successfully joined the tournament"`
+
+#### Example Response
+```json
+{
+  "message": "user successfully joined the tournament"
+}
+```
+
+# API Documentation: Leave Tournament API
+
+## Endpoint: POST `/fe/esports/tournaments/{tournamentId}/leave`
+This endpoint is used for withdrawing a player from a specific tournament, recording their exit from the competitive event.
+
+#### Request Header
+- `Content-Type`: application/json
+- `user-jwt-token`: Users JWT token for authentication.
+
+### Response
+- **`response`:** 
+  - **Type:** Object
+  - **Description:** Indicates if the operation was successful.
+  - **Field:** `"message"`
+  - **Value:** `"user left the tournament successfully"`
+
+#### Example Response
+```json
+{
+  "message": "user left the tournament successfully"
+}
+```
+
 # API Documentation: Eventing API
 
 ## Endpoint: POST `/fe/esports/tournaments/{tournamentId}/score`
