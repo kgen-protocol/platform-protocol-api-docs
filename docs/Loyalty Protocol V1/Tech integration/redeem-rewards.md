@@ -205,6 +205,7 @@ Example response:
         "platformProtocolsTxnDescription": "Tournament fee deduct",
         "platformProtocolsTxnName": "Tournament fee deduct",
         "type": "JOIN"
+        "platformProtocolsTxnType": "DEBIT"
       },
       "created_at": "2024-01-20T08:06:36.568965",
       ...
@@ -218,10 +219,11 @@ Example response:
       "amount": 75,
       "sync_status": "PENDING",
       "description": { 
-        "platformProtocolsTxnAmount": 50,
+        "platformProtocolsTxnAmount": 75,
         "platformProtocolsTxnDescription": "Tournament fee deduct",
         "platformProtocolsTxnName": "Tournament fee deduct",
         "type": "JOIN"
+        "platformProtocolsTxnType": "DEBIT"
       },
       "created_at": "2024-01-22T09:15:20.568965",
       ...
@@ -239,6 +241,7 @@ Example response:
         "platformProtocolsTxnDescription": "Tournament fee deduct",
         "platformProtocolsTxnName": "Tournament fee deduct",
         "type": "JOIN"
+        "platformProtocolsTxnType": "DEBIT"
       },
       "created_at": "2024-08-19T21:57:48.694297+05:30",
       ...
@@ -263,7 +266,8 @@ Each transaction object includes fields such as:
   - `platformProtocolsTxnAmount`: Amount of the transaction.
   - `platformProtocolsTxnDescription`: Description of the transaction.
   - `platformProtocolsTxnName`: Name of the transaction.
-  - `type`: Type of the transaction.
+  - `type`: Purpose of the transaction.
+  - `platformProtocolsTxnType`: Indicates the type of transaction, such as CREDIT or DEBIT.
 - `sync_status`: Status of the transaction synchronization.
 - Additional transaction details (timestamps, gas fees, block number, etc.).
 

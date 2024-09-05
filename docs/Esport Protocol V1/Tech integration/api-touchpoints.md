@@ -379,6 +379,7 @@ Each transaction object includes fields such as:
         "platformProtocolsTxnDescription": "Tournament fee deduct",
         "platformProtocolsTxnName": "Tournament fee deduct",
         "type": "JOIN"
+        "platformProtocolsTxnType": "DEBIT"
       },
       "created_at": "2024-01-20T08:06:36.568965",
       ...
@@ -396,6 +397,7 @@ Each transaction object includes fields such as:
         "platformProtocolsTxnDescription": "Tournament fee deduct",
         "platformProtocolsTxnName": "Tournament fee deduct",
         "type": "JOIN"
+        "platformProtocolsTxnType": "DEBIT"
       },
       "created_at": "2024-01-22T09:15:20.568965",
       ...
@@ -413,6 +415,7 @@ Each transaction object includes fields such as:
         "platformProtocolsTxnDescription": "Tournament fee deduct",
         "platformProtocolsTxnName": "Tournament fee deduct",
         "type": "JOIN"
+        "platformProtocolsTxnType": "DEBIT"
       },
       "created_at": "2024-08-19T21:57:48.694297+05:30",
       ...
