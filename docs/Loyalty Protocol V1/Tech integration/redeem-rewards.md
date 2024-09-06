@@ -38,6 +38,12 @@ Example:
   }
 ```
 ### Response
+Response Status Code:
+- `Success`: 200 OK
+- `Failure`: 
+  - `401 Unauthorized`
+    - "UN_AUTHORIZED"
+
 Example Response:
 ```json
   {
@@ -77,6 +83,12 @@ Example:
 
 ```
 ### Response
+Response Status Code:
+- `Success`: 200 OK
+- `Failure`: 
+  - `401 Unauthorized`
+    - "UN_AUTHORIZED"
+
 Example Response:
 ```json
   {
@@ -122,12 +134,18 @@ Example:
   }
 ```
 ### Response
+Response Status Code:
+- `Success`: 200 OK
+- `Failure`: 
+  - `401 Unauthorized`
+    - "UN_AUTHORIZED"
+
+Example response:
 ```json
   {
     "message": "Users linked successfully"
   }
 ```
-Status : 201 Created
 
 ## Wallet Balance Retrieval
 This endpoint retrieves the balance details from the user's wallet.
@@ -144,6 +162,12 @@ curl --location 'https://stage-platform-protocols.kgen.io/fe/wallet/balance' \
 - `user-jwt-token`: [User JWT Token]
 
 ### Response
+Response Status Code:
+- `Success`: 200 OK
+- `Failure`: 
+  - `401 Unauthorized`
+    - "UN_AUTHORIZED"
+
 Example response:
 ```json
   {
@@ -190,6 +214,12 @@ curl --location 'https://stage-platform-protocols.kgen.io/fe/wallet/transactions
 - `user-jwt-token`: [User JWT Token]
 
 ### Response
+Response Status Code:
+- `Success`: 200 OK
+- `Failure`: 
+  - `401 Unauthorized`
+    - "UN_AUTHORIZED"
+
 Example response:
 ```json
 {
@@ -204,7 +234,7 @@ Example response:
         "platformProtocolsTxnAmount": 50,
         "platformProtocolsTxnDescription": "Tournament fee deduct",
         "platformProtocolsTxnName": "Tournament fee deduct",
-        "type": "JOIN"
+        "type": "JOIN",
         "platformProtocolsTxnType": "DEBIT"
       },
       "created_at": "2024-01-20T08:06:36.568965",
@@ -222,7 +252,7 @@ Example response:
         "platformProtocolsTxnAmount": 75,
         "platformProtocolsTxnDescription": "Tournament fee deduct",
         "platformProtocolsTxnName": "Tournament fee deduct",
-        "type": "JOIN"
+        "type": "JOIN",
         "platformProtocolsTxnType": "DEBIT"
       },
       "created_at": "2024-01-22T09:15:20.568965",
@@ -240,7 +270,7 @@ Example response:
         "platformProtocolsTxnAmount": 50,
         "platformProtocolsTxnDescription": "Tournament fee deduct",
         "platformProtocolsTxnName": "Tournament fee deduct",
-        "type": "JOIN"
+        "type": "JOIN",
         "platformProtocolsTxnType": "DEBIT"
       },
       "created_at": "2024-08-19T21:57:48.694297+05:30",
@@ -286,6 +316,12 @@ curl --location --request POST 'https://stage-platform-protocols.kgen.io/fe/wall
 - `user-jwt-token`: [User JWT Token]
 
 ### Response
+Response Status Code:
+- `Success`: 200 OK
+- `Failure`: 
+  - `401 Unauthorized`
+    - "UN_AUTHORIZED"
+
 Example response:
 ```json
 {

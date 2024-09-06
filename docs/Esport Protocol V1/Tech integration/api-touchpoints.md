@@ -43,7 +43,6 @@ A JSON object containing the following fields:
 The response returns a JSON object with session details:
 - `gamer_id`: Echoes back the gamer's ID.
 - `appId`: Application ID where the session is created.
-- `token`: A token for session validation or further API calls.
 - `linkedMobileNumber`: Gamer's linked mobile number.
 - `session_id`: Unique ID for the current session.
 - `user_id`: The unique identifier of the user.
@@ -79,6 +78,51 @@ The response returns a JSON object with session details:
 - `linked_phone`: Gamer's linked phone number.
 - `session_start_time`: Timestamp marking the start of the session.
 
+#### Response Status Code
+- `Success`: 200 OK
+- `Failure`: 
+    - `500 Internal Server Error`
+
+#### Example Response (Success)
+```json
+{
+    "session_id": "4c6ffb9b-090f-4e09-bd3d-c8dab48c6581",
+    "user_id": "38331972",
+    "name": "",
+    "username": "",
+    "email": "",
+    "device_id": "",
+    "phonenumber": "",
+    "level": 0,
+    "rank": 0,
+    "date_joined": "",
+    "playertag": "",
+    "location": "",
+    "location_name": "",
+    "device_model": "",
+    "screen_height": "",
+    "screen_width": "",
+    "os_name": "",
+    "os_version": "",
+    "browser_name": "",
+    "indigg_id": "6002f920-ba07-43c9-be71-22fdae35375b",
+    "indigg_wallet_address": "0x99da56df5982ae9155cb9a914cfe3839e41351",
+    "third_party_client_id": "2079857813",
+    "third_party_client_name": "ESPORTS_PROTOCOL_CALLBREAK",
+    "namespaced_third_party_user_id": "2079857813#38331972",
+    "wallet_address": "0x84b6f41fb37d0f7293c6cf405fb4b8c7a2c5b9",
+    "is_new_user": false,
+    "access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIzODMzMTk3MiIsImNsaWVudF9pZCI6IjIwNzk4NTc4MTMiLCJpYXQiOjE3MjU1OTk0NTQsImlzcyI6IjIwNzk4NTc4MTMiLCJleHAiOjE3MjU2ODU4NTQsInVzZXJfaWQiOiIzODMzMTk3MiIsImdhbWVyX2lkIjoiIiwidGhpcmRfcGFydHlfY2xpZW50X2lkIjoiMjA3OTg1NzgxMyIsInRoaXJkX3BhcnR5X2NsaWVudF9uYW1lIjoiRVNQT1JUU19QUk9UT0NPTF9DQUxMQlJFQUsiLCJuYW1lc3BhY2VkX3RoaXJkX3BhcnR5X3VzZXJfaWQiOiIyMDc5ODU3ODEzIzM4MzMxOTcyIjZmNDFmYjM3ZDBmNzI5M2M2Y2Y0MDVmY2ZiNGI4YzdhMmM1YjkiLCJpc19uZXdfdXNlciI6ZmFsc2UsImluZGlnZ19pZCI6IjYwMDJmOTIwLWJhMDctNDNjOS1iZTcxLTIyZmRhZTM1Mzc1YiIsImluZGlnZ193YWxsZXRfYWRkcmVzcyI6IjB4OTlkYTU2ZGY1OTgyYWU5MTU1Y2I5YWNlOTE0Y2ZlMzgzOWU0MTM1MSIsImxpbmtlZF9waG9uZSI6Iis5MTgwMDAwMDAwMDEifQ.-InW-sn2pLhFIr-NRdvloPWFd39hGkLs2GTVzyW2sZc",
+    "refresh_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIzODMzMTk3MiIsImNsaWVudF9pZCI6IjIwNzk4NTc4MTMiLCJpYXQiOjE3MjU1OTk0NTQsImlzcyI6IjIwNzk4NTc4MTMiLCJleHAiOjE3MjU2ODU4NTQsInVzZXJfaWQiOiIzODMzMTk3MiIsImdhbWVyX2lkIjoiIiwidGhpcmRfcGFydHlfY2xpZW50X2lkIjoiMjA3OTg1NzgxMyIsInRoaXJkX3BhcnR5X2NsaWVudF9uYW1lIjoiRVNQT1JUU19QUk9UT0NPTF9DQUxMQlJFQUsiLCJuYW1lc3BhY2VkX3RoaXJkX3BhcnR5X3VzZXJfaWQiOiIyMDc5ODU3ODEzIzM4MzMxOTcyIjZmNDFmYjM3ZDBmNzI5M2M2Y2Y0MDVmY2ZiNGI4YzdhMmM1YjkiLCJpc19uZXdfdXNlciI6ZmFsc2UsImluZGlnZ19pZCI6IjYwMDJmOTIwLWJhMDctNDNjOS1iZTcxLTIyZmRhZTM1Mzc1YiIsImluZGlnZ193YWxsZXRfYWRkcmVzcyI6IjB4OTlkYTU2ZGY1OTgyYWU5MTU1Y2I5YWNlOTE0Y2ZlMzgzOWU0MTM1MSIsImxpbmtlZF9waG9uZSI6Iis5MTgwMDAwMDAwMDEifQ.jBt8oZKE1Xtku_pN3Pj9K9Mw28JeiCKVhB8HU8jEjNA",
+    "linked_phone": "+918000000001",
+    "session_start_time": "2024-09-06 05:10:53.871198445 +0000 UTC",
+    "appId": "2079857813",
+    "gamer_id": "38331972",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIzODMzMTk3MiIsImNsaWVudF9pZCI6IjIwNzk4NTc4MTMiLCJpYXQiOjE3MjU1OTk0NTQsImlzcyI6IjIwNzk4NTc4MTMiLCJleHAiOjE3MjU2ODU4NTQsInVzZXJfaWQiOiIzODMzMTk3MiIsImdhbWVyX2lkIjoiIiwidGhpcmRfcGFydHlfY2xpZW50X2lkIjoiMjA3OTg1NzgxMyIsInRoaXJkX3BhcnR5X2NsaWVudF9uYW1lIjoiRVNQT1JUU19QUk9UT0NPTF9DQUxMQlJFQUsiLCJuYW1lc3BhY2VkX3RoaXJkX3BhcnR5X3VzZXJfaWQiOiIyMDc5ODU3ODEzIzM4MzMxOTcyIjZmNDFmYjM3ZDBmNzI5M2M2Y2Y0MDVmY2ZiNGI4YzdhMmM1YjkiLCJpc19uZXdfdXNlciI6ZmFsc2UsImluZGlnZ19pZCI6IjYwMDJmOTIwLWJhMDctNDNjOS1iZTcxLTIyZmRhZTM1Mzc1YiIsImluZGlnZ193YWxsZXRfYWRkcmVzcyI6IjB4OTlkYTU2ZGY1OTgyYWU5MTU1Y2I5YWNlOTE0Y2ZlMzgzOWU0MTM1MSIsImxpbmtlZF9waG9uZSI6Iis5MTgwMDAwMDAwMDEifQ.-InW-sn2pLhFIr-NRdvloPWFd39hGkLs2GTVzyW2sZc",
+    "linkedMobileNumber": "+918000000001"
+}
+```
+
 ### Use Case
 This endpoint is primarily used for initializing a session when a gamer starts a game or logs into a system. It helps in tracking and managing gamer activity and can be crucial for features like saved game progress, customization, and in-game purchases.
 
@@ -104,6 +148,18 @@ This endpoint is used for registering a player to participate in a specific tour
   - **Field:** `"message"`
   - **Value:** `"user successfully joined the tournament"`
 
+#### Response Status Code
+- `Success`: 200 OK
+- `Failure`: 
+  - `400 Bad Request`
+    - "TOURNAMENT_INVALID_JOINING_STAKE"
+    - "TOURNAMENT_IS_NOT_LIVE"
+  - `404 Not Found`
+    - "TOURNAMENT_NOT_FOUND"
+  - `409 Conflict`
+    - "EXISTING_PARTICIPATION_FOUND"
+    - "TOURNAMENT_IS_FULL"
+
 #### Example Response
 ```json
 {
@@ -126,6 +182,15 @@ This endpoint is used for withdrawing a player from a specific tournament, recor
   - **Description:** Indicates if the operation was successful.
   - **Field:** `"message"`
   - **Value:** `"user left the tournament successfully"`
+
+#### Response Status Code
+- `Success`: 200 OK
+- `Failure`: 
+  - `400 Bad Request`
+    - "TOURNAMENT_IS_NOT_LIVE"
+  - `404 Not Found`
+    - "TOURNAMENT_NOT_FOUND"
+    - "TOURNAMENT_PARTICIPATION_NOT_FOUND"
 
 #### Example Response
 ```json
@@ -167,6 +232,20 @@ This endpoint is used for submitting various game-related events, capturing key 
   - **Field:** `"message"`
   - **Value:** `"leaderboard score update successful"`
 
+#### Response Status Code
+- `Success`: 200 OK
+- `Failure`: 
+  - `404 Not Found`
+    - "TOURNAMENT_NOT_FOUND"
+    - "TOURNAMENT_PARTICIPATION_NOT_FOUND"
+
+#### Example Response
+```json
+{
+  "message": "leaderboard score update successful"
+}
+```
+
 ### Use Case
 
 - **Score Update:** Updates the scores of the player in tournament.
@@ -199,6 +278,38 @@ The response is a JSON array, with each element representing an active tournamen
 - `created_at`: Timestamp for when the tournament was created.
 - `updated_at`: Timestamp for the last update made to the tournament.
 
+#### Response Status Code
+- `Success`: 200 OK
+- `Failure`: 
+  - `404 Not Found`
+    - "TOURNAMENT_NOT_FOUND"
+    - "TOURNAMENT_PARTICIPATION_NOT_FOUND"
+
+#### Example Response
+```json
+{
+[
+  {
+    "tournament_uid": "0ce87683-541e-4f5c-9599-89337d3907ed",
+    "game_uid": "2079857813",
+    "tournament_status": "STARTED",
+    "title": "Callbreak_Tournament",
+    "description": "A thrilling tournament to determine the champion TTT",
+    "buy_in_price": 50,
+    "tournament_size": 40000,
+    "participants_count": 0,
+    "schedules_at_timestamp": "2024-09-05T08:02:00Z",
+    "starts_at_timestamp": "2024-09-05T08:05:00Z",
+    "moves_to_lobby_at_timestamp": "2024-09-05T08:04:00Z",
+    "locks_at_timestamp": "2024-09-06T08:03:00Z",
+    "ends_at_timestamp": "2024-09-06T08:05:00Z",
+    "created_at": "2024-09-05T08:01:03.731196991Z",
+    "updated_at": "2024-09-05T08:01:03.731196991Z"
+  }
+]
+}
+```
+
 # API Documentation: Tournaments Session API
 
 ## Endpoint: GET `/fe/esports/tournaments/participated`
@@ -211,10 +322,15 @@ This endpoint is designed to list the tournaments in which a user has participat
 ### Response Structure
 The response is a JSON array containing the unique identifiers (UIDs) of the tournaments the user has participated in. Each element in the array is a tournament UID.
 
+#### Response Status Code
+- `Success`: 200 OK
+
 #### Example Response
 ```json
 [
-    "818796d3-7c33-44dd-a130-d2593a2eca53"
+    "818796d3-7c33-44dd-a130-d2593a2eca53",
+    "882c473e-481a-4c68-bad3-936cac966a6b",
+    "f1c28ca8-b409-4bd4-a7aa-4dac22589deb"
 ]
 ```
 
@@ -249,6 +365,33 @@ The response is a JSON object containing comprehensive details about the tournam
 - `created_at`: Timestamp for when the tournament was created.
 - `updated_at`: Timestamp for the last update made to the tournament.
 
+#### Response Status Code
+- `Success`: 200 OK
+- `Failure`: 
+  - `404 Not Found`
+    - "TOURNAMENT_NOT_FOUND"
+
+#### Example Response
+```json
+{
+    "tournament_uid": "14198021-47da-464c-9d9d-cab6e5e32f4a",
+    "game_uid": "2079857813",
+    "tournament_status": "COMPLETED",
+    "title": "Callbreak_Tournament",
+    "description": "A thrilling tournament to determine the champion TTT",
+    "buy_in_price": 50,
+    "tournament_size": 40000,
+    "participants_count": 14,
+    "schedules_at_timestamp": "2024-08-30T06:42:00Z",
+    "starts_at_timestamp": "2024-08-30T06:45:00Z",
+    "moves_to_lobby_at_timestamp": "2024-08-30T06:44:00Z",
+    "locks_at_timestamp": "2024-08-31T06:38:00Z",
+    "ends_at_timestamp": "2024-08-31T06:40:00Z",
+    "created_at": "2024-08-30T06:41:49.445310147Z",
+    "updated_at": "2024-08-30T06:41:49.445310147Z"
+}
+```
+
 # API Documentation: Tournament Leaderboard API
 
 ## Endpoint: GET `/fe/esports/tournaments/{tournamentUID}/leaderboard`
@@ -271,6 +414,12 @@ The response is a JSON object containing details about the tournament's leaderbo
 - `winners`: An array of winners, if available. Each entry in the array is an object containing details about the winning users.
   - `user_id`: The unique identifier of the winning user.
   - `reward`: The reward of the winning user in the tournament.
+
+#### Response Status Code
+- `Success`: 200 OK
+- `Failure`: 
+  - `404 Not Found`
+    - "TOURNAMENT_NOT_FOUND"
 
 #### Example Response
 ```json
@@ -316,10 +465,16 @@ The response is a JSON object containing various details about the wallet's bala
 - `modified_at`: Timestamp for the last modification to the wallet record.
 - `minWalletBalToWithdraw`: The minimum balance amount that is required to withdraw. 
 
+#### Response Status Code
+- `Success`: 200 OK
+- `Failure`: 
+  - `401 Unauthorized`
+    - "UN_AUTHORIZED"
+
 #### Example Response
 ```json
 {
-    "wallet_address": "[WALLET_ADDRESS]",
+    "wallet_address": "0x84b6f41fb37d0f7293c6cf405fcfb4b8c7a2c5b9",
     "earned_balance": 0,
     "bought_balance": 0,
     "bonus_balance": 50,
@@ -363,6 +518,12 @@ Each transaction object includes fields such as:
   - `platformProtocolsTxnType`: Indicates the type of transaction, such as CREDIT or DEBIT.
 - `sync_status`: Status of the transaction synchronization.
 - Additional transaction details (timestamps, gas fees, block number, etc.).
+
+#### Response Status Code
+- `Success`: 200 OK
+- `Failure`: 
+  - `401 Unauthorized`
+    - "UN_AUTHORIZED"
 
 #### Example Response
 ```json
@@ -454,6 +615,12 @@ The client get a JSON object with the following information in response:
 - `authCode`: The authentication code which is required for verification along with OTP.
 - `isNewUser`: Bool value whether the user is new user or not.
 
+#### Response Status Code
+- `Success`: 200 OK
+- `Failure`: 
+  - `401 Unauthorized`
+    - "UN_AUTHORIZED"
+
 #### Example Response
 ```json
 {
@@ -489,6 +656,12 @@ To verify an OTP, the client must send a JSON object containing the following in
 }
 ```
 
+#### Response Status Code
+- `Success`: 200 OK
+- `Failure`: 
+  - `401 Unauthorized`
+    - "UN_AUTHORIZED"
+
 #### Example Response
 ```json
 {
@@ -511,15 +684,27 @@ The server responds with a JSON object that includes details about the user's to
 - `total_claimable_rewards`: An integer value representing the total amount of rewards that the user can claim.
 - `claimable_rewards_info`: An array of objects (`reward_info`), each containing detailed information about individual claimable rewards.
 
+#### Response Status Code
+- `Success`: 200 OK
+- `Failure`: 
+  - `401 Unauthorized`
+    - "UN_AUTHORIZED"
+
 #### Example Response
 ```json
 {
   "total_claimable_rewards": 100,
   "claimable_rewards_info": [
     {
-      // Detailed information about each reward
-    },
-    // Additional reward objects
+      
+      "user_id":"test1",
+      "tournament_id":"testTournament5",
+      "claim_status":"CLAIMED_SUCCESSFULLY",
+      "reward":50,
+      "wallet_address":"0x84b6f41fb37d0f7293c6cf405fcfb4b8c7a2c5b9",
+      "created_at":"2024-08-19T21:57:48.694297+05:30",
+      "updated_at":"2024-08-19T21:57:48.694297+05:30",
+    }
   ]
 }
 ```
@@ -540,6 +725,12 @@ To claim rewards, the user typically needs to make a POST request to this endpoi
 Upon successful claim of rewards, the server responds with a JSON object containing a confirmation message.
 
 - `message`: A string indicating the successful claim of rewards.
+
+#### Response Status Code
+- `Success`: 200 OK
+- `Failure`: 
+  - `401 Unauthorized`
+    - "UN_AUTHORIZED"
 
 #### Example Response
 ```json
@@ -564,6 +755,12 @@ This endpoint does not require a request body. The necessary information for the
 Upon successful completion of the withdrawal process, the server responds with a JSON object containing:
 
 - `msg`: A confirmation message, usually indicating successful withdrawal.
+
+#### Response Status Code
+- `Success`: 200 OK
+- `Failure`: 
+  - `401 Unauthorized`
+    - "UN_AUTHORIZED"
 
 #### Example Response
 ```json
@@ -596,6 +793,12 @@ The response is a JSON array, where each element is an object containing histori
 - `buyInStake`: The stake or buy-in amount for the participation.
 - `amountWon`: The amount won in the event.
 
+#### Response Status Code
+- `Success`: 200 OK
+- `Failure`: 
+  - `401 Unauthorized`
+    - "UN_AUTHORIZED"
+
 #### Example Response
 ```json
 [
@@ -608,7 +811,15 @@ The response is a JSON array, where each element is an object containing histori
     "buyInStake": 100,
     "amountWon": 500
   },
-  // Additional historical event objects
+  {
+    "amountWon": 0,
+    "buyInStake": 10,
+    "mode": "Quick",
+    "occurredAtText": "",
+    "result": "You Lost",
+    "type": "Tournament",
+    "typeValue": 0
+  }
 ]
 ```
 ![tournaments-flow](/img/tournaments-flow.png)

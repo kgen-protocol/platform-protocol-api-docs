@@ -37,6 +37,11 @@ Explanation :
 - `user_id`: Unique identifier for the game in the gaming application.
 
 ### Response
+Response Status Code:
+- `Success`: 200 OK
+- `Failure`: 
+    - `500 Internal Server Error`
+
 Example Response:
 ```json
 {
@@ -72,7 +77,6 @@ Example Response:
     "session_start_time": "2024-08-20 08:32:13.025599965 +0000 UTC",
     "appId": "20798813",
     "gamer_id": "FTC_User1",
-    "token": "exampleToken1",
     "linkedMobileNumber": ""
 }
 ```
@@ -110,6 +114,12 @@ curl --location --request POST 'https://stage-platform-protocols.kgen.io/fe/loya
 - `eventID`: Unique identifier for the specific event.
 
 ### Response
+Response Status Code:
+- `Success`: 201 Created
+- `Failure`: 
+  - `401 Unauthorized`
+    - "UN_AUTHORIZED"
+
 Example Response:
 ```json
 {
@@ -140,6 +150,12 @@ curl --location 'https://stage-platform-protocols.kgen.io/fe/loyalty/event-rewar
 - `user-jwt-token`: [User JWT Token]
 
 ### Response
+Response Status Code:
+- `Success`: 200 OK
+- `Failure`: 
+  - `401 Unauthorized`
+    - "UN_AUTHORIZED"
+
 Example Response:
 ```json
 {
@@ -158,4 +174,3 @@ Example Response:
 }
 ```
 This operation offers a comprehensive list of rewards earned by a gamer, complete with detailed information about each reward's status, creation timestamp, and associated amounts.
-

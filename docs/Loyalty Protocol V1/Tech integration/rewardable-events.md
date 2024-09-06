@@ -35,7 +35,7 @@ curl --location --request PUT 'https://stage-platform-protocols.kgen.io/s2s/loya
 - `clientID` : [Your Client ID]
 - `clientSecret` : [Your Client Secret]
 
-### Request Body
+### Request Body (Create Event)
 ```json
 {
     "eventType": "Adding Event",
@@ -59,28 +59,8 @@ Explanation:
 - `isActive` : The isActive field in the provided payload is a boolean attribute that can be used to temporarily set the status of the rewardable event. 
 - `isActivityTraceEnabled`: Whether activity trace enabled or not.
 - `activityTraceActivityID`: Activity trace unique ID.
-### Response
-Succesfull response for the above request
-```json
-{
-    "eventID": "d6089e8f-2844-41d7-7bb2095f58e4",
-    "eventType": "Adding Event",
-    "eventName": "PlatformProtocols",
-    "eventDescription": "PlatformProtocols",
-    "rewardAmount": 100,
-    "rewardCategory": "EARNED",
-    "entityType": "GAME",
-    "entityID": "b6410c9d-21e1f3d-9b5fb6dd3fdf",
-    "isActive": true,
-    "isActivityTraceEnabled": false,
-    "activityTraceActivityID": "",
-    "createdAt": "2024-08-20T07:52:35.660045104Z",
-    "updatedAt": "2024-08-20T07:52:35.660045104Z"
-}
-```
-- `eventID`: The unique identifier of the specific rewardable event.
 
-### Request Body (Update Event):
+### Request Body (Update Event)
 To update an existing event, include the eventID in the payload along with other parameters you want to change. The system will replace the existing event with the updated details.
 ```json
 {
@@ -102,6 +82,34 @@ This will update the existing event with the specified eventID, modifying the sp
 Use this API to create new events or update existing ones.
 When updating, provide the eventID of an already existing event in the payload, and the system will replace the event with the updated details.
 
+### Response
+Response Status Code:
+- `Success`: 201 Created
+- `Failure`:
+  - `400 Bad Request`
+    - "BAD_REQUEST"
+  - `401 Unauthorized`
+    - "UN_AUTHORIZED"
+
+Example response:
+```json
+{
+    "eventID": "d6089e8f-2844-41d7-7bb2095f58e4",
+    "eventType": "Adding Event",
+    "eventName": "PlatformProtocols",
+    "eventDescription": "PlatformProtocols",
+    "rewardAmount": 100,
+    "rewardCategory": "EARNED",
+    "entityType": "GAME",
+    "entityID": "b6410c9d-21e1f3d-9b5fb6dd3fdf",
+    "isActive": true,
+    "isActivityTraceEnabled": false,
+    "activityTraceActivityID": "",
+    "createdAt": "2024-08-20T07:52:35.660045104Z",
+    "updatedAt": "2024-08-20T07:52:35.660045104Z"
+}
+```
+- `eventID`: The unique identifier of the specific rewardable event.
 
 ## Get all the Rewardable events
 After successfully registering rewardable events, game developers can retrieve a list of active events through a GET request to the following endpoint:
@@ -125,6 +133,14 @@ curl --location 'https://stage-platform-protocols.kgen.io/s2s/loyalty/rewardable
 
 ### Response
 Upon making the request, the system will provide a comprehensive list of currently active rewardable events, offering essential information including event type, name, description, reward amount, and any other pertinent details, all created by the game developer.
+
+Response Status Code:
+- `Success`: 200 OK
+- `Failure`: 
+  - `401 Unauthorized`
+    - "UN_AUTHORIZED"
+
+Example response:
 ```json
 {
     "rewardableEvents": [
@@ -158,8 +174,8 @@ Upon making the request, the system will provide a comprehensive list of current
             "createdAt": "2024-07-30T12:40:13.207906773Z",
             "updatedAt": "2024-07-30T12:40:13.207906773Z"
         },
-        //Additional events
-    ]
+    ],
+    "offset": ""
 }
 ```
 
@@ -187,6 +203,14 @@ Example:
 
 ### Response
 The system will provide comprehensive details for the specified rewardable event.
+
+Response Status Code:
+- `Success`: 200 OK
+- `Failure`: 
+  - `401 Unauthorized`
+    - "UN_AUTHORIZED"
+
+Example response:
 ```json
 {
     "eventID": "ee605722-a26c-42e7-3589273d8ce6",
@@ -224,9 +248,12 @@ curl --location --request DELETE 'https://stage-platform-protocols.kgen.io/s2s/l
 ### Request paramter
 - `eventID`: The unique identifier of the specific rewardable event.
 
-Example:
-
-### Endpoint: DELETE `/s2s/loyalty/rewardable-events/c93ff468-7d7b-44f0-9cd9-74d`
-
 ### Response
 The system will confirm the successful deletion of the specified rewardable event with a status code of 204, indicating no content.
+Response Status Code:
+- `Success`: 204 No Content
+- `Failure`:
+  - `400 Bad Request`
+    - "BAD_REQUEST"
+  - `401 Unauthorized`
+    - "UN_AUTHORIZED"
