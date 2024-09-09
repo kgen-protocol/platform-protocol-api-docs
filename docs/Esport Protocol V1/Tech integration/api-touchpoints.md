@@ -118,7 +118,6 @@ The response returns a JSON object with session details:
     "session_start_time": "2024-09-06 05:10:53.871198445 +0000 UTC",
     "appId": "2079857813",
     "gamer_id": "38331972",
-    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIzODMzMTk3MiIsImNsaWVudF9pZCI6IjIwNzk4NTc4MTMiLCJpYXQiOjE3MjU1OTk0NTQsImlzcyI6IjIwNzk4NTc4MTMiLCJleHAiOjE3MjU2ODU4NTQsInVzZXJfaWQiOiIzODMzMTk3MiIsImdhbWVyX2lkIjoiIiwidGhpcmRfcGFydHlfY2xpZW50X2lkIjoiMjA3OTg1NzgxMyIsInRoaXJkX3BhcnR5X2NsaWVudF9uYW1lIjoiRVNQT1JUU19QUk9UT0NPTF9DQUxMQlJFQUsiLCJuYW1lc3BhY2VkX3RoaXJkX3BhcnR5X3VzZXJfaWQiOiIyMDc5ODU3ODEzIzM4MzMxOTcyIjZmNDFmYjM3ZDBmNzI5M2M2Y2Y0MDVmY2ZiNGI4YzdhMmM1YjkiLCJpc19uZXdfdXNlciI6ZmFsc2UsImluZGlnZ19pZCI6IjYwMDJmOTIwLWJhMDctNDNjOS1iZTcxLTIyZmRhZTM1Mzc1YiIsImluZGlnZ193YWxsZXRfYWRkcmVzcyI6IjB4OTlkYTU2ZGY1OTgyYWU5MTU1Y2I5YWNlOTE0Y2ZlMzgzOWU0MTM1MSIsImxpbmtlZF9waG9uZSI6Iis5MTgwMDAwMDAwMDEifQ.-InW-sn2pLhFIr-NRdvloPWFd39hGkLs2GTVzyW2sZc",
     "linkedMobileNumber": "+918000000001"
 }
 ```
@@ -199,7 +198,7 @@ This endpoint is used for withdrawing a player from a specific tournament, recor
 }
 ```
 
-# API Documentation: Eventing API
+# API Documentation: Tournament Score Update API
 
 ## Endpoint: POST `/fe/esports/tournaments/{tournamentId}/score`
 This endpoint is used for submitting various game-related events, capturing key data about player actions and achievements within a game.
@@ -669,7 +668,7 @@ To verify an OTP, the client must send a JSON object containing the following in
 }
 ```
 
-# API Documentation: Rewards Information API
+# API Documentation: Claimable Rewards Information API
 
 ## Endpoint: GET `/fe/esports/rewards/claim`
 This endpoint is designed to provide users with information about the claimable rewards they have earned. It's a key feature for platforms that offer reward-based incentives or achievements.
