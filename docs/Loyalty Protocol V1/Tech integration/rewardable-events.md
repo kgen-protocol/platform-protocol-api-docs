@@ -9,22 +9,25 @@ Game developers can utilize dedicated APIs to effortlessly register, update, and
 ## Register or Update the event
 
 Game developers can manage rewardable events on the KGeN platform by using a PUT request at the designated endpoint to create or update events.
-```text
-PUT - {{rewards_system_url}}/admin/rewardable-events
-```
+
+### Endpoint: PUT `/s2s/loyalty/rewardable-events`
+
 ### cURL Example
-```text
-curl --location --request PUT 'https://stage-platform-rewards.devKGeN.com/admin/rewardable-events' \
---header 'x-client-id;' \
---header 'x-client-secret;' \
+```bash
+curl --location --request PUT 'https://stage-platform-protocols.kgen.io/s2s/loyalty/rewardable-events' \
+--header 'x-client-id: [example]' \
+--header 'x-client-secret: [example]' \
 --header 'Content-Type: application/json' \
---data '{   
-    "eventType": "DailyBonus",
-    "eventName": "Unlocking the daily gift",
-    "eventDescription": "Reward gamer on succesfully opening a daily free gift chest",
-    "rewardAmount": 10,
-    "entityType": "GAME"
-    
+--data '{
+    "eventType": "Adding Event",
+    "eventName": "PlatformProtocols",
+    "eventDescription": "PlatformProtocols",
+    "entityType": "GAME",
+    "rewardAmount": 100,
+    "rewardCategory": "EARNED",
+    "isActive": true,
+    "isActivityTraceEnabled": false,
+    "activityTraceActivityID": ""
 }'
 ```
 ### Request Header
@@ -32,52 +35,46 @@ curl --location --request PUT 'https://stage-platform-rewards.devKGeN.com/admin/
 - `clientID` : [Your Client ID]
 - `clientSecret` : [Your Client Secret]
 
-### Request Body
-```text
+### Request Body (Create Event)
+```json
 {
-    "eventType": "DailyBonus",
-    "eventName": "Unlocking the daily gift",
-    "eventDescription": "Reward gamer on successfully opening a daily free gift chest",
-    "rewardAmount": 10,
-    "entityType": "GAME"
-    // "isActive": true
+    "eventType": "Adding Event",
+    "eventName": "PlatformProtocols",
+    "eventDescription": "PlatformProtocols",
+    "entityType": "GAME",
+    "rewardAmount": 100,
+    "rewardCategory": "EARNED",
+    "isActive": true,
+    "isActivityTraceEnabled": false,
+    "activityTraceActivityID": ""
 }
 ```
 Explanation:
 - `eventType`: The type of the event, for example, "DailyBonus."
-- `eventName`: A descriptive name for the event, such as "Unlocking the daily gift."
+- `eventName`: A descriptive name for the event (only for display purpose), such as "Unlocking the daily gift."
 - `eventDescription`: A brief description of the event, providing additional context. In this case, "Reward gamer on successfully opening a daily free gift chest."
 - `rewardAmount`: The amount of the reward associated with the event. In this example, it is set to 10.
+- `rewardCategory`: The category of the reward e.g. "EARNED".
 - `entityType`: Specifies the type of entity related to the event. In this context, it is set to "GAME."
 - `isActive` : The isActive field in the provided payload is a boolean attribute that can be used to temporarily set the status of the rewardable event. 
-### Response
-Succesfull response for the above request
-```text
-{
-    "eventID": "dc3806e6-e56b-4da7-90e3-6b8e57307482",
-    "eventType": "DailyBonus",
-    "eventName": "Unlocking the daily gift",
-    "eventDescription": "Reward gamer on succesfully opening a daily free gift chest",
-    "rewardAmount": 10,
-    "entityType": "GAME",
-    "entityID": "d5b2e760-1b6c-4296-a89f-1da0ffe8c414",
-    "isActive": false,
-    "createdAt": "2024-01-19T12:18:47.623568881Z",
-    "updatedAt": "2024-01-19T12:18:47.623568881Z"
-}
-```
-- `eventID`: The unique identifier of the specific rewardable event.
+- `isActivityTraceEnabled`: Whether activity trace enabled or not.
+- `activityTraceActivityID`: Activity trace unique ID.
 
-### Request Body (Update Event):
+### Request Body (Update Event)
 To update an existing event, include the eventID in the payload along with other parameters you want to change. The system will replace the existing event with the updated details.
-```text
+```json
 {
     "eventID": "dc3806e6-e56b-4da7-90e3-6b8e57307482",
     "eventType": "UpdatedEventType",
     "eventName": "UpdatedEventName",
     "eventDescription": "UpdatedEventDescription",
-    "rewardAmount": 20,
-    "entityType": "UPDATED_ENTITY_TYPE"
+    "rewardAmount": 100,
+    "rewardCategory": "EARNED",
+    "entityType": "GAME",
+    "entityID": "b6410c9d-21e1f3d-9b5fb6dd3fdf",
+    "isActive": true,
+    "isActivityTraceEnabled": false,
+    "activityTraceActivityID": "",
 }
 ```
 This will update the existing event with the specified eventID, modifying the specified parameters accordingly.
@@ -85,18 +82,45 @@ This will update the existing event with the specified eventID, modifying the sp
 Use this API to create new events or update existing ones.
 When updating, provide the eventID of an already existing event in the payload, and the system will replace the event with the updated details.
 
+### Response
+Response Status Code:
+- `Success`: 201 Created
+- `Failure`:
+  - `400 Bad Request`
+    - "BAD_REQUEST"
+  - `401 Unauthorized`
+    - "UN_AUTHORIZED"
+
+Example response:
+```json
+{
+    "eventID": "d6089e8f-2844-41d7-7bb2095f58e4",
+    "eventType": "Adding Event",
+    "eventName": "PlatformProtocols",
+    "eventDescription": "PlatformProtocols",
+    "rewardAmount": 100,
+    "rewardCategory": "EARNED",
+    "entityType": "GAME",
+    "entityID": "b6410c9d-21e1f3d-9b5fb6dd3fdf",
+    "isActive": true,
+    "isActivityTraceEnabled": false,
+    "activityTraceActivityID": "",
+    "createdAt": "2024-08-20T07:52:35.660045104Z",
+    "updatedAt": "2024-08-20T07:52:35.660045104Z"
+}
+```
+- `eventID`: The unique identifier of the specific rewardable event.
 
 ## Get all the Rewardable events
 After successfully registering rewardable events, game developers can retrieve a list of active events through a GET request to the following endpoint:
-```text
-GET - {{rewards_system_url}}/admin/rewardable-events?isActive=true
-```
+
+### Endpoint: GET `/s2s/loyalty/rewardable-events?isActive=true`
+
 ### cURL Example
-```text
-curl --location --request PUT 'https://stage-platform-rewards.devKGeN.com/admin/rewardable-events' \
-curl --location 'https://stage-platform-rewards.devKGeN.com/admin/rewardable-events?isActive=true' \
---header 'x-client-id: d5b2e760-1b6c-4296-a89f-1da0ffe8c414' \
---header 'x-client-secret: R3k9FqLsNwPv7GjX5tHmY2e6WzVxZ8bC'
+```bash
+curl --location 'https://stage-platform-protocols.kgen.io/s2s/loyalty/rewardable-events?isActive=true' \
+--header 'x-client-id: [example]' \
+--header 'x-client-secret: [example]'
 ```
 ### Request Header
 - `Content-Type`: application/json
@@ -109,48 +133,62 @@ curl --location 'https://stage-platform-rewards.devKGeN.com/admin/rewardable-eve
 
 ### Response
 Upon making the request, the system will provide a comprehensive list of currently active rewardable events, offering essential information including event type, name, description, reward amount, and any other pertinent details, all created by the game developer.
-```text
+
+Response Status Code:
+- `Success`: 200 OK
+- `Failure`: 
+  - `401 Unauthorized`
+    - "UN_AUTHORIZED"
+
+Example response:
+```json
 {
     "rewardableEvents": [
         {
-            "eventID": "082aca7d-d0b8-4179-ba81-5eb64df247f5",
-            "eventType": "RightNowJustAIdentifierStringUpdated",
-            "eventName": "Summer Challenge",
-            "eventDescription": "A challenge for all players to compete over the summer.",
-            "rewardAmount": 12342,
+            "eventID": "d6089e8f-2844-83a3-7bb2095f58e4",
+            "eventType": "Adding Event",
+            "eventName": "PlatformProtocols",
+            "eventDescription": "PlatformProtocols",
+            "rewardAmount": 50,
+            "rewardCategory": "EARNED",
             "entityType": "GAME",
-            "entityID": "d5b2e760-1b6c-4296-a89f-1da0ffe8c414",
+            "entityID": "b6410c9d4-4da6-bf3d-9b5fb6dd3fdf",
             "isActive": true,
-            "createdAt": "2023-11-20T05:44:18.672625689Z",
-            "updatedAt": "2023-11-20T05:44:18.672625689Z"
+            "isActivityTraceEnabled": false,
+            "activityTraceActivityID": "",
+            "createdAt": "2024-08-20T07:52:35.660045104Z",
+            "updatedAt": "2024-08-20T08:05:33.495815964Z"
         },
         {
-            "eventID": "51a8a58c-e8ec-4b16-b512-d42b3b078fef",
-            "eventType": "RightNowJustAIdentifierStringUpdated",
-            "eventName": "Summer Challenge",
-            "eventDescription": "A challenge for all players to compete over the summer.",
-            "rewardAmount": 12342,
+            "eventID": "59fc9b45-222c-81fc-31160bfacb35",
+            "eventType": "Adding Event",
+            "eventName": "PlatformProtocols",
+            "eventDescription": "PlatformProtocols",
+            "rewardAmount": 100,
+            "rewardCategory": "EARNED",
             "entityType": "GAME",
-            "entityID": "d5b2e760-1b6c-4296-a89f-1da0ffe8c414",
+            "entityID": "b6410c9d-1da6-bf3d-9b5fb6dd3fdf",
             "isActive": true,
-            "createdAt": "2023-11-21T05:47:30.519517028Z",
-            "updatedAt": "2023-11-21T05:47:30.519517028Z"
+            "isActivityTraceEnabled": false,
+            "activityTraceActivityID": "",
+            "createdAt": "2024-07-30T12:40:13.207906773Z",
+            "updatedAt": "2024-07-30T12:40:13.207906773Z"
         },
-        //Additional events
-    ]
+    ],
+    "offset": ""
 }
 ```
 
 ## Get a specific Rewardable event
 For obtaining specific details about a rewardable event crafted, simply initiate a GET request to the designated endpoint.
-```text
-GET - {{rewards_system_url}}/admin/rewardable-events/{eventID}
-```
+
+### Endpoint: GET `/s2s/loyalty/rewardable-events/{eventID}`
+
 ### cURL Example
-```text
-curl --location 'https://stage-platform-rewards.devKGeN.com/admin/rewardable-events/a4ded2a5-6f7a-4116-874c-435af9831cda' \
---header 'x-client-id: d5b2e760-1b6c-4296-a89f-1da0ffe8c414' \
---header 'x-client-secret: R3k9FqLsNwPv7GjX5tHmY2e6WzVxZ8bC'
+```bash
+curl --location 'https://stage-platform-protocols.kgen.io/s2s/loyalty/rewardable-events/a4ded2a5-6f7a-4116-874c-435af9831cda' \
+--header 'x-client-id: [example]' \
+--header 'x-client-secret: [example]'
 ```
 ### Request Header
 - `Content-Type`: application/json
@@ -160,53 +198,62 @@ curl --location 'https://stage-platform-rewards.devKGeN.com/admin/rewardable-eve
 ### Request paramter
 - `eventID`: The unique identifier of the specific rewardable event.
 Example:
-```text
-GET - {{rewards_system_url}}/admin/rewardable-events/a4ded2a5-6f7a-4116-874c-435af9831cda
-```
+
+### Endpoint: GET `/s2s/loyalty/rewardable-events/a4ded2a5-6f7a-874c-435af9831cda`
 
 ### Response
 The system will provide comprehensive details for the specified rewardable event.
-```text
+
+Response Status Code:
+- `Success`: 200 OK
+- `Failure`: 
+  - `401 Unauthorized`
+    - "UN_AUTHORIZED"
+
+Example response:
+```json
 {
-    "eventID": "082aca7d-d0b8-4179-ba81-5eb64df247f5",
-    "eventType": "RightNowJustAIdentifierStringUpdated",
-    "eventName": "Summer Challenge",
-    "eventDescription": "A challenge for all players to compete over the summer.",
-    "rewardAmount": 12342,
+    "eventID": "ee605722-a26c-42e7-3589273d8ce6",
+    "eventType": "t5",
+    "eventName": "Daily Chest Open - 2 ",
+    "eventDescription": "adding event to a user_id",
+    "rewardAmount": 1,
+    "rewardCategory": "EARNED",
     "entityType": "GAME",
-    "entityID": "d5b2e760-1b6c-4296-a89f-1da0ffe8c414",
+    "entityID": "91c8810c-d819-9707-f8537adbbe5d",
     "isActive": true,
-    "createdAt": "2023-11-20T05:44:18.672625689Z",
-    "updatedAt": "2023-11-20T05:44:18.672625689Z"
+    "isActivityTraceEnabled": false,
+    "activityTraceActivityID": "",
+    "createdAt": "2024-07-22T17:19:37.980966812Z",
+    "updatedAt": "2024-07-22T17:19:37.980966812Z"
 }
 ```
 
 ## Delete a specific Rewardable event
 To delete a particular rewardable event created, you can send a DELETE request to the following endpoint.
-```text
-DELETE - {{rewards_system_url}}/admin/rewardable-events/{eventID}
-```
+
+### Endpoint: DELETE `/s2s/loyalty/rewardable-events/{eventID}`
+
 ### cURL Example
-```text
-curl --location --request DELETE 'https://stage-platform-rewards.devKGeN.com/admin/rewardable-events/a4ded2a5-6f7a-4116-874c-435af9831cda' \
---header 'x-client-id: d5b2e760-1b6c-4296-a89f-1da0ffe8c414' \
---header 'x-client-secret: R3k9FqLsNwPv7GjX5tHmY2e6WzVxZ8bC'
+```bash
+curl --location --request DELETE 'https://stage-platform-protocols.kgen.io/s2s/loyalty/rewardable-events/a4ded2a5-6f7a-4116-874c-435af9831cda' \
+--header 'x-client-id: [example]' \
+--header 'x-client-secret: [example]'
 ```
 ### Request Header
 - `Content-Type`: application/json
 - `clientID` : [Your Client ID]
 - `clientSecret` : [Your Client Secret]
 
-
 ### Request paramter
 - `eventID`: The unique identifier of the specific rewardable event.
 
-```text
-Example:
-DELETE - {{rewards_system_url}}/admin/rewardable-events/c93ff468-7d7b-44f0-9cd9-74d
-```
 ### Response
 The system will confirm the successful deletion of the specified rewardable event with a status code of 204, indicating no content.
-
-
-
+Response Status Code:
+- `Success`: 204 No Content
+- `Failure`:
+  - `400 Bad Request`
+    - "BAD_REQUEST"
+  - `401 Unauthorized`
+    - "UN_AUTHORIZED"
