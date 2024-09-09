@@ -75,9 +75,6 @@ Example Response:
     "refresh_token": "exampleToken2",
     "linked_phone": "",
     "session_start_time": "2024-08-20 08:32:13.025599965 +0000 UTC",
-    "appId": "20798813",
-    "gamer_id": "FTC_User1",
-    "linkedMobileNumber": ""
 }
 ```
 Explanation:

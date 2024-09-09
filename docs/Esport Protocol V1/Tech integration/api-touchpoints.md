@@ -17,7 +17,6 @@ This endpoint is used to create or retrieve the current session context for a us
 #### Request Body
 A JSON object containing the following fields:
 - `user_id`: The unique identifier of the user.
-- `gamer_id`: The unique identifier of the gamer.
 - `name`: The real name of the gamer.
 - `username`: Gamer's username.
 - `email`: Gamer's email address.
@@ -41,9 +40,6 @@ A JSON object containing the following fields:
 
 #### Response
 The response returns a JSON object with session details:
-- `gamer_id`: Echoes back the gamer's ID.
-- `appId`: Application ID where the session is created.
-- `linkedMobileNumber`: Gamer's linked mobile number.
 - `session_id`: Unique ID for the current session.
 - `user_id`: The unique identifier of the user.
 - `name`: The real name of the gamer.
@@ -115,10 +111,7 @@ The response returns a JSON object with session details:
     "access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIzODMzMTk3MiIsImNsaWVudF9pZCI6IjIwNzk4NTc4MTMiLCJpYXQiOjE3MjU1OTk0NTQsImlzcyI6IjIwNzk4NTc4MTMiLCJleHAiOjE3MjU2ODU4NTQsInVzZXJfaWQiOiIzODMzMTk3MiIsImdhbWVyX2lkIjoiIiwidGhpcmRfcGFydHlfY2xpZW50X2lkIjoiMjA3OTg1NzgxMyIsInRoaXJkX3BhcnR5X2NsaWVudF9uYW1lIjoiRVNQT1JUU19QUk9UT0NPTF9DQUxMQlJFQUsiLCJuYW1lc3BhY2VkX3RoaXJkX3BhcnR5X3VzZXJfaWQiOiIyMDc5ODU3ODEzIzM4MzMxOTcyIjZmNDFmYjM3ZDBmNzI5M2M2Y2Y0MDVmY2ZiNGI4YzdhMmM1YjkiLCJpc19uZXdfdXNlciI6ZmFsc2UsImluZGlnZ19pZCI6IjYwMDJmOTIwLWJhMDctNDNjOS1iZTcxLTIyZmRhZTM1Mzc1YiIsImluZGlnZ193YWxsZXRfYWRkcmVzcyI6IjB4OTlkYTU2ZGY1OTgyYWU5MTU1Y2I5YWNlOTE0Y2ZlMzgzOWU0MTM1MSIsImxpbmtlZF9waG9uZSI6Iis5MTgwMDAwMDAwMDEifQ.-InW-sn2pLhFIr-NRdvloPWFd39hGkLs2GTVzyW2sZc",
     "refresh_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIzODMzMTk3MiIsImNsaWVudF9pZCI6IjIwNzk4NTc4MTMiLCJpYXQiOjE3MjU1OTk0NTQsImlzcyI6IjIwNzk4NTc4MTMiLCJleHAiOjE3MjU2ODU4NTQsInVzZXJfaWQiOiIzODMzMTk3MiIsImdhbWVyX2lkIjoiIiwidGhpcmRfcGFydHlfY2xpZW50X2lkIjoiMjA3OTg1NzgxMyIsInRoaXJkX3BhcnR5X2NsaWVudF9uYW1lIjoiRVNQT1JUU19QUk9UT0NPTF9DQUxMQlJFQUsiLCJuYW1lc3BhY2VkX3RoaXJkX3BhcnR5X3VzZXJfaWQiOiIyMDc5ODU3ODEzIzM4MzMxOTcyIjZmNDFmYjM3ZDBmNzI5M2M2Y2Y0MDVmY2ZiNGI4YzdhMmM1YjkiLCJpc19uZXdfdXNlciI6ZmFsc2UsImluZGlnZ19pZCI6IjYwMDJmOTIwLWJhMDctNDNjOS1iZTcxLTIyZmRhZTM1Mzc1YiIsImluZGlnZ193YWxsZXRfYWRkcmVzcyI6IjB4OTlkYTU2ZGY1OTgyYWU5MTU1Y2I5YWNlOTE0Y2ZlMzgzOWU0MTM1MSIsImxpbmtlZF9waG9uZSI6Iis5MTgwMDAwMDAwMDEifQ.jBt8oZKE1Xtku_pN3Pj9K9Mw28JeiCKVhB8HU8jEjNA",
     "linked_phone": "+918000000001",
-    "session_start_time": "2024-09-06 05:10:53.871198445 +0000 UTC",
-    "appId": "2079857813",
-    "gamer_id": "38331972",
-    "linkedMobileNumber": "+918000000001"
+    "session_start_time": "2024-09-06 05:10:53.871198445 +0000 UTC"
 }
 ```
 
