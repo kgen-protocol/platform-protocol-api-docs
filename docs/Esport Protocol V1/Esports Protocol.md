@@ -9,7 +9,7 @@ sidebar_position: 2
 
 Tournament system is a key feature of the Kratos ESports Protocol that enables game developers to host tournaments and incentivize players with rewards.
 
-Upon launching the game for the first time post-protocol implementation, a user's in-game wallet is automatically created, and an initial bonus of 50 KCash is deposited. This currency can be used to participate in tournaments.
+Upon launching the game for the first time post-protocol implementation, a user's in-game wallet is automatically created, and an initial one time welcome bonus is deposited. This currency can be used to participate in tournaments.
 
 # Flow Diagram
 
@@ -18,7 +18,7 @@ Upon launching the game for the first time post-protocol implementation, a user'
 
 # User Onboarding
 
-When a player launches the game for the first time the API creates a wallet for the user and deposits with 50 Bonus KCash to enter into on-going tournaments. The player can opt-in to link their wallet with their phone number through an OTP validation to take custody of their wallet. However this is not a mandatory step during the onboarding. The user can opt-in again at the time of redemption.
+When a player launches the game for the first time the API creates a wallet for the user and deposits with one time welcome bonus (eg. 50 KCash) to enter into on-going tournaments. The player can opt-in to link their wallet with their phone number through an OTP validation to take custody of their wallet. However this is not a mandatory step during the onboarding. The user can opt-in again at the time of redemption.
 
 ![Image](../../static/Images/Esports/es_03_user_onboard_image18.png)
 <!-- ![Image](../../static/Images/Esports/es_10_KCash_02_iimage7.png)
@@ -27,7 +27,7 @@ When a player launches the game for the first time the API creates a wallet for 
 # Tournament Leaderboard
 
 
-When a tournament is active in the game, players have the opportunity to join with an entry fee of 10 KCash. As more participants join, the leaderboard expands, intensifying the competition and the prize pool. These tournaments are defined as 24hr format leaderboard tournaments.
+When a tournament is active in the game, players have the opportunity to join with an entry fee (eg. 10 KCash). As more participants join, the leaderboard expands, intensifying the competition and the prize pool. These tournaments are defined as 24hr format leaderboard tournaments.
 
 
 
