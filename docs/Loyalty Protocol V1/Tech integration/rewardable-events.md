@@ -1,8 +1,8 @@
 ---
-sidebar_position: 1
+sidebar_position: 3
 ---
 
-# Rewardable Events
+# Rewardable Events Endpoints
 
 Game developers can utilize dedicated APIs to effortlessly register, update, and delete rewardable events in their games. These integrations offer precise control over the reward system, enabling developers to adapt and enhance the gaming experience, keeping players engaged and motivated through dynamic challenges and rewards.
 
@@ -32,8 +32,8 @@ curl --location --request PUT 'https://stage-platform-protocols.kgen.io/s2s/loya
 ```
 ### Request Header
 - `Content-Type`: application/json
-- `clientID` : [Your Client ID]
-- `clientSecret` : [Your Client Secret]
+- `x-client-id` : [Your Client ID]
+- `x-client-secret` : [Your Client Secret]
 
 ### Request Body (Create Event)
 ```json
@@ -124,8 +124,8 @@ curl --location 'https://stage-platform-protocols.kgen.io/s2s/loyalty/rewardable
 ```
 ### Request Header
 - `Content-Type`: application/json
-- `clientID` : [Your Client ID]
-- `clientSecret` : [Your Client Secret]
+- `x-client-id` : [Your Client ID]
+- `x-client-secret` : [Your Client Secret]
 
 ### Query Paramter
 - `isActive`: A boolean parameter to filter events based on their activation status. If not set, it retrieves all events. If set to true, it retrieves only active events.
@@ -192,8 +192,8 @@ curl --location 'https://stage-platform-protocols.kgen.io/s2s/loyalty/rewardable
 ```
 ### Request Header
 - `Content-Type`: application/json
-- `clientID` : [Your Client ID]
-- `clientSecret` : [Your Client Secret]
+- `x-client-id` : [Your Client ID]
+- `x-client-secret` : [Your Client Secret]
 
 ### Request paramter
 - `eventID`: The unique identifier of the specific rewardable event.
@@ -242,8 +242,8 @@ curl --location --request DELETE 'https://stage-platform-protocols.kgen.io/s2s/l
 ```
 ### Request Header
 - `Content-Type`: application/json
-- `clientID` : [Your Client ID]
-- `clientSecret` : [Your Client Secret]
+- `x-client-id` : [Your Client ID]
+- `x-client-secret` : [Your Client Secret]
 
 ### Request paramter
 - `eventID`: The unique identifier of the specific rewardable event.

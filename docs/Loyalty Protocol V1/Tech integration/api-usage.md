@@ -3,6 +3,8 @@ sidebar_position: 1
 ---
 # API Usage
 
+The API Usage provides a comprehensive overview of various endpoints available for managing user interactions, authentication, wallet transactions, and reward systems within the platform. Each endpoint includes a description and usage details, enabling developers to effectively integrate and utilize these functionalities in their applications.
+
 | API Endpoint | Description | Usage |
 |--------------|--------------|-------|
 | PUT `/s2s/loyalty/rewardable-events` | Register or update rewardable events in the game. | Create new events or update existing ones for the reward system. |
@@ -18,3 +20,6 @@ sidebar_position: 1
 | POST `/s2s/session` | Create an KGeN-specific session for a gamer. | Establish a secure session for the gamer within the gaming application. |
 | POST `/fe/loyalty/event-reward-user-claims/events/{eventID}` | Create a reward for a user when they achieve a specific event. | Record rewards for specific events when users achieve corresponding milestones. |
 | GET `/fe/loyalty/event-reward-user-claims/user` | Retrieve all rewards earned by a gamer. | Obtain a comprehensive list of rewards earned by the gamer throughout their gaming journey. |
+| POST `/fe/users/k-store/generate-redirect-uri` | Redirect URI for a specific user to the k-store. | Obtain a redirect URI for a specific user to k-store. |
+| POST `/fe/analytics/px-tracker/events/{eventID}/drop` | Drop specific event. | Remove the specified event from the events. |
+| GET `/fe/users/account/linked-mobile-number` | Retrieve linked mobile number of user. | Retrieves the linked mobile number associated with the user. |

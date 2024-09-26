@@ -3,6 +3,8 @@ sidebar_position: 1
 ---
 # API Usage
 
+This documentation outlines the key API endpoints available for managing user interactions within the platform. Each endpoint is designed to facilitate essential operations, from session management and tournament participation to wallet transactions and user authentication. Below is a table detailing each API endpoint, its description, and when to use it, helping developers effectively integrate these functionalities into their applications.
+
 | API Endpoint | Description | Usage |
 |--------------|--------------|-------|
 | POST `/s2s/session` | Create or retrieve the current session context for a user (gamer). | When ever user open the app call this api  |
@@ -21,3 +23,6 @@ sidebar_position: 1
 | POST `/fe/esports/rewards/claim` | Allow users to claim their earned rewards. | this will be called when the user is claiming the rewards |
 | POST `/fe/wallet/withdraw` | Transfer a user's earned balance from a custodial wallet to their KGeN wallet. | this will be called on withdraw cta |
 | GET `/fe/esports/statistics/historic` | Provide historical data regarding a user's participation in gaming activities, specifically within the context of tournaments. | Obtain historical statistics and participation details for a user. |
+| POST `/fe/users/k-store/generate-redirect-uri` | Redirect URI for a specific user to the k-store. | Obtain a redirect URI for a specific user to k-store. |
+| POST `/fe/analytics/px-tracker/events/{eventID}/drop` | Drop specific event. | Remove the specified event from the events. |
+| GET `/fe/users/account/linked-mobile-number` | Retrieve linked mobile number of user. | Retrieves the linked mobile number associated with the user. |

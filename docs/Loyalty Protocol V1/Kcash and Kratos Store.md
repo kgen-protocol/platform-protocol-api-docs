@@ -11,7 +11,7 @@ KCash is a currency that rewards players for playing games. What sets KCash apar
 
 # KGeN Wallet
 
-When a player joins, the API automatically generates a wallet to provide joining bonus KCash to the player and to manage the earned KCash acquired during gameplay. Once the balance reaches 1000 KCash, the player can initiate a withdrawal process by verifying their phone number via OTP and taking custody of their wallet.
+When a player joins, the API automatically generates a wallet to provide joining bonus (eg. 50 KCash) to the player and to manage the earned KCash acquired during gameplay. Once the balance reaches the minimum balance threshold required for withdrawal (eg. 1000 KCash), the player can initiate the withdrawal process by verifying their phone number via OTP and taking custody of their wallet.
 
 
 ![Image](../../static/Images/Esports/es_09_KCash_01_image4.jpg)
