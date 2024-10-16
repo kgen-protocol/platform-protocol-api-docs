@@ -14,7 +14,7 @@ This documentation outlines the key API endpoints available for managing user in
 | GET `/fe/esports/tournaments/active` | Retrieve a list of active tournaments. |Call this API  to get active tournaments|
 | GET `/fe/esports/tournaments/participated` | List the tournaments a user has participated in. | Call this API  to check whether user has participated in any tournament or not|
 | GET `/fe/esports/tournaments/{tournamentUID}` | Retrieve detailed information about a specific tournament. | Obtain comprehensive details about a tournament. |
-| GET `/fe/esports/leaderboards/{tournamentUID}/leaderboard` | Provide the leaderboard details for a specific tournament. | Display player standings and scores within a tournament context. |
+| GET `/fe/esports/tournaments/{tournamentUID}/leaderboard` | Provide the leaderboard details for a specific tournament. | Display player standings and scores within a tournament context. |
 | GET `/fe/wallet/balance` | Retrieve the balance details of a user's wallet. | Call this API  to get wallet balance of the user |
 | GET `/fe/wallet/transactions` | Retrieve the transaction history of a specific wallet address. |Call this API  to get the transaction history of the wallet of the specific user |
 | POST `/fe/users/auth/otp/register` | Generate a One Time Password (OTP) for user verification. | Request an OTP for authentication or user confirmation processes. |
