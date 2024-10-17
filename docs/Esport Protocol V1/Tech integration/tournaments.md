@@ -8,7 +8,7 @@ The Tournaments Endpoints provides a comprehensive suite of functions for managi
 
 ## Join Tournament API
 
-### Endpoint: POST `/fe/esports/tournaments/{tournamentId}/join`
+### Endpoint: POST `/fe/esports/tournaments/{tournamentUID}/join`
 This endpoint is used for registering a player to participate in a specific tournament, capturing their entry into the competitive event.
 
 ##### Request Header
@@ -49,7 +49,7 @@ This endpoint is used for registering a player to participate in a specific tour
 
 ## Leave Tournament API
 
-### Endpoint: POST `/fe/esports/tournaments/{tournamentId}/leave`
+### Endpoint: POST `/fe/esports/tournaments/{tournamentUID}/leave`
 This endpoint is used for withdrawing a player from a specific tournament, recording their exit from the competitive event.
 
 ##### Request Header
@@ -81,7 +81,7 @@ This endpoint is used for withdrawing a player from a specific tournament, recor
 
 ## Tournament Score Update API
 
-### Endpoint: POST `/fe/esports/tournaments/{tournamentId}/score`
+### Endpoint: POST `/fe/esports/tournaments/{tournamentUID}/score`
 This endpoint is used for submitting various game-related events, capturing key data about player actions and achievements within a game.
 
 ##### Request Header
@@ -94,7 +94,7 @@ This endpoint is used for submitting various game-related events, capturing key 
    - **Type:** Object
    - **Description:** Contains key information related to the gaming context.
    - **Fields:**
-     - `tournamentId` (String): Identifier for the tournament.
+     - `tournamentUID` (String): Identifier for the tournament.
 
 ##### `payload`
    - **Type:** Object
