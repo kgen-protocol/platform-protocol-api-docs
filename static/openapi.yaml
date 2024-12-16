@@ -725,16 +725,16 @@ info:
   version: '1.0'
   contact:
     name: KGeN Platform Engineering Team
-    url: https://indi.gg
-    email: support@indi.gg
+    url: https://kgen.io
+    email: support@kgen.io
   license:
-    name: Copyright (C) Indi.gg LTD - All Rights Reserved
-    url: https://indi.gg
+    name: Copyright (C) KGeN.io LTD - All Rights Reserved
+    url: https://kgen.io
 tags: []
 servers:
-  - url: https://platform-api.indi.gg
+  - url: https://prod-platform-protocols.kgen.io
     description: production Environment
-  - url: https://platform-api.devindigg.com
+  - url: https://stage-platform-protocols.kgen.io
     description: staging Environment
 components:
   securitySchemes:
@@ -1112,4 +1112,4 @@ components:
         - id
 externalDocs:
   description: Developer Documentation
-  url: https://indigg-api-docs.netlify.app/
+  url: https://api-docs-ashy-pi.vercel.app
