@@ -98,7 +98,7 @@ const config = {
       navbar: {
         title: 'KGeN',
         logo: {
-          alt: 'IndiGG Logo',
+          alt: 'KGeN Logo',
           src: 'img/kgen_logo.webp',
         },
         items: [
